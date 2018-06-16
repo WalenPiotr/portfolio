@@ -11,7 +11,7 @@ const Box = styled.div`
 `;
 
 const Button = styled.div`
-    width: 100px;
+    width: 120px;
     height: 50px;
     font-size: 20px;
     display: flex;
@@ -29,7 +29,7 @@ interface IPageProps {
 
 const View = ({ handleClick, color, innerRef, last }: IPageProps) => (
     <Box color={color} innerRef={innerRef}>
-        <Button onClick={handleClick}>{last ? 'Last' : 'Next'}</Button>
+        <Button onClick={handleClick}>{last ? 'Back to Top' : 'Next'}</Button>
     </Box>
 );
 
