@@ -31,16 +31,17 @@ class App extends React.Component<AppProps, any> {
     render() {
         const indices = [...new Array(5).keys()];
         const components = indices.map(index => {
+            const last = index === indices.length - 1;
+            const click = last
+                ? this.handleClick(0)
+                : this.handleClick(index + 1);
             return (
                 <View
                     color={randomRGB()}
                     innerRef={this.createRef(index)}
-                    handleClick={
-                        index === indices.length - 1
-                            ? this.handleClick(0)
-                            : this.handleClick(index + 1)
-                    }
+                    handleClick={click}
                     key={String(index)}
+                    last={last}
                 />
             );
         });

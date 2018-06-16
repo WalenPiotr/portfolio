@@ -24,11 +24,12 @@ interface IPageProps {
     color: string;
     handleClick: () => void;
     innerRef: any;
+    last: boolean;
 }
 
-const View = ({ handleClick, color, innerRef }: IPageProps) => (
+const View = ({ handleClick, color, innerRef, last }: IPageProps) => (
     <Box color={color} innerRef={innerRef}>
-        <Button onClick={handleClick}>Next</Button>
+        <Button onClick={handleClick}>{last ? 'Last' : 'Next'}</Button>
     </Box>
 );
 
