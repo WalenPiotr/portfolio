@@ -3,20 +3,19 @@ import styled from 'styled-components';
 import Navbar from '@components/Navbar';
 import Pages from '@components/Pages';
 
-interface AppProps {
-    message: string;
-}
+interface AppProps {}
+interface AppState {}
 
-const Box = styled.div``;
+class App extends React.Component<AppProps, AppState> {
+    boxes: Map<string, HTMLDivElement>;
+    pageNames = ['First View', 'Second View', 'Last View'];
 
-class App extends React.Component<AppProps, any> {
-    boxes: Map<string, any>;
     constructor(props: AppProps) {
         super(props);
-        this.boxes = new Map<string, any>();
+        this.boxes = new Map<string, HTMLDivElement>();
     }
 
-    createHandler = (pageName: string) => (): any => {
+    createHandler = (pageName: string) => (): void => {
         window.scrollTo({
             top: this.boxes.get(pageName).offsetTop,
             left: 0,
@@ -24,20 +23,19 @@ class App extends React.Component<AppProps, any> {
         });
     };
 
-    createRef = (pageName: string) => (ref: any) => {
+    createRef = (pageName: string) => (ref: HTMLDivElement): void => {
         this.boxes.set(pageName, ref);
     };
 
     render() {
-        const pageNames = ['First View', 'Second View', 'Last View'];
         return (
             <div>
                 <Navbar
-                    pageNames={pageNames}
+                    pageNames={this.pageNames}
                     createHandler={this.createHandler}
                 />
                 <Pages
-                    pageNames={pageNames}
+                    pageNames={this.pageNames}
                     createHandler={this.createHandler}
                     createRef={this.createRef}
                 />
@@ -45,8 +43,5 @@ class App extends React.Component<AppProps, any> {
         );
     }
 }
-
-
-
 
 export default App;
