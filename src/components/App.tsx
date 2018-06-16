@@ -48,7 +48,6 @@ class App extends React.Component<AppProps, any> {
             <div>
                 <Navbar />
                 {components}
-                <button onClick={this.handleClick(2)}>click</button>
             </div>
         );
     }
