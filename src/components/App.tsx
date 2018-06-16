@@ -16,7 +16,7 @@ class App extends React.Component<AppProps, any> {
         this.boxes = [];
     }
 
-    handleClick = (boxIndex: number) => () => {
+    handleClick = (boxIndex: number) => (): void => {
         window.scrollTo({
             top: this.boxes[boxIndex].offsetTop,
             left: 0,
@@ -29,7 +29,9 @@ class App extends React.Component<AppProps, any> {
     };
 
     render() {
-        const indices = [...new Array(5).keys()];
+        const pageNames = ['First View', 'Second View', 'Last View'];
+        const indices = [...pageNames.keys()];
+
         const views = indices.map(index => {
             const last = index === indices.length - 1;
             const click = last
@@ -45,9 +47,14 @@ class App extends React.Component<AppProps, any> {
                 />
             );
         });
+
+        const handlers = indices.map(index => {
+            return this.handleClick(index);
+        });
+
         return (
             <div>
-                <Navbar />
+                <Navbar pageNames={pageNames} handlers={handlers} />
                 {views}
             </div>
         );

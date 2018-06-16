@@ -12,11 +12,12 @@ const Box = styled.div`
 
 const Button = styled.button`
     width: 120px;
-    height: 50px;
-    font-size: 20px;
+    height: 40px;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0,0,0,0);
     border: 1px solid black;
 `;
 
