@@ -30,7 +30,7 @@ class App extends React.Component<AppProps, any> {
 
     render() {
         const indices = [...new Array(5).keys()];
-        const components = indices.map(index => {
+        const views = indices.map(index => {
             const last = index === indices.length - 1;
             const click = last
                 ? this.handleClick(0)
@@ -48,7 +48,7 @@ class App extends React.Component<AppProps, any> {
         return (
             <div>
                 <Navbar />
-                {components}
+                {views}
             </div>
         );
     }
