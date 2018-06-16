@@ -26,10 +26,10 @@ interface IPageProps {
     innerRef: any;
 }
 
-const Page = ({ handleClick, color, innerRef }: IPageProps) => (
+const View = ({ handleClick, color, innerRef }: IPageProps) => (
     <Box color={color} innerRef={innerRef}>
         <Button onClick={handleClick}>Next</Button>
     </Box>
 );
 
-export default Page;
+export default View;

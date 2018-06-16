@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Navbar from '@components/Navbar';
-import Page from '@components/Page';
+import View from '@components/View';
 
 interface AppProps {
     message: string;
@@ -32,7 +32,7 @@ class App extends React.Component<AppProps, any> {
         const indices = [...new Array(5).keys()];
         const components = indices.map(index => {
             return (
-                <Page
+                <View
                     color={randomRGB()}
                     innerRef={this.createRef(index)}
                     handleClick={
