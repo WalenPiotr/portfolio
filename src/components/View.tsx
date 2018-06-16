@@ -10,7 +10,7 @@ const Box = styled.div`
     align-items: flex-end;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
     width: 120px;
     height: 50px;
     font-size: 20px;
