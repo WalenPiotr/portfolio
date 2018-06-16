@@ -3,8 +3,8 @@ import Page from '@components/Page';
 
 interface IPages {
     pageNames: string[];
-    createHandler: (pageName: string) => any;
-    createRef: (pageName: string) => any;
+    createHandler: (pageName: string) => () => void;
+    createRef: (pageName: string) => (ref: HTMLDivElement) => void;
 }
 
 const Pages = ({ pageNames, createRef, createHandler }: IPages) => {
@@ -31,4 +31,4 @@ const randomRGB = () => {
     return `rgb(${color()}, ${color()}, ${color()})`;
 };
 
-export default Pages
+export default Pages;
