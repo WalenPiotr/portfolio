@@ -21,17 +21,17 @@ const Button = styled.button`
     border: 1px solid black;
 `;
 
-interface IPageProps {
+interface IPage {
     color: string;
     handleClick: () => void;
     innerRef: any;
     last: boolean;
 }
 
-const View = ({ handleClick, color, innerRef, last }: IPageProps) => (
+const Page = ({ handleClick, color, innerRef, last }: IPage) => (
     <Box color={color} innerRef={innerRef}>
         <Button onClick={handleClick}>{last ? 'Back to Top' : 'Next'}</Button>
     </Box>
 );
 
-export default View;
+export default Page;

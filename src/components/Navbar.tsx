@@ -21,17 +21,17 @@ const Button = styled.button`
     align-items: center;
     border: 1px solid black;
     background-color: rgba(0, 0, 0, 0);
-    margin-left:10px;
+    margin-left: 10px;
 `;
 
 interface IPropsNavbar {
     pageNames: string[];
-    handlers: (() => void)[];
+    createHandler: (pageName: string) => any;
 }
 
-const Navbar = ({ handlers, pageNames }: IPropsNavbar) => {
+const Navbar = ({ pageNames, createHandler }: IPropsNavbar) => {
     const buttons = pageNames.map((name, index) => (
-        <Button key={name} onClick={handlers[index]}>
+        <Button key={name} onClick={createHandler(name)}>
             {name}
         </Button>
     ));
