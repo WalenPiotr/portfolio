@@ -5,23 +5,25 @@ const Box = styled.div`
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: red;
-    border: 1px solid black;
-    height: 60px;
+    background-color: rgba(0, 0, 0, 0);
+    height: 40px;
     display: flex;
     align-items: center;
 `;
 
 const Button = styled.button`
-    width: 120px;
     height: 40px;
     font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    color: white;
+    border: none;
     background-color: rgba(0, 0, 0, 0);
     margin-left: 10px;
+    &:focus {
+        outline: none;
+    }
 `;
 
 interface IPropsNavbar {
@@ -30,12 +32,12 @@ interface IPropsNavbar {
 }
 
 const Navbar = ({ pageNames, createHandler }: IPropsNavbar) => {
-    const buttons = pageNames.map((name, index) => (
+    const Links = pageNames.map((name, index) => (
         <Button key={name} onClick={createHandler(name)}>
             {name}
         </Button>
     ));
-    return <Box>{buttons}</Box>;
+    return <Box>{Links}</Box>;
 };
 
 export default Navbar;
