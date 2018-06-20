@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as FontAwesome from 'react-fontawesome';
 import styled from 'styled-components';
 
 const Box = styled.div`
@@ -11,17 +12,27 @@ const Box = styled.div`
 `;
 
 const Button = styled.button`
-    height: 40px;
-    font-size: 16px;
+    font-family: 'Roboto Condensed'; 
+    height: 50px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0);
     color: white;
     border: none;
     &:focus {
         outline: none;
     }
+`;
+
+const TextWrapper = styled.div`
+    font-size: 12px;
+    width: 100%;
+`;
+
+const IconWrapper = styled.div`
+    font-size: 28px;
+    width: 100%;
+    margin-bottom: -10px;
 `;
 
 interface IPage {
@@ -32,7 +43,23 @@ interface IPage {
 
 const Page = ({ handleClick, innerRef, last }: IPage) => (
     <Box innerRef={innerRef}>
-        <Button onClick={handleClick}>{last ? 'Back to Top' : 'Next'}</Button>
+        <Button onClick={handleClick}>
+            {last ? (
+                <div>
+                    <IconWrapper>
+                        <FontAwesome name="angle-double-up" />
+                    </IconWrapper>
+                    <TextWrapper>Back to top</TextWrapper>
+                </div>
+            ) : (
+                <div>
+                    <IconWrapper>
+                        <FontAwesome name="angle-down" />
+                    </IconWrapper>
+                    <TextWrapper>Next</TextWrapper>
+                </div>
+            )}
+        </Button>
     </Box>
 );
 

@@ -12,6 +12,7 @@ const Box = styled.div`
 `;
 
 const Button = styled.button`
+    font-family: 'Roboto Condensed'; 
     height: 40px;
     font-size: 16px;
     display: flex;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Navbar from '@components/Navbar';
 import Pages from '@components/Pages';
 
+
 interface AppProps {}
 interface AppState {}
 
@@ -29,7 +30,7 @@ class App extends React.Component<AppProps, AppState> {
 
     render() {
         return (
-            <div>
+            <div className="App">
                 <Navbar
                     pageNames={this.pageNames}
                     createHandler={this.createHandler}
