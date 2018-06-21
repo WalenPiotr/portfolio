@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import IView from '@typings/IView';
 
 const Box = styled.div`
     position: fixed;
@@ -12,7 +13,7 @@ const Box = styled.div`
 `;
 
 const Button = styled.button`
-    font-family: 'Roboto Condensed'; 
+    font-family: 'Roboto Condensed';
     height: 40px;
     font-size: 16px;
     display: flex;
@@ -28,14 +29,15 @@ const Button = styled.button`
 `;
 
 interface IPropsNavbar {
-    pageNames: string[];
-    createHandler: (pageName: string) => any;
+    views: IView[];
+    createHandler: (view: IView) => any;
 }
 
-const Navbar = ({ pageNames, createHandler }: IPropsNavbar) => {
-    const Links = pageNames.map((name, index) => (
-        <Button key={name} onClick={createHandler(name)}>
-            {name}
+const Navbar = ({ views, createHandler }: IPropsNavbar) => {
+    console.log(views);
+    const Links = views.map((view, index) => (
+        <Button key={view.name} onClick={createHandler(view)}>
+            {view.name}
         </Button>
     ));
     return <Box>{Links}</Box>;

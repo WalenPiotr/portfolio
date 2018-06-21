@@ -2,41 +2,41 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Navbar from '@components/Navbar';
 import Pages from '@components/Pages';
-
-
+import IView from '@typings/IView';
 interface AppProps {}
 interface AppState {}
 
 class App extends React.Component<AppProps, AppState> {
-    boxes: Map<string, HTMLDivElement>;
-    pageNames = ['First View', 'Second View', 'Last View'];
+    boxes: Map<IView, HTMLDivElement>;
+    views = [
+        { name: 'Home', component: <div>Piotr Waleń - WebDev</div> },
+        { name: 'Projects', component: <div>Projects</div> },
+        { name: 'Contact', component: <div>Contact</div> },
+    ];
 
     constructor(props: AppProps) {
         super(props);
-        this.boxes = new Map<string, HTMLDivElement>();
+        this.boxes = new Map<IView, HTMLDivElement>();
     }
 
-    createHandler = (pageName: string) => (): void => {
+    createHandler = (view: IView) => (): void => {
         window.scrollTo({
-            top: this.boxes.get(pageName).offsetTop,
+            top: this.boxes.get(view).offsetTop,
             left: 0,
             behavior: 'smooth',
         });
     };
 
-    createRef = (pageName: string) => (ref: HTMLDivElement): void => {
-        this.boxes.set(pageName, ref);
+    createRef = (view: IView) => (ref: HTMLDivElement): void => {
+        this.boxes.set(view, ref);
     };
 
     render() {
         return (
             <div className="App">
-                <Navbar
-                    pageNames={this.pageNames}
-                    createHandler={this.createHandler}
-                />
+                <Navbar views={this.views} createHandler={this.createHandler} />
                 <Pages
-                    pageNames={this.pageNames}
+                    views={this.views}
                     createHandler={this.createHandler}
                     createRef={this.createRef}
                 />

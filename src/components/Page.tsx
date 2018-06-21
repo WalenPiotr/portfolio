@@ -1,18 +1,20 @@
 import * as React from 'react';
 import * as FontAwesome from 'react-fontawesome';
 import styled from 'styled-components';
+import IView from '@typings/IView';
 
 const Box = styled.div`
     width: 100%;
     height: 100vh;
     background-color: rgb(20, 20, 250, 0.8);
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 `;
 
 const Button = styled.button`
-    font-family: 'Roboto Condensed'; 
+    font-family: 'Roboto Condensed';
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -35,14 +37,25 @@ const IconWrapper = styled.div`
     margin-bottom: -10px;
 `;
 
+const ComponentWrapper = styled.div`
+    width: 100%;
+    flex-grow: 1;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 interface IPage {
     handleClick: () => void;
     innerRef: any;
     last: boolean;
+    innerComponent: JSX.Element;
 }
 
-const Page = ({ handleClick, innerRef, last }: IPage) => (
+const Page = ({ handleClick, innerRef, last, innerComponent }: IPage) => (
     <Box innerRef={innerRef}>
+        <ComponentWrapper>{innerComponent}</ComponentWrapper>
         <Button onClick={handleClick}>
             {last ? (
                 <div>
