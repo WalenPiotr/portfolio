@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as FontAwesome from 'react-fontawesome';
 import styled from 'styled-components';
 import IView from '@typings/IView';
+import * as navbar from '@components/Navbar';
 
 const Box = styled.div`
     width: 100%;
@@ -40,7 +41,7 @@ const IconWrapper = styled.div`
 const ComponentWrapper = styled.div`
     width: 100%;
     flex-grow: 1;
-    margin-top: 40px;
+    margin-top: ${(props: { navbarHeight: string }) => props.navbarHeight};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +56,9 @@ interface IPage {
 
 const Page = ({ handleClick, innerRef, last, innerComponent }: IPage) => (
     <Box innerRef={innerRef}>
-        <ComponentWrapper>{innerComponent}</ComponentWrapper>
+        <ComponentWrapper navbarHeight={navbar.height}>
+            {innerComponent}
+        </ComponentWrapper>
         <Button onClick={handleClick}>
             {last ? (
                 <div>

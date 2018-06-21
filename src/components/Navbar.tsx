@@ -12,9 +12,10 @@ const Box = styled.div`
     align-items: center;
 `;
 
+
 const Button = styled.button`
     font-family: 'Roboto Condensed';
-    height: 40px;
+    height: ${(props: { height: string }) => props.height};
     font-size: 16px;
     display: flex;
     justify-content: center;
@@ -32,11 +33,16 @@ interface IPropsNavbar {
     views: IView[];
     createHandler: (view: IView) => any;
 }
+export const height = '40px';
 
 const Navbar = ({ views, createHandler }: IPropsNavbar) => {
     console.log(views);
     const Links = views.map((view, index) => (
-        <Button key={view.name} onClick={createHandler(view)}>
+        <Button
+            height={height}
+            key={view.name}
+            onClick={createHandler(view)}
+        >
             {view.name}
         </Button>
     ));
