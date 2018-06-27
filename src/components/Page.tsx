@@ -21,10 +21,13 @@ const Button = styled.button`
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0);
-    color: ${({ theme }: { theme: ITheme }) => theme.fontHighlightColor};
+    color: ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
     border: none;
     &:focus {
         outline: none;
+    }
+    &:hover {
+        color: ${({ theme }: { theme: ITheme }) => theme.fontHighlightColor};
     }
 `;
 

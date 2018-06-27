@@ -54,8 +54,8 @@ class App extends React.Component<AppProps, AppState> {
 
     render() {
         const theme: ITheme = {
-            fontPrimaryColor: 'rgb(220, 220, 220)',
-            fontHighlightColor: 'rgb(250, 250, 250)',
+            fontPrimaryColor: 'rgb(210, 210, 255)',
+            fontHighlightColor: 'rgb(250, 250, 255)',
         };
         return (
             <div className="App">
