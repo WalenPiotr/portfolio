@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import IView from '@typings/IView';
 import ITheme from '@typings/ITheme';
 
