@@ -27,6 +27,8 @@ const Button = styled.button`
     height: 90px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 10px;
     background-color: rgba(0, 0, 0, 0);
     color: ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
     border: none;
