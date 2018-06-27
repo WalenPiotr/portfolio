@@ -4,20 +4,40 @@ import Navbar from '@components/Navbar';
 import Pages from '@components/Pages';
 import IView from '@typings/IView';
 interface AppProps {}
-interface AppState {}
+interface AppState {
+    currentPage: number;
+}
 
 class App extends React.Component<AppProps, AppState> {
+    state = {
+        currentPage: 0,
+    };
+    constructor(props: AppProps) {
+        super(props);
+        this.boxes = new Map<IView, HTMLDivElement>();
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll, {
+            passive: true,
+        });
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = (event: Event) => {
+        const currentPage = Math.round(window.pageYOffset / window.innerHeight);
+        this.setState({ currentPage });
+    };
+
     boxes: Map<IView, HTMLDivElement>;
     views = [
         { name: 'Home', component: <div>Piotr Waleń - WebDev</div> },
         { name: 'Projects', component: <div>Projects</div> },
         { name: 'Contact', component: <div>Contact</div> },
     ];
-
-    constructor(props: AppProps) {
-        super(props);
-        this.boxes = new Map<IView, HTMLDivElement>();
-    }
 
     createHandler = (view: IView) => (): void => {
         window.scrollTo({
@@ -34,7 +54,11 @@ class App extends React.Component<AppProps, AppState> {
     render() {
         return (
             <div className="App">
-                <Navbar views={this.views} createHandler={this.createHandler} />
+                <Navbar
+                    views={this.views}
+                    createHandler={this.createHandler}
+                    currentPage={this.state.currentPage}
+                />
                 <Pages
                     views={this.views}
                     createHandler={this.createHandler}

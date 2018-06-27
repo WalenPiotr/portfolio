@@ -16,7 +16,7 @@ const Box = styled.div`
 
 const Button = styled.button`
     font-family: 'Roboto Condensed';
-    height: 50px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0);
@@ -28,12 +28,12 @@ const Button = styled.button`
 `;
 
 const TextWrapper = styled.div`
-    font-size: 12px;
+    font-size: 16px;
     width: 100%;
 `;
 
 const IconWrapper = styled.div`
-    font-size: 28px;
+    font-size: 40px;
     width: 100%;
     margin-bottom: -10px;
 `;
