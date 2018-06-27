@@ -8,8 +8,11 @@ import ITheme from '@typings/ITheme';
 const Box = styled.div`
     width: 100%;
     height: 100vh;
-    background-color: rgb(20, 20, 250, 0.8);
+    background-color: ${({ theme }: { theme: ITheme }) =>
+        theme.backgroundColor};
     display: flex;
+    border-bottom: 2px dashed
+        ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
@@ -66,7 +69,7 @@ const Page = ({
     innerComponent,
     theme,
 }: IPage) => (
-    <Box innerRef={innerRef}>
+    <Box innerRef={innerRef} theme={theme}>
         <ComponentWrapper navbarHeight={navbar.height}>
             {innerComponent}
         </ComponentWrapper>
