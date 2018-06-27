@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import IView from '@typings/IView';
+import ITheme from '@typings/ITheme';
 
 const Box = styled.div`
     position: fixed;
@@ -15,19 +16,20 @@ const Box = styled.div`
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
     height: 2px;
-    background-color: rgb(220, 220, 220);
+    background-color: ${({ theme }: { theme: ITheme }) =>
+        theme.fontPrimaryColor};
     transition: width 0.1s linear;
 `;
 
 const Button = styled.button`
     font-family: 'Roboto Condensed';
-    height: ${(props: { height: string }) => props.height};
+    height: ${({ height }: { height: string }) => height};
     font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: rgb(220, 220, 220);
+    color: ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
     border: none;
     background-color: rgba(0, 0, 0, 0);
     margin-left: 10px;
@@ -35,10 +37,11 @@ const Button = styled.button`
         outline: none;
     }
     &:hover {
-        color: rgb(250, 250, 250);
+        color: ${({ theme }: { theme: ITheme }) => theme.fontHighlightColor};
     }
     &:hover ${Line} {
-        background-color: rgb(250, 250, 250);
+        background-color: ${({ theme }: { theme: ITheme }) =>
+            theme.fontHighlightColor};
     }
 `;
 
@@ -46,18 +49,20 @@ interface IPropsNavbar {
     views: IView[];
     createHandler: (view: IView) => any;
     currentPage: number;
+    theme: ITheme;
 }
 export const height = '40px';
 
-const Navbar = ({ views, createHandler, currentPage }: IPropsNavbar) => {
+const Navbar = ({ views, createHandler, currentPage, theme }: IPropsNavbar) => {
     const Links = views.map((view, index) => {
         return (
             <Button
                 height={height}
                 key={view.name}
                 onClick={createHandler(view)}
+                theme={theme}
             >
-                <Line current={currentPage == index} />
+                <Line current={currentPage == index} theme={theme} />
                 <span>{view.name}</span>
             </Button>
         );

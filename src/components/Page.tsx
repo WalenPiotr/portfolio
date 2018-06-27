@@ -3,6 +3,7 @@ import * as FontAwesome from 'react-fontawesome';
 import styled from 'styled-components';
 import IView from '@typings/IView';
 import * as navbar from '@components/Navbar';
+import ITheme from '@typings/ITheme';
 
 const Box = styled.div`
     width: 100%;
@@ -20,7 +21,7 @@ const Button = styled.button`
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0);
-    color: white;
+    color: ${({ theme }: { theme: ITheme }) => theme.fontHighlightColor};
     border: none;
     &:focus {
         outline: none;
@@ -52,14 +53,21 @@ interface IPage {
     innerRef: any;
     last: boolean;
     innerComponent: JSX.Element;
+    theme: ITheme;
 }
 
-const Page = ({ handleClick, innerRef, last, innerComponent }: IPage) => (
+const Page = ({
+    handleClick,
+    innerRef,
+    last,
+    innerComponent,
+    theme,
+}: IPage) => (
     <Box innerRef={innerRef}>
         <ComponentWrapper navbarHeight={navbar.height}>
             {innerComponent}
         </ComponentWrapper>
-        <Button onClick={handleClick}>
+        <Button onClick={handleClick} theme={theme}>
             {last ? (
                 <div>
                     <IconWrapper>
