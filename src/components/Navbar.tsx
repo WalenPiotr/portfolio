@@ -12,7 +12,6 @@ const Box = styled.div`
     align-items: center;
 `;
 
-
 const Button = styled.button`
     font-family: 'Roboto Condensed';
     height: ${(props: { height: string }) => props.height};
@@ -20,12 +19,15 @@ const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(180, 180, 180);
     border: none;
     background-color: rgba(0, 0, 0, 0);
     margin-left: 10px;
     &:focus {
         outline: none;
+    }
+    &:hover {
+        color: rgb(250, 250, 250);
     }
 `;
 
@@ -38,11 +40,7 @@ export const height = '40px';
 const Navbar = ({ views, createHandler }: IPropsNavbar) => {
     console.log(views);
     const Links = views.map((view, index) => (
-        <Button
-            height={height}
-            key={view.name}
-            onClick={createHandler(view)}
-        >
+        <Button height={height} key={view.name} onClick={createHandler(view)}>
             {view.name}
         </Button>
     ));
