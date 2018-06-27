@@ -7,9 +7,15 @@ const Box = styled.div`
     top: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
-    height: 40px;
+    height: ${(props: { height: string }) => props.height};
     display: flex;
     align-items: center;
+`;
+
+const Line = styled.div`
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0);
 `;
 
 const Button = styled.button`
@@ -17,6 +23,7 @@ const Button = styled.button`
     height: ${(props: { height: string }) => props.height};
     font-size: 16px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: rgb(180, 180, 180);
@@ -29,6 +36,9 @@ const Button = styled.button`
     &:hover {
         color: rgb(250, 250, 250);
     }
+    &:hover ${Line} {
+        background-color: rgb(250, 250, 250);
+    }
 `;
 
 interface IPropsNavbar {
@@ -38,13 +48,13 @@ interface IPropsNavbar {
 export const height = '40px';
 
 const Navbar = ({ views, createHandler }: IPropsNavbar) => {
-    console.log(views);
     const Links = views.map((view, index) => (
         <Button height={height} key={view.name} onClick={createHandler(view)}>
-            {view.name}
+            <Line />
+            <span>{view.name}</span>
         </Button>
     ));
-    return <Box>{Links}</Box>;
+    return <Box height={height}>{Links}</Box>;
 };
 
 export default Navbar;
