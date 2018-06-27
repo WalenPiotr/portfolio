@@ -24,7 +24,7 @@ const Line = styled.div`
 const Button = styled.button`
     font-family: 'Roboto Condensed';
     height: ${({ height }: { height: string }) => height};
-    font-size: 20px;
+    font-size: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,6 +33,8 @@ const Button = styled.button`
     border: none;
     background-color: rgba(0, 0, 0, 0);
     margin-left: 10px;
+    margin-top: 10px;
+
     &:focus {
         outline: none;
     }
