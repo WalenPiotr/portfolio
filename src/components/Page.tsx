@@ -14,7 +14,7 @@ const Box = styled.div`
     width: 100%;
     height: 100vh;
     background-color: ${(props: IBox) => props.theme.backgroundColor};
-    transition: background-color 700ms ease-in;
+    transition: background-color 650ms ease-in;
     display: flex;
     border-bottom: 2px dashed ${(props: IBox) => props.theme.fontPrimaryColor};
     flex-direction: column;
@@ -24,7 +24,7 @@ const Box = styled.div`
 
 const Button = styled.button`
     font-family: 'Roboto Condensed';
-    height: 70px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0);
@@ -39,14 +39,15 @@ const Button = styled.button`
 `;
 
 const TextWrapper = styled.div`
-    font-size: 16px;
+    font-size: 20px;
     width: 100%;
+    text-transform: lowercase;
 `;
 
 const IconWrapper = styled.div`
-    font-size: 40px;
+    font-size: 60px;
     width: 100%;
-    margin-bottom: -10px;
+    margin-bottom: -20px;
 `;
 
 const ComponentWrapper = styled.div`
