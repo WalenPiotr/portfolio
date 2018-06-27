@@ -5,14 +5,18 @@ import IView from '@typings/IView';
 import * as navbar from '@components/Navbar';
 import ITheme from '@typings/ITheme';
 
+interface IBox {
+    index: number;
+    theme: ITheme;
+}
+
 const Box = styled.div`
     width: 100%;
     height: 100vh;
-    background-color: ${({ theme }: { theme: ITheme }) =>
-        theme.backgroundColor};
+    background-color: ${(props: IBox) => props.theme.backgroundColor};
+    transition: background-color 700ms ease-in;
     display: flex;
-    border-bottom: 2px dashed
-        ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
+    border-bottom: 2px dashed ${(props: IBox) => props.theme.fontPrimaryColor};
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
@@ -60,6 +64,7 @@ interface IPage {
     last: boolean;
     innerComponent: JSX.Element;
     theme: ITheme;
+    index: number;
 }
 
 const Page = ({
@@ -68,8 +73,9 @@ const Page = ({
     last,
     innerComponent,
     theme,
+    index,
 }: IPage) => (
-    <Box innerRef={innerRef} theme={theme}>
+    <Box innerRef={innerRef} index={index} theme={theme}>
         <ComponentWrapper navbarHeight={navbar.height}>
             {innerComponent}
         </ComponentWrapper>

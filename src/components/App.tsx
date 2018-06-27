@@ -8,17 +8,24 @@ import ITheme from '@typings/ITheme';
 interface AppProps {}
 interface AppState {
     currentPage: number;
+    theme: ITheme;
 }
 
 class App extends React.Component<AppProps, AppState> {
     state = {
         currentPage: 0,
+        theme: {
+            fontPrimaryColor: 'rgb(220, 220, 255)',
+            fontHighlightColor: 'rgb(250, 250, 255)',
+            pageColors: [
+                'rgb(20, 20, 255, 0.85)',
+                'rgb(80, 20, 255, 0.85)',
+                'rgb(20, 80, 255, 0.85)',
+            ],
+            backgroundColor: 'rgb(100, 100, 255, 0.85)',
+        },
     };
-    theme: ITheme = {
-        fontPrimaryColor: 'rgb(220, 220, 255)',
-        fontHighlightColor: 'rgb(250, 250, 255)',
-        backgroundColor: 'rgb(20, 20, 255, 0.8)',
-    };
+
     constructor(props: AppProps) {
         super(props);
         this.boxes = new Map<IView, HTMLDivElement>();
@@ -28,6 +35,15 @@ class App extends React.Component<AppProps, AppState> {
         window.addEventListener('scroll', this.handleScroll, {
             passive: true,
         });
+        const currentPage = Math.round(window.pageYOffset / window.innerHeight);
+        this.setState((prevState: AppState) => ({
+            ...prevState,
+            currentPage,
+            theme: {
+                ...prevState.theme,
+                backgroundColor: prevState.theme.pageColors[currentPage],
+            },
+        }));
     }
 
     componentWillUnmount() {
@@ -36,12 +52,19 @@ class App extends React.Component<AppProps, AppState> {
 
     handleScroll = (event: Event) => {
         const currentPage = Math.round(window.pageYOffset / window.innerHeight);
-        this.setState({ currentPage });
+        this.setState((prevState: AppState) => ({
+            ...prevState,
+            currentPage,
+            theme: {
+                ...prevState.theme,
+                backgroundColor: prevState.theme.pageColors[currentPage],
+            },
+        }));
     };
 
     boxes: Map<IView, HTMLDivElement>;
     views = [
-        { name: 'Home', component: <Home theme={this.theme} /> },
+        { name: 'Home', component: <Home theme={this.state.theme} /> },
         { name: 'Projects', component: <div>Projects</div> },
         { name: 'Contact', component: <div>Contact</div> },
     ];
@@ -65,13 +88,13 @@ class App extends React.Component<AppProps, AppState> {
                     views={this.views}
                     createHandler={this.createHandler}
                     currentPage={this.state.currentPage}
-                    theme={this.theme}
+                    theme={this.state.theme}
                 />
                 <Pages
                     views={this.views}
                     createHandler={this.createHandler}
                     createRef={this.createRef}
-                    theme={this.theme}
+                    theme={this.state.theme}
                 />
             </div>
         );

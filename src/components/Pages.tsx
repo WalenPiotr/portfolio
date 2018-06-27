@@ -17,6 +17,7 @@ const Pages = ({ views, createRef, createHandler, theme }: IPages) => {
         return (
             <Page
                 theme={theme}
+                index={index}
                 innerRef={createRef(view)}
                 handleClick={createHandler(clickTarget)}
                 key={String(index)}
