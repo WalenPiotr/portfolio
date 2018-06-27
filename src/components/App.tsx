@@ -5,6 +5,7 @@ import Pages from '@components/Pages';
 import Home from '@components/Home';
 import IView from '@typings/IView';
 import ITheme from '@typings/ITheme';
+import Skills from '@components/Skills';
 interface AppProps {}
 interface AppState {
     currentPage: number;
@@ -19,10 +20,10 @@ class App extends React.Component<AppProps, AppState> {
             fontHighlightColor: 'rgb(250, 250, 255)',
             pageColors: [
                 'rgb(20, 20, 255, 0.85)',
-                'rgb(80, 20, 255, 0.85)',
-                'rgb(20, 80, 255, 0.85)',
+                'rgb(60, 20, 255, 0.85)',
+                'rgb(20, 60, 255, 0.85)',
             ],
-            backgroundColor: 'rgb(100, 100, 255, 0.85)',
+            backgroundColor: 'rgb(80, 80, 255, 0.9)',
         },
     };
 
@@ -65,7 +66,10 @@ class App extends React.Component<AppProps, AppState> {
     boxes: Map<IView, HTMLDivElement>;
     views = [
         { name: 'Home', component: <Home theme={this.state.theme} /> },
-        { name: 'Projects', component: <div>Projects</div> },
+        {
+            name: 'Technologies',
+            component: <Skills theme={this.state.theme} />,
+        },
         { name: 'Contact', component: <div>Contact</div> },
     ];
 

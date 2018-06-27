@@ -15,9 +15,8 @@ const Box = styled.div`
 
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
-    height: 2px;
-    background-color: ${({ theme }: { theme: ITheme }) =>
-        theme.fontPrimaryColor};
+    border-bottom: 2px dashed
+        ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
     transition: width 0.1s linear;
 `;
 
@@ -33,7 +32,7 @@ const Button = styled.button`
     border: none;
     background-color: rgba(0, 0, 0, 0);
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 12px;
 
     &:focus {
         outline: none;
@@ -42,8 +41,8 @@ const Button = styled.button`
         color: ${({ theme }: { theme: ITheme }) => theme.fontHighlightColor};
     }
     &:hover ${Line} {
-        background-color: ${({ theme }: { theme: ITheme }) =>
-            theme.fontHighlightColor};
+        border-bottom: 2px dashed
+            ${({ theme }: { theme: ITheme }) => theme.fontHighlightColor};
     }
 `;
 
