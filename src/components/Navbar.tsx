@@ -13,10 +13,10 @@ const Box = styled.div`
 `;
 
 const Line = styled.div`
-    width: 100%;
+    width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
     height: 2px;
-    background-color: ${({ current }: { current: boolean }) =>
-        current ? 'rgb(220, 220, 220)' : 'none'};
+    background-color: rgb(220, 220, 220);
+    transition: width 0.1s linear;
 `;
 
 const Button = styled.button`
@@ -36,6 +36,9 @@ const Button = styled.button`
     }
     &:hover {
         color: rgb(250, 250, 250);
+    }
+    &:hover ${Line} {
+        background-color: rgb(250, 250, 250);
     }
 `;
 
