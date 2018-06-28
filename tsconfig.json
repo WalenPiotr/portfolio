@@ -11,7 +11,9 @@
         "paths": {
             "@components/*": ["src/components/*"],
             "@typings/*": ["src/typings/*"],
-            "@icons/*": ["src/icons/*"]
+            "@icons/*": ["src/icons/*"],
+            "@reducers/*": ["src/reducers/*"],
+            "@actions/*": ["src/actions/*"]
         },
         "downlevelIteration": true
     },

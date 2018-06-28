@@ -12,6 +12,8 @@ module.exports = {
             '@components': path.resolve(__dirname, 'src/components/'),
             '@typings': path.resolve(__dirname, 'src/typings/'),
             '@icons': path.resolve(__dirname, 'src/icons/'),
+            '@reducers': path.resolve(__dirname, 'src/reducers/'),
+            '@actions': path.resolve(__dirname, 'src/actions/'),
         },
     },
     module: {

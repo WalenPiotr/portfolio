@@ -24,13 +24,11 @@ const Box = styled.div`
 
 const Button = styled.button`
     font-family: 'Roboto Condensed';
-    height: 4vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 10px;
     background-color: rgba(0, 0, 0, 0);
     color: ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
     border: none;
@@ -50,8 +48,8 @@ const TextWrapper = styled.div`
 
 const IconWrapper = styled.div`
     font-size: 3.5vh;
-    width: 100%;
     margin-bottom: -1vh;
+    width: 100%;
 `;
 
 const ComponentWrapper = styled.div`
