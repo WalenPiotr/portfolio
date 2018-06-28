@@ -20,41 +20,100 @@ const Section = styled.div`
     margin-bottom: 8px;
 `;
 
+const List = styled.ul`
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+`;
+
+const IconWrapper = styled.div`
+    width: 30px;
+`;
+
+const Item = styled.li`
+    display: flex;
+`;
+
 const Skills = ({ theme }: ISkills) => (
     <Box theme={theme}>
         <Section theme={theme} />
         <div>Front-End:</div>
-        <li>
-            <FontAwesomeIcon icon={['fab', 'html5']} /> HTML
-        </li>
-        <li>
-            <FontAwesomeIcon icon={['fab', 'css3-alt']} /> CSS
-        </li>
-        <li>
-            <FontAwesomeIcon icon={['fab', 'js-square']} /> JS (ES2017)
-        </li>
-        <li>
-            <FontAwesomeIcon icon={['fab', 'react']} /> React
-        </li>
-        <li>Redux</li>
+        <List>
+            <Item>
+                <IconWrapper>
+                    <FontAwesomeIcon icon={['fab', 'html5']} />
+                </IconWrapper>{' '}
+                HTML
+            </Item>
+            <Item>
+                <IconWrapper>
+                    <FontAwesomeIcon icon={['fab', 'css3-alt']} />
+                </IconWrapper>
+                CSS
+            </Item>
+            <Item>
+                <IconWrapper>
+                    <FontAwesomeIcon icon={['fab', 'js-square']} />
+                </IconWrapper>
+                JS (ES2017)
+            </Item>
+            <Item>
+                <IconWrapper>
+                    <FontAwesomeIcon icon={['fab', 'react']} />
+                </IconWrapper>
+                React
+            </Item>
+            <Item>
+                <IconWrapper />Redux
+            </Item>
+            <Item>
+                <IconWrapper />Webpack
+            </Item>
+        </List>
         <Section theme={theme} />
-        <div>Back-End:</div>
-        <li>
-            <FontAwesomeIcon icon={['fab', 'node-js']} /> NodeJS
-        </li>
-        <li>Express</li>
-        <li>MongoDB</li>
-        <li>PostgreSQL</li>
+        <List>
+            <div>
+                <IconWrapper />Back-End:
+            </div>
+            <Item>
+                <IconWrapper>
+                    <FontAwesomeIcon icon={['fab', 'node-js']} />
+                </IconWrapper>
+                NodeJS
+            </Item>
+            <Item>
+                <IconWrapper />Express
+            </Item>
+            <Item>
+                <IconWrapper />MongoDB
+            </Item>
+            <Item>
+                <IconWrapper />PostgreSQL
+            </Item>
+        </List>
         <Section theme={theme} />
         <div>Other:</div>
-        <li>
-            <FontAwesomeIcon icon={['fab', 'linux']} /> Linux
-        </li>
-        <li>
-            <FontAwesomeIcon icon={['fab', 'git-square']} /> Git
-        </li>
-        <li>Keras, Tensorflow (Python)</li>
-        <li>OpenCV (Python, Java for Android)</li>
+        <List>
+            <Item>
+                <IconWrapper>
+                    <FontAwesomeIcon icon={['fab', 'linux']} />
+                </IconWrapper>
+                Linux
+            </Item>
+            <Item>
+                <IconWrapper>
+                    <FontAwesomeIcon icon={['fab', 'git-square']} />
+                </IconWrapper>
+                Git
+            </Item>
+            <Item>
+                <IconWrapper />Keras, Tensorflow (Python)
+            </Item>
+            <Item>
+                <IconWrapper />OpenCV (Python, Java for Android)
+            </Item>
+        </List>
         <Section theme={theme} />
     </Box>
 );
