@@ -3,14 +3,15 @@ import styled from 'styled-components';
 import Navbar from '@components/Navbar';
 import Pages from '@components/Pages';
 import Home from '@components/Home';
+import Projects from '@components/Projects';
+import Skills from '@components/Skills';
 import IView from '@typings/IView';
 import ITheme from '@typings/ITheme';
-import Skills from '@components/Skills';
-
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-library.add(fab, fas);
+import { far } from '@fortawesome/free-regular-svg-icons';
+library.add(fab, fas, far);
 
 interface AppProps {}
 
@@ -23,14 +24,14 @@ class App extends React.Component<AppProps, AppState> {
     state = {
         currentPage: 0,
         theme: {
-            fontPrimaryColor: 'rgb(220, 220, 255)',
+            fontPrimaryColor: 'rgb(230, 230, 255)',
             fontHighlightColor: 'rgb(250, 250, 255)',
             pageColors: [
-                'rgb(20, 20, 255, 0.9)',
-                'rgb(60, 20, 255, 0.9)',
-                'rgb(20, 60, 255, 0.9)',
+                'rgb(80, 100, 200)',
+                'rgb(100, 80, 200)',
+                'rgb(100, 100, 200)',
             ],
-            backgroundColor: 'rgb(80, 80, 255, 0.9)',
+            backgroundColor: 'rgb(80, 80, 200)',
         },
     };
 
@@ -71,14 +72,6 @@ class App extends React.Component<AppProps, AppState> {
     };
 
     boxes: Map<IView, HTMLDivElement>;
-    views = [
-        { name: 'Home', component: <Home theme={this.state.theme} /> },
-        {
-            name: 'Skills',
-            component: <Skills theme={this.state.theme} />,
-        },
-        { name: 'Contact', component: <div>Contact</div> },
-    ];
 
     createHandler = (view: IView) => (): void => {
         window.scrollTo({
@@ -93,16 +86,28 @@ class App extends React.Component<AppProps, AppState> {
     };
 
     render() {
+        const views = [
+            { name: 'Home', component: <Home theme={this.state.theme} /> },
+            {
+                name: 'Skills',
+                component: <Skills theme={this.state.theme} />,
+            },
+            {
+                name: 'Projects',
+                component: <Projects theme={this.state.theme} />,
+            },
+        ];
+
         return (
             <div className="App">
                 <Navbar
-                    views={this.views}
+                    views={views}
                     createHandler={this.createHandler}
                     currentPage={this.state.currentPage}
                     theme={this.state.theme}
                 />
                 <Pages
-                    views={this.views}
+                    views={views}
                     createHandler={this.createHandler}
                     createRef={this.createRef}
                     theme={this.state.theme}
