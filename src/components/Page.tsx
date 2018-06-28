@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as FontAwesome from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import IView from '@typings/IView';
 import * as navbar from '@components/Navbar';
@@ -47,9 +47,9 @@ const TextWrapper = styled.div`
 `;
 
 const IconWrapper = styled.div`
-    font-size: 60px;
+    font-size: 40px;
     width: 100%;
-    margin-bottom: -20px;
+    margin-bottom: -10px;
 `;
 
 const ComponentWrapper = styled.div`
@@ -86,14 +86,14 @@ const Page = ({
             {last ? (
                 <div>
                     <IconWrapper>
-                        <FontAwesome name="angle-double-up" />
+                        <FontAwesomeIcon icon="angle-double-up" />
                     </IconWrapper>
                     <TextWrapper>Back to top</TextWrapper>
                 </div>
             ) : (
                 <div>
                     <IconWrapper>
-                        <FontAwesome name="angle-down" />
+                        <FontAwesomeIcon icon="angle-down" />
                     </IconWrapper>
                     <TextWrapper>Next</TextWrapper>
                 </div>

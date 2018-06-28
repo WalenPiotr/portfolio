@@ -6,7 +6,14 @@ import Home from '@components/Home';
 import IView from '@typings/IView';
 import ITheme from '@typings/ITheme';
 import Skills from '@components/Skills';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fab, fas);
+
 interface AppProps {}
+
 interface AppState {
     currentPage: number;
     theme: ITheme;
@@ -19,9 +26,9 @@ class App extends React.Component<AppProps, AppState> {
             fontPrimaryColor: 'rgb(220, 220, 255)',
             fontHighlightColor: 'rgb(250, 250, 255)',
             pageColors: [
-                'rgb(20, 20, 255, 0.85)',
-                'rgb(60, 20, 255, 0.85)',
-                'rgb(20, 60, 255, 0.85)',
+                'rgb(20, 20, 255, 0.9)',
+                'rgb(60, 20, 255, 0.9)',
+                'rgb(20, 60, 255, 0.9)',
             ],
             backgroundColor: 'rgb(80, 80, 255, 0.9)',
         },
