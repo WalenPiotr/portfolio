@@ -74,7 +74,7 @@ class App extends React.Component<AppProps, AppState> {
     views = [
         { name: 'Home', component: <Home theme={this.state.theme} /> },
         {
-            name: 'Technologies',
+            name: 'Skills',
             component: <Skills theme={this.state.theme} />,
         },
         { name: 'Contact', component: <div>Contact</div> },
