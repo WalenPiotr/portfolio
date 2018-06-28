@@ -10,7 +10,8 @@
         "baseUrl": ".",
         "paths": {
             "@components/*": ["src/components/*"],
-            "@typings/*": ["src/typings/*"]
+            "@typings/*": ["src/typings/*"],
+            "@icons/*": ["src/icons/*"]
         },
         "downlevelIteration": true
     },

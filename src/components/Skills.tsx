@@ -2,7 +2,7 @@ import * as React from 'react';
 import ITheme from '@typings/ITheme';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import Icon from '@components/Icon';
 interface ISkills {
     theme: ITheme;
 }
@@ -28,6 +28,9 @@ const List = styled.ul`
 `;
 
 const IconWrapper = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     width: 30px;
 `;
 
@@ -65,10 +68,14 @@ const Skills = ({ theme }: ISkills) => (
                 React
             </Item>
             <Item>
-                <IconWrapper />Redux
+                <IconWrapper>
+                    <Icon theme={theme} name={'redux'} />
+                </IconWrapper>Redux
             </Item>
             <Item>
-                <IconWrapper />Webpack
+                <IconWrapper>
+                    <Icon theme={theme} name={'webpack'} />
+                </IconWrapper>Webpack
             </Item>
         </List>
         <Section theme={theme} />
@@ -83,13 +90,19 @@ const Skills = ({ theme }: ISkills) => (
                 NodeJS
             </Item>
             <Item>
-                <IconWrapper />Express
+                <IconWrapper>
+                    <FontAwesomeIcon icon={['fas', 'file-code']} />
+                </IconWrapper>Express
             </Item>
             <Item>
-                <IconWrapper />MongoDB
+                <IconWrapper>
+                    <Icon theme={theme} name={'mongo'} />
+                </IconWrapper>MongoDB
             </Item>
             <Item>
-                <IconWrapper />PostgreSQL
+                <IconWrapper>
+                    <Icon theme={theme} name={'postgre'} />
+                </IconWrapper>PostgreSQL
             </Item>
         </List>
         <Section theme={theme} />
@@ -108,10 +121,14 @@ const Skills = ({ theme }: ISkills) => (
                 Git
             </Item>
             <Item>
-                <IconWrapper />Keras, Tensorflow (Python)
+                <IconWrapper>
+                    <FontAwesomeIcon icon={['fas', 'file-code']} />
+                </IconWrapper>Keras, Tensorflow (Python)
             </Item>
             <Item>
-                <IconWrapper />OpenCV (Python, Java for Android)
+                <IconWrapper>
+                    <FontAwesomeIcon icon={['fas', 'file-code']} />
+                </IconWrapper>OpenCV (Python, Java for Android)
             </Item>
         </List>
         <Section theme={theme} />
