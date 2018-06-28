@@ -9,15 +9,19 @@ interface ISkills {
 
 const Box = styled.div`
     color: ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
-    font-size: 24px;
+    font-size: 2.8vh;
+`;
+
+const Title = styled.span`
+    font-size: 35px;
 `;
 
 const Section = styled.div`
     width: 100%;
     border-bottom: 2px dashed
         ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
 `;
 
 const List = styled.ul`
@@ -27,109 +31,121 @@ const List = styled.ul`
     padding: 0;
 `;
 
-const IconWrapper = styled.div`
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 30px;
-`;
+const Item = ({
+    icon,
+    skill,
+    theme,
+}: {
+    icon: JSX.Element;
+    skill: string;
+    theme: ITheme;
+}) => {
+    const IconWrapper = styled.div`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3vh;
+        height: 100%;
+        margin-right: 1vh;
+    `;
 
-const Item = styled.li`
-    display: flex;
-`;
+    const ItemBox = styled.li`
+        display: flex;
+        align-items: center;
+        height: 100%;
+    `;
+
+    return (
+        <ItemBox>
+            <IconWrapper theme={theme}>{icon}</IconWrapper>
+            {skill}
+        </ItemBox>
+    );
+};
 
 const Skills = ({ theme }: ISkills) => (
     <Box theme={theme}>
         <Section theme={theme} />
         <div>Front-End:</div>
         <List>
-            <Item>
-                <IconWrapper>
-                    <FontAwesomeIcon icon={['fab', 'html5']} />
-                </IconWrapper>{' '}
-                HTML
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <FontAwesomeIcon icon={['fab', 'css3-alt']} />
-                </IconWrapper>
-                CSS
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <FontAwesomeIcon icon={['fab', 'js-square']} />
-                </IconWrapper>
-                JS (ES2017)
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <FontAwesomeIcon icon={['fab', 'react']} />
-                </IconWrapper>
-                React
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <Icon theme={theme} name={'redux'} />
-                </IconWrapper>Redux
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <Icon theme={theme} name={'webpack'} />
-                </IconWrapper>Webpack
-            </Item>
+            <Item
+                icon={<FontAwesomeIcon icon={['fab', 'html5']} />}
+                skill="HTML"
+                theme={theme}
+            />
+            <Item
+                icon={<FontAwesomeIcon icon={['fab', 'css3']} />}
+                skill="CSS"
+                theme={theme}
+            />
+            <Item
+                icon={<FontAwesomeIcon icon={['fab', 'js']} />}
+                skill="JS (ES2017)"
+                theme={theme}
+            />
+            <Item
+                icon={<FontAwesomeIcon icon={['fab', 'react']} />}
+                skill="React"
+                theme={theme}
+            />
+            <Item
+                icon={<Icon theme={theme} name={'redux'} />}
+                skill="Redux"
+                theme={theme}
+            />
+            <Item
+                icon={<Icon theme={theme} name={'webpack'} />}
+                skill="Webpack"
+                theme={theme}
+            />
         </List>
         <Section theme={theme} />
         <List>
-            <div>
-                <IconWrapper />Back-End:
-            </div>
-            <Item>
-                <IconWrapper>
-                    <FontAwesomeIcon icon={['fab', 'node-js']} />
-                </IconWrapper>
-                NodeJS
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <FontAwesomeIcon icon={['fas', 'file-code']} />
-                </IconWrapper>Express
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <Icon theme={theme} name={'mongo'} />
-                </IconWrapper>MongoDB
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <Icon theme={theme} name={'postgre'} />
-                </IconWrapper>PostgreSQL
-            </Item>
+            <div>Back-End:</div>
+            <Item
+                icon={<FontAwesomeIcon icon={['fab', 'node-js']} />}
+                skill="NodeJS"
+                theme={theme}
+            />
+            <Item
+                icon={<FontAwesomeIcon icon={['far', 'file-code']} />}
+                skill="Express"
+                theme={theme}
+            />
+            <Item
+                icon={<Icon theme={theme} name={'mongo'} />}
+                skill="MongoDB"
+                theme={theme}
+            />
+            <Item
+                icon={<Icon theme={theme} name={'postgre'} />}
+                skill="PostgreSQL"
+                theme={theme}
+            />
         </List>
         <Section theme={theme} />
         <div>Other:</div>
         <List>
-            <Item>
-                <IconWrapper>
-                    <FontAwesomeIcon icon={['fab', 'linux']} />
-                </IconWrapper>
-                Linux
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <FontAwesomeIcon icon={['fab', 'git-square']} />
-                </IconWrapper>
-                Git
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <FontAwesomeIcon icon={['fas', 'file-code']} />
-                </IconWrapper>Keras, Tensorflow (Python)
-            </Item>
-            <Item>
-                <IconWrapper>
-                    <FontAwesomeIcon icon={['fas', 'file-code']} />
-                </IconWrapper>OpenCV (Python, Java for Android)
-            </Item>
+            <Item
+                icon={<FontAwesomeIcon icon={['fab', 'linux']} />}
+                skill="Linux"
+                theme={theme}
+            />
+            <Item
+                icon={<FontAwesomeIcon icon={['fab', 'git']} />}
+                skill="Git"
+                theme={theme}
+            />
+            <Item
+                icon={<FontAwesomeIcon icon={['far', 'file-code']} />}
+                skill="Keras, Tensorflow (Python)"
+                theme={theme}
+            />
+            <Item
+                icon={<FontAwesomeIcon icon={['far', 'file-code']} />}
+                skill="OpenCV (Python, Java for Android)"
+                theme={theme}
+            />
         </List>
         <Section theme={theme} />
     </Box>

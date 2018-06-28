@@ -23,7 +23,7 @@ const Line = styled.div`
 const Button = styled.button`
     font-family: 'Roboto Condensed';
     height: ${({ height }: { height: string }) => height};
-    font-size: 24px;
+    font-size: 3vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,8 +31,8 @@ const Button = styled.button`
     color: ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    margin-left: 10px;
-    margin-top: 12px;
+    margin-left: 1vh;
+    margin-top: 2vh;
 
     &:focus {
         outline: none;
