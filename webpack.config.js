@@ -10,7 +10,9 @@ module.exports = {
         extensions: ['.js', '.json', '.ts', '.tsx', '.d.ts'],
         alias: {
             '@components': path.resolve(__dirname, 'src/components/'),
+            '@containers': path.resolve(__dirname, 'src/containers/'),
             '@typings': path.resolve(__dirname, 'src/typings/'),
+            '@theme': path.resolve(__dirname, 'src/theme'),
             '@icons': path.resolve(__dirname, 'src/icons/'),
             '@reducers': path.resolve(__dirname, 'src/reducers/'),
             '@actions': path.resolve(__dirname, 'src/actions/'),

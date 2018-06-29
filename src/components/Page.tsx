@@ -4,19 +4,19 @@ import styled, { withTheme } from 'styled-components';
 import IView from '@typings/IView';
 import * as navbar from '@components/Navbar';
 import ITheme from '@typings/ITheme';
+import { theme } from '@theme';
 
 interface IBox {
     label: string;
-    theme: ITheme;
 }
 
 const Box = styled.div`
     width: 100%;
     height: 100vh;
-    background-color: ${(props: IBox) => props.theme.backgroundColor};
+    background-color: ${theme.backgroundColor};
     transition: background-color 500ms ease-in;
     display: flex;
-    border-bottom: 2px dashed ${(props: IBox) => props.theme.fontPrimaryColor};
+    border-bottom: 2px dashed ${theme.fontPrimaryColor};
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
@@ -30,13 +30,13 @@ const Button = styled.button`
     justify-content: flex-end;
     align-items: center;
     background-color: rgba(0, 0, 0, 0);
-    color: ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
+    color: ${theme.fontPrimaryColor};
     border: none;
     &:focus {
         outline: none;
     }
     &:hover {
-        color: ${({ theme }: { theme: ITheme }) => theme.fontHighlightColor};
+        color: ${theme.fontHighlightColor};
     }
 `;
 
@@ -78,11 +78,11 @@ const Page = ({
     theme,
     label,
 }: IPage) => (
-    <Box innerRef={innerRef} label={label} theme={theme}>
+    <Box innerRef={innerRef}>
         <ComponentWrapper navbarHeight={navbar.height}>
             {innerComponent}
         </ComponentWrapper>
-        <Button onClick={handleClick} theme={theme}>
+        <Button onClick={handleClick}>
             {last ? (
                 <div>
                     <IconWrapper>

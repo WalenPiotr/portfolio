@@ -2,8 +2,10 @@ import * as React from 'react';
 import styled, { keyframes, withTheme } from 'styled-components';
 import IView from '@typings/IView';
 import ITheme from '@typings/ITheme';
+import { theme } from '@theme';
+import { connect } from 'react-redux';
 
-const Box = styled.div`
+const Box = withTheme(styled.div`
     position: fixed;
     top: 0;
     width: 100%;
@@ -11,16 +13,15 @@ const Box = styled.div`
     height: ${(props: { height: string }) => props.height};
     display: flex;
     align-items: center;
-`;
+`);
 
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
-    border-bottom: 2px dashed
-        ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
+    border-bottom: 2px dashed ${theme.fontPrimaryColor};
     transition: width 0.1s linear;
 `;
 
-const Button = styled.button`
+const Button = withTheme(styled.button`
     font-family: 'Roboto Condensed';
     height: ${({ height }: { height: string }) => height};
     font-size: 3vh;
@@ -28,7 +29,7 @@ const Button = styled.button`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
+    color: ${theme.fontPrimaryColor};
     border: none;
     background-color: rgba(0, 0, 0, 0);
     margin-left: 1vh;
@@ -38,32 +39,30 @@ const Button = styled.button`
         outline: none;
     }
     &:hover {
-        color: ${({ theme }: { theme: ITheme }) => theme.fontHighlightColor};
+        color: ${theme.fontHighlightColor};
     }
     &:hover ${Line} {
         border-bottom: 2px dashed
-            ${({ theme }: { theme: ITheme }) => theme.fontHighlightColor};
+            ${theme.fontHighlightColor};
     }
-`;
+`);
 
-interface IPropsNavbar {
+export interface NavbarProps {
     views: IView[];
     createHandler: (view: IView) => any;
     currentPage: number;
-    theme: ITheme;
 }
 export const height = '40px';
 
-const Navbar = ({ views, createHandler, currentPage, theme }: IPropsNavbar) => {
+const Navbar = ({ views, createHandler, currentPage }: NavbarProps) => {
     const Links = views.map((view, index) => {
         return (
             <Button
                 height={height}
                 key={view.name}
                 onClick={createHandler(view)}
-                theme={theme}
             >
-                <Line current={currentPage == index} theme={theme} />
+                <Line current={currentPage == index} />
                 <span>{view.name}</span>
             </Button>
         );
@@ -71,4 +70,4 @@ const Navbar = ({ views, createHandler, currentPage, theme }: IPropsNavbar) => {
     return <Box height={height}>{Links}</Box>;
 };
 
-export default withTheme(Navbar);
+export default Navbar;

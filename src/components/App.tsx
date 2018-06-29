@@ -1,14 +1,13 @@
 import * as React from 'react';
 import styled, { withTheme } from 'styled-components';
 
-import Navbar from '@components/Navbar';
+import Navbar from '@containers/Navbar';
 import Pages from '@components/Pages';
 import Home from '@components/Home';
 import Projects from '@components/Projects';
 import Skills from '@components/Skills';
 
 import IView from '@typings/IView';
-import IState from '@typings/IState';
 import ITheme from '@typings/ITheme';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -17,13 +16,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 library.add(fab, fas, far);
 
-import { connect } from 'react-redux';
-import * as page from '@actions/page';
-import { Dispatch, AnyAction } from 'redux';
-interface AppProps {
-    currentPage: number;
+export interface AppProps {
     setCurrentPage: (page: number) => void;
-    theme: ITheme;
 }
 
 class App extends React.Component<AppProps, any> {
@@ -46,9 +40,7 @@ class App extends React.Component<AppProps, any> {
 
     handleScroll = (event: Event) => {
         const currentPage = Math.round(window.pageYOffset / window.innerHeight);
-        if (currentPage !== this.props.currentPage) {
-            this.props.setCurrentPage(currentPage);
-        }
+        this.props.setCurrentPage(currentPage);
     };
 
     boxes: Map<IView, HTMLDivElement>;
@@ -80,11 +72,7 @@ class App extends React.Component<AppProps, any> {
 
         return (
             <div className="App">
-                <Navbar
-                    views={views}
-                    createHandler={this.createHandler}
-                    currentPage={this.props.currentPage}
-                />
+                <Navbar views={views} createHandler={this.createHandler} />
                 <Pages
                     views={views}
                     createHandler={this.createHandler}
@@ -95,17 +83,4 @@ class App extends React.Component<AppProps, any> {
     }
 }
 
-const mapStateToProps = (state: IState) => ({
-    currentPage: state.page.current,
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-    setCurrentPage: (pageNumber: number) => {
-        dispatch(page.setPageIndex(pageNumber));
-    },
-});
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)((props: AppProps) => <App {...props} />);
+export default App;
