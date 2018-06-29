@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import IView from '@typings/IView';
 import * as navbar from '@components/Navbar';
 import ITheme from '@typings/ITheme';
@@ -102,4 +102,4 @@ const Page = ({
     </Box>
 );
 
-export default Page;
+export default withTheme(Page);

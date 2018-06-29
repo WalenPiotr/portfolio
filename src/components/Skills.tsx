@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ITheme from '@typings/ITheme';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Icon from '@components/Icon';
 interface ISkills {
@@ -151,4 +151,4 @@ const Skills = ({ theme }: ISkills) => (
     </Box>
 );
 
-export default Skills;
+export default withTheme(Skills);

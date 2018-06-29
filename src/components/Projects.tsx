@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ITheme from '@typings/ITheme';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 interface IHome {
     theme: ITheme;
@@ -24,4 +24,4 @@ const Projects = ({ theme }: IHome) => (
     </Box>
 );
 
-export default Projects;
+export default withTheme(Projects);

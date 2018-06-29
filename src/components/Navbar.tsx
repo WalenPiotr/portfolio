@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, withTheme } from 'styled-components';
 import IView from '@typings/IView';
 import ITheme from '@typings/ITheme';
 
@@ -71,4 +71,4 @@ const Navbar = ({ views, createHandler, currentPage, theme }: IPropsNavbar) => {
     return <Box height={height}>{Links}</Box>;
 };
 
-export default Navbar;
+export default withTheme(Navbar);

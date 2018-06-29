@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { withTheme } from 'styled-components';
 import ITheme from '@typings/ITheme';
 
 const ReduxIcon = ({ theme }: { theme: ITheme }) => (
@@ -74,4 +75,4 @@ interface IconProps {
 
 const Icon = ({ theme, name }: IconProps) => Icons[name]({ theme });
 
-export default Icon;
+export default withTheme(Icon);

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 import Navbar from '@components/Navbar';
 import Pages from '@components/Pages';
@@ -8,8 +8,8 @@ import Projects from '@components/Projects';
 import Skills from '@components/Skills';
 
 import IView from '@typings/IView';
-import ITheme from '@typings/ITheme';
 import IState from '@typings/IState';
+import ITheme from '@typings/ITheme';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -18,13 +18,12 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 library.add(fab, fas, far);
 
 import { connect } from 'react-redux';
-import * as theme from '@actions/theme';
 import * as page from '@actions/page';
 import { Dispatch, AnyAction } from 'redux';
 interface AppProps {
-    theme: ITheme;
     currentPage: number;
     setCurrentPage: (page: number) => void;
+    theme: ITheme;
 }
 
 class App extends React.Component<AppProps, any> {
@@ -68,14 +67,14 @@ class App extends React.Component<AppProps, any> {
 
     render() {
         const views = [
-            { name: 'Home', component: <Home theme={this.props.theme} /> },
+            { name: 'Home', component: <Home  /> },
             {
                 name: 'Skills',
-                component: <Skills theme={this.props.theme} />,
+                component: <Skills />,
             },
             {
                 name: 'Projects',
-                component: <Projects theme={this.props.theme} />,
+                component: <Projects  />,
             },
         ];
 
@@ -85,13 +84,11 @@ class App extends React.Component<AppProps, any> {
                     views={views}
                     createHandler={this.createHandler}
                     currentPage={this.props.currentPage}
-                    theme={this.props.theme}
                 />
                 <Pages
                     views={views}
                     createHandler={this.createHandler}
                     createRef={this.createRef}
-                    theme={this.props.theme}
                 />
             </div>
         );
@@ -99,7 +96,6 @@ class App extends React.Component<AppProps, any> {
 }
 
 const mapStateToProps = (state: IState) => ({
-    theme: state.theme,
     currentPage: state.page.current,
 });
 
@@ -112,7 +108,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
             'rgb(100, 100, 200)',
         ];
         const backgroundColor = pageColors[pageNumber];
-        dispatch(theme.loadBackground(backgroundColor));
+        // dispatch(theme.loadBackground(backgroundColor));
     },
 });
 
