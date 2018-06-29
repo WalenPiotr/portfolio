@@ -1,9 +1,8 @@
 import * as React from 'react';
-import ITheme from '@typings/ITheme';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Icon from '@components/Icon';
-import { theme } from '@theme';
+import { theme } from '@constants/theme';
 
 const Box = styled.div`
     color: ${theme.fontPrimaryColor};
@@ -123,4 +122,4 @@ const Skills = () => (
     </Box>
 );
 
-export default withTheme(Skills);
+export default Skills;

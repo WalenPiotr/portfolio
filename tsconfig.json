@@ -13,7 +13,7 @@
             "@containers/*": ["src/containers/*"],
             "@typings/*": ["src/typings/*"],
             "@icons/*": ["src/icons/*"],
-            "@theme": ["src/theme"],
+            "@constants/*": ["src/constants/*"],
             "@reducers/*": ["src/reducers/*"],
             "@actions/*": ["src/actions/*"]
         },

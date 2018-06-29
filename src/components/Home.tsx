@@ -1,17 +1,14 @@
 import * as React from 'react';
 import ITheme from '@typings/ITheme';
 import styled, { withTheme } from 'styled-components';
-
-interface IHome {
-    theme: ITheme;
-}
+import { theme } from '@constants/theme';
 
 const Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: ${({ theme }: { theme: ITheme }) => theme.fontPrimaryColor};
+    color: ${theme.fontPrimaryColor};
 `;
 
 const Name = styled.span`
@@ -22,8 +19,8 @@ const Title = styled.span`
     font-size: 35px;
 `;
 
-const Home = ({ theme }: IHome) => (
-    <Box theme={theme}>
+const Home = () => (
+    <Box>
         <Name>Piotr Waleń</Name>
         <Title>Web Developer</Title>
     </Box>

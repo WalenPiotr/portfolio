@@ -1,7 +1,6 @@
 import * as React from 'react';
-import ITheme from '@typings/ITheme';
-import styled, { withTheme } from 'styled-components';
-import { theme } from '@theme'
+import styled from 'styled-components';
+import { theme } from '@constants/theme';
 
 const Box = styled.div`
     display: flex;
@@ -21,4 +20,4 @@ const Projects = () => (
     </Box>
 );
 
-export default withTheme(Projects);
+export default Projects;

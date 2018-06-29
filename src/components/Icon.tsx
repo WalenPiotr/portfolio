@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { withTheme } from 'styled-components';
-import ITheme from '@typings/ITheme';
-import { theme } from '@theme';
+import { theme } from '@constants/theme';
 
 const ReduxIcon = () => (
     <svg viewBox="0 0 100 100" width="24" height="24">
@@ -70,10 +68,9 @@ const Icons: Icons = {
 };
 
 interface IconProps {
-    theme: ITheme;
     name: string;
 }
 
-const Icon = ({ theme, name }: IconProps) => Icons[name]({ theme });
+const Icon = ({ name }: IconProps) => Icons[name]({ theme });
 
-export default withTheme(Icon);
+export default Icon;

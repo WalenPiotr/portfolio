@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Page from '@components/Page';
 import IView from '@typings/IView';
-import ITheme from '@typings/ITheme';
 
 interface IPages {
     views: IView[];

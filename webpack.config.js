@@ -12,7 +12,7 @@ module.exports = {
             '@components': path.resolve(__dirname, 'src/components/'),
             '@containers': path.resolve(__dirname, 'src/containers/'),
             '@typings': path.resolve(__dirname, 'src/typings/'),
-            '@theme': path.resolve(__dirname, 'src/theme'),
+            '@constants': path.resolve(__dirname, 'src/constants/'),
             '@icons': path.resolve(__dirname, 'src/icons/'),
             '@reducers': path.resolve(__dirname, 'src/reducers/'),
             '@actions': path.resolve(__dirname, 'src/actions/'),

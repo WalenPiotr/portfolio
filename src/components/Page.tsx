@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { withTheme } from 'styled-components';
 import IView from '@typings/IView';
 import * as navbar from '@components/Navbar';
-import ITheme from '@typings/ITheme';
-import { theme } from '@theme';
+import { theme } from '@constants/theme';
 
 interface IBox {
     label: string;
@@ -41,13 +40,14 @@ const Button = styled.button`
 `;
 
 const TextWrapper = styled.div`
-    font-size: 2.5vh;
+    font-size: 2vh;
     width: 100%;
     text-transform: lowercase;
+    margin-bottom: 1vh;
 `;
 
 const IconWrapper = styled.div`
-    font-size: 3.5vh;
+    font-size: 4vh;
     margin-bottom: -1vh;
     width: 100%;
 `;
@@ -66,7 +66,6 @@ interface IPage {
     innerRef: any;
     last: boolean;
     innerComponent: JSX.Element;
-    theme: ITheme;
     label: string;
 }
 
@@ -75,7 +74,6 @@ const Page = ({
     innerRef,
     last,
     innerComponent,
-    theme,
     label,
 }: IPage) => (
     <Box innerRef={innerRef}>
@@ -102,4 +100,4 @@ const Page = ({
     </Box>
 );
 
-export default withTheme(Page);
+export default Page;
