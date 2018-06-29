@@ -67,14 +67,14 @@ class App extends React.Component<AppProps, any> {
 
     render() {
         const views = [
-            { name: 'Home', component: <Home  /> },
+            { name: 'Home', component: <Home /> },
             {
                 name: 'Skills',
                 component: <Skills />,
             },
             {
                 name: 'Projects',
-                component: <Projects  />,
+                component: <Projects />,
             },
         ];
 
@@ -102,13 +102,6 @@ const mapStateToProps = (state: IState) => ({
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     setCurrentPage: (pageNumber: number) => {
         dispatch(page.setPageIndex(pageNumber));
-        const pageColors = [
-            'rgb(80, 100, 200)',
-            'rgb(100, 80, 200)',
-            'rgb(100, 100, 200)',
-        ];
-        const backgroundColor = pageColors[pageNumber];
-        // dispatch(theme.loadBackground(backgroundColor));
     },
 });
 

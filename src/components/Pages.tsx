@@ -15,10 +15,10 @@ const Pages = ({ views, createRef, createHandler }: IPages) => {
         const clickTarget = last ? views[0] : views[index + 1];
         return (
             <Page
-                index={index}
+                label={view.name}
                 innerRef={createRef(view)}
                 handleClick={createHandler(clickTarget)}
-                key={String(index)}
+                key={view.name}
                 last={last}
                 innerComponent={view.component}
             />

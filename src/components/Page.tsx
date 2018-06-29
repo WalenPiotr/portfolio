@@ -6,7 +6,7 @@ import * as navbar from '@components/Navbar';
 import ITheme from '@typings/ITheme';
 
 interface IBox {
-    index: number;
+    label: string;
     theme: ITheme;
 }
 
@@ -67,7 +67,7 @@ interface IPage {
     last: boolean;
     innerComponent: JSX.Element;
     theme: ITheme;
-    index: number;
+    label: string;
 }
 
 const Page = ({
@@ -76,9 +76,9 @@ const Page = ({
     last,
     innerComponent,
     theme,
-    index,
+    label,
 }: IPage) => (
-    <Box innerRef={innerRef} index={index} theme={theme}>
+    <Box innerRef={innerRef} label={label} theme={theme}>
         <ComponentWrapper navbarHeight={navbar.height}>
             {innerComponent}
         </ComponentWrapper>
