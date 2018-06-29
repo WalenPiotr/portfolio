@@ -1,9 +1,8 @@
-import Icon from '@components/Icon';
+import * as Icon from '@components/Icon';
+import { media } from '@constants/media';
 import { theme } from '@constants/theme';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import styled from 'styled-components';
-
 const Box = styled.div`
     color: ${theme.fontPrimaryColor};
     font-size: 2.8vh;
@@ -46,71 +45,43 @@ const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {
         </ItemBox>
     );
 };
+const Title = styled.span`
+    font-size: 35px;
+    ${media.sm`
+        font-size: 25px;
+    `};
+`;
 
 const Skills = () => (
     <Box>
+        <Title>Skills</Title>
         <Section />
         <div>Front-End:</div>
         <List>
-            <Item
-                icon={<FontAwesomeIcon icon={['fab', 'html5']} />}
-                skill="HTML"
-            />
-            <Item
-                icon={<FontAwesomeIcon icon={['fab', 'css3']} />}
-                skill="CSS"
-            />
-            <Item
-                icon={<FontAwesomeIcon icon={['fab', 'js']} />}
-                skill="JS (ES2017)"
-            />
-            <Item
-                icon={<FontAwesomeIcon icon={['fab', 'react']} />}
-                skill="React"
-            />
-            <Item icon={<Icon theme={theme} name={'redux'} />} skill="Redux" />
-            <Item
-                icon={<Icon theme={theme} name={'webpack'} />}
-                skill="Webpack"
-            />
+            <Item icon={<Icon.HTML />} skill="HTML" />
+            <Item icon={<Icon.CSS />} skill="CSS" />
+            <Item icon={<Icon.JS />} skill="JS (ES2017)" />
+            <Item icon={<Icon.TS />} skill="Typescript" />
+            <Item icon={<Icon.react />} skill="React" />
+            <Item icon={<Icon.Redux />} skill="Redux" />
+            <Item icon={<Icon.Webpack />} skill="Webpack" />
         </List>
         <Section />
         <List>
             <div>Back-End:</div>
-            <Item
-                icon={<FontAwesomeIcon icon={['fab', 'node-js']} />}
-                skill="NodeJS"
-            />
-            <Item
-                icon={<FontAwesomeIcon icon={['far', 'file-code']} />}
-                skill="Express"
-            />
-            <Item
-                icon={<Icon theme={theme} name={'mongo'} />}
-                skill="MongoDB"
-            />
-            <Item
-                icon={<Icon theme={theme} name={'postgre'} />}
-                skill="PostgreSQL"
-            />
+            <Item icon={<Icon.NodeJS />} skill="NodeJS" />
+            <Item icon={<Icon.FileCode />} skill="Express" />
+            <Item icon={<Icon.Mongo />} skill="MongoDB" />
+            <Item icon={<Icon.Postgre />} skill="PostgreSQL" />
         </List>
         <Section />
         <div>Other:</div>
         <List>
+            <Item icon={<Icon.Linux />} skill="Linux" />
+            <Item icon={<Icon.Git />} skill="Git" />
+            <Item icon={<Icon.FileCode />} skill="Keras, Tensorflow (Python)" />
             <Item
-                icon={<FontAwesomeIcon icon={['fab', 'linux']} />}
-                skill="Linux"
-            />
-            <Item
-                icon={<FontAwesomeIcon icon={['fab', 'git']} />}
-                skill="Git"
-            />
-            <Item
-                icon={<FontAwesomeIcon icon={['far', 'file-code']} />}
-                skill="Keras, Tensorflow (Python)"
-            />
-            <Item
-                icon={<FontAwesomeIcon icon={['far', 'file-code']} />}
+                icon={<Icon.FileCode />}
                 skill="OpenCV (Python, Java for Android)"
             />
         </List>

@@ -1,8 +1,8 @@
 import { dimensions } from '@constants/dimensions';
 import { theme } from '@constants/theme';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import styled from 'styled-components';
+import * as Icon from '@components/Icon';
 interface IBox {
     label: string;
 }
@@ -82,14 +82,14 @@ const Page = ({
             {last ? (
                 <div>
                     <IconWrapper>
-                        <FontAwesomeIcon icon="angle-double-up" />
+                        <Icon.Up />
                     </IconWrapper>
                     <TextWrapper>Back to top</TextWrapper>
                 </div>
             ) : (
                 <div>
                     <IconWrapper>
-                        <FontAwesomeIcon icon="angle-down" />
+                        <Icon.Down />
                     </IconWrapper>
                     <TextWrapper>Next</TextWrapper>
                 </div>

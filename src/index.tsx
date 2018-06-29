@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { injectGlobal, ThemeProvider } from 'styled-components';
+import { injectGlobal } from 'styled-components';
 
 injectGlobal`
     body {
@@ -16,11 +16,9 @@ injectGlobal`
 
 const store = createStore(rootReducer);
 
-
-
 ReactDOM.render(
     <Provider store={store}>
-            <App />
+        <App />
     </Provider>,
     document.getElementById('root'),
 );

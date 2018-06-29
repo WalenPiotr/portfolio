@@ -44,6 +44,7 @@ const Button = styled.button`
 
     ${media.sm`
         font-size: 20px;
+        display: none;
     `};
 `;
 
