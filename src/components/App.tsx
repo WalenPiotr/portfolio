@@ -19,21 +19,15 @@ library.add(fab, fas, far);
 
 import { connect } from 'react-redux';
 import * as theme from '@actions/theme';
+import * as page from '@actions/page';
 import { Dispatch, AnyAction } from 'redux';
 interface AppProps {
     theme: ITheme;
-    loadTheme: Function;
-}
-
-interface AppState {
     currentPage: number;
+    setCurrentPage: (page: number) => void;
 }
 
-class App extends React.Component<AppProps, AppState> {
-    state = {
-        currentPage: 0,
-    };
-
+class App extends React.Component<AppProps, any> {
     constructor(props: AppProps) {
         super(props);
         this.boxes = new Map<IView, HTMLDivElement>();
@@ -44,11 +38,7 @@ class App extends React.Component<AppProps, AppState> {
             passive: true,
         });
         const currentPage = Math.round(window.pageYOffset / window.innerHeight);
-        this.setState((prevState: AppState) => ({
-            ...prevState,
-            currentPage,
-        }));
-        this.props.loadTheme(currentPage);
+        this.props.setCurrentPage(currentPage);
     }
 
     componentWillUnmount() {
@@ -57,12 +47,9 @@ class App extends React.Component<AppProps, AppState> {
 
     handleScroll = (event: Event) => {
         const currentPage = Math.round(window.pageYOffset / window.innerHeight);
-        
-        this.setState((prevState: AppState) => ({
-            ...prevState,
-            currentPage,
-        }));
-        this.props.loadTheme(currentPage);
+        if (currentPage !== this.props.currentPage) {
+            this.props.setCurrentPage(currentPage);
+        }
     };
 
     boxes: Map<IView, HTMLDivElement>;
@@ -97,7 +84,7 @@ class App extends React.Component<AppProps, AppState> {
                 <Navbar
                     views={views}
                     createHandler={this.createHandler}
-                    currentPage={this.state.currentPage}
+                    currentPage={this.props.currentPage}
                     theme={this.props.theme}
                 />
                 <Pages
@@ -111,10 +98,14 @@ class App extends React.Component<AppProps, AppState> {
     }
 }
 
-const mapStateToProps = (state: IState) => ({ theme: state.theme });
+const mapStateToProps = (state: IState) => ({
+    theme: state.theme,
+    currentPage: state.page.current,
+});
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    loadTheme: (pageNumber: number) => {
+    setCurrentPage: (pageNumber: number) => {
+        dispatch(page.setPageIndex(pageNumber));
         const pageColors = [
             'rgb(80, 100, 200)',
             'rgb(100, 80, 200)',
