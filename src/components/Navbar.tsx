@@ -3,6 +3,7 @@ import { theme } from '@constants/theme';
 import IView from '@typings/IView';
 import * as React from 'react';
 import styled from 'styled-components';
+import { media } from '@constants/media';
 
 const Box = styled.div`
     position: fixed;
@@ -22,7 +23,7 @@ const Line = styled.div`
 const Button = styled.button`
     font-family: 'Roboto Condensed';
     height: ${({ height }: { height: string }) => height};
-    font-size: 3vh;
+    font-size: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,6 +41,10 @@ const Button = styled.button`
     &:hover ${Line} {
         border-bottom: 2px dashed ${theme.fontHighlightColor};
     }
+
+    ${media.sm`
+        font-size: 20px;
+    `};
 `;
 
 export interface NavbarProps {

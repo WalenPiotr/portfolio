@@ -1,6 +1,7 @@
 import { theme } from '@constants/theme';
 import * as React from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
+import { media } from '@constants/media';
 
 const Box = styled.div`
     display: flex;
@@ -12,10 +13,16 @@ const Box = styled.div`
 
 const Name = styled.span`
     font-size: 70px;
+    ${media.sm`
+        font-size: 60px;
+    `};
 `;
 
 const Title = styled.span`
     font-size: 35px;
+    ${media.sm`
+        font-size: 25px;
+    `};
 `;
 
 const Home = () => (
@@ -25,4 +32,4 @@ const Home = () => (
     </Box>
 );
 
-export default withTheme(Home);
+export default Home;
