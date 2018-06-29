@@ -1,24 +1,17 @@
 import { css } from 'styled-components';
 
+const range = (width: number) => (
+    rule: TemplateStringsArray,
+    ...args: TemplateStringsArray[]
+) => css`
+    @media (max-width: ${`${width}px`}) {
+        ${css(rule, ...args)};
+    }
+`;
+
 export const media = {
-    sm: (rule: TemplateStringsArray, ...args: TemplateStringsArray[]) => css`
-        @media (max-width: 576px) {
-            ${css(rule, ...args)};
-        }
-    `,
-    md: (rule: TemplateStringsArray, ...args: TemplateStringsArray[]) => css`
-        @media (max-width: 768px) {
-            ${css(rule, ...args)};
-        }
-    `,
-    lg: (rule: TemplateStringsArray, ...args: TemplateStringsArray[]) => css`
-        @media (max-width: 992px) {
-            ${css(rule, ...args)};
-        }
-    `,
-    xl: (rule: TemplateStringsArray, ...args: TemplateStringsArray[]) => css`
-        @media (max-width: 1200px) {
-            ${css(rule, ...args)};
-        }
-    `,
+    xs: range(576),
+    sm: range(768),
+    md: range(992),
+    lg: range(1200),
 };
