@@ -9,10 +9,6 @@ const Box = styled.div`
     font-size: 2.8vh;
 `;
 
-const Title = styled.span`
-    font-size: 35px;
-`;
-
 const Section = styled.div`
     width: 100%;
     border-bottom: 2px dashed ${theme.fontPrimaryColor};
