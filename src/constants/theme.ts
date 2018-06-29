@@ -1,5 +1,5 @@
 export const theme = {
-    fontPrimaryColor: 'rgb(230, 230, 255)',
-    fontHighlightColor: 'rgb(250, 250, 255)',
-    backgroundColor: 'rgb(40, 40, 220)',
+    fontPrimaryColor: 'rgb(190, 190, 190)',
+    fontHighlightColor: 'rgb(220, 220, 220)',
+    backgroundColor: 'rgb(48, 66, 112)',
 };

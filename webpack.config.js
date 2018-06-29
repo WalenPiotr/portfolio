@@ -13,7 +13,7 @@ module.exports = {
             '@containers': path.resolve(__dirname, 'src/containers/'),
             '@typings': path.resolve(__dirname, 'src/typings/'),
             '@constants': path.resolve(__dirname, 'src/constants/'),
-            '@icons': path.resolve(__dirname, 'src/icons/'),
+            '@pages': path.resolve(__dirname, 'src/pages/'),
             '@reducers': path.resolve(__dirname, 'src/reducers/'),
             '@actions': path.resolve(__dirname, 'src/actions/'),
         },

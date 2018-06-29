@@ -12,7 +12,7 @@
             "@components/*": ["src/components/*"],
             "@containers/*": ["src/containers/*"],
             "@typings/*": ["src/typings/*"],
-            "@icons/*": ["src/icons/*"],
+            "@pages/*": ["src/pages/*"],
             "@constants/*": ["src/constants/*"],
             "@reducers/*": ["src/reducers/*"],
             "@actions/*": ["src/actions/*"]
