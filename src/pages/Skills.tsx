@@ -58,30 +58,30 @@ const Skills = () => (
         <Section />
         <div>Front-End:</div>
         <List>
-            <Item icon={<Icon.HTML />} skill="HTML" />
-            <Item icon={<Icon.CSS />} skill="CSS" />
-            <Item icon={<Icon.JS />} skill="JS (ES2017)" />
-            <Item icon={<Icon.TS />} skill="Typescript" />
+            <Item icon={<Icon.html />} skill="HTML" />
+            <Item icon={<Icon.css />} skill="CSS" />
+            <Item icon={<Icon.js />} skill="JS (ES2017)" />
+            <Item icon={<Icon.ts />} skill="Typescript" />
             <Item icon={<Icon.react />} skill="React" />
-            <Item icon={<Icon.Redux />} skill="Redux" />
-            <Item icon={<Icon.Webpack />} skill="Webpack" />
+            <Item icon={<Icon.redux />} skill="Redux" />
+            <Item icon={<Icon.webpack />} skill="Webpack" />
         </List>
         <Section />
         <List>
             <div>Back-End:</div>
-            <Item icon={<Icon.NodeJS />} skill="NodeJS" />
-            <Item icon={<Icon.FileCode />} skill="Express" />
-            <Item icon={<Icon.Mongo />} skill="MongoDB" />
-            <Item icon={<Icon.Postgre />} skill="PostgreSQL" />
+            <Item icon={<Icon.nodejs />} skill="NodeJS" />
+            <Item icon={<Icon.filecode />} skill="Express" />
+            <Item icon={<Icon.mongo />} skill="MongoDB" />
+            <Item icon={<Icon.postgre />} skill="PostgreSQL" />
         </List>
         <Section />
         <div>Other:</div>
         <List>
-            <Item icon={<Icon.Linux />} skill="Linux" />
-            <Item icon={<Icon.Git />} skill="Git" />
-            <Item icon={<Icon.FileCode />} skill="Keras, Tensorflow (Python)" />
+            <Item icon={<Icon.linux />} skill="Linux" />
+            <Item icon={<Icon.git />} skill="Git" />
+            <Item icon={<Icon.filecode />} skill="Keras, Tensorflow (Python)" />
             <Item
-                icon={<Icon.FileCode />}
+                icon={<Icon.filecode />}
                 skill="OpenCV (Python, Java for Android)"
             />
         </List>

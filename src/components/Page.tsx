@@ -82,14 +82,14 @@ const Page = ({
             {last ? (
                 <div>
                     <IconWrapper>
-                        <Icon.Up />
+                        <Icon.up />
                     </IconWrapper>
                     <TextWrapper>Back to top</TextWrapper>
                 </div>
             ) : (
                 <div>
                     <IconWrapper>
-                        <Icon.Down />
+                        <Icon.down />
                     </IconWrapper>
                     <TextWrapper>Next</TextWrapper>
                 </div>
