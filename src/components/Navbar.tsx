@@ -1,8 +1,8 @@
-import * as React from 'react';
-import styled, { keyframes, withTheme } from 'styled-components';
-import IView from '@typings/IView';
+import { dimensions } from '@constants/dimensions';
 import { theme } from '@constants/theme';
-import { connect } from 'react-redux';
+import IView from '@typings/IView';
+import * as React from 'react';
+import styled from 'styled-components';
 
 const Box = styled.div`
     position: fixed;
@@ -47,13 +47,12 @@ export interface NavbarProps {
     createHandler: (view: IView) => any;
     currentPage: number;
 }
-export const height = '5vh';
 
 const Navbar = ({ views, createHandler, currentPage }: NavbarProps) => {
     const Links = views.map((view, index) => {
         return (
             <Button
-                height={height}
+                height={dimensions.navbar.height}
                 key={view.name}
                 onClick={createHandler(view)}
             >
@@ -62,7 +61,7 @@ const Navbar = ({ views, createHandler, currentPage }: NavbarProps) => {
             </Button>
         );
     });
-    return <Box height={height}>{Links}</Box>;
+    return <Box height={dimensions.navbar.height}>{Links}</Box>;
 };
 
 export default Navbar;

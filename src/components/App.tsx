@@ -1,19 +1,17 @@
-import * as React from 'react';
-import styled, { withTheme } from 'styled-components';
-
-import Navbar from '@containers/Navbar';
-import Pages from '@components/Pages';
 import Home from '@components/Home';
+import Pages from '@components/Pages';
 import Projects from '@components/Projects';
 import Skills from '@components/Skills';
-
-import IView from '@typings/IView';
-import ITheme from '@typings/ITheme';
-
+import Navbar from '@containers/Navbar';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import IView from '@typings/IView';
+import * as React from 'react';
+
+
+
 library.add(fab, fas, far);
 
 export interface AppProps {

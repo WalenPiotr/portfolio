@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { theme } from '@constants/theme';
+import * as React from 'react';
 
 const ReduxIcon = () => (
     <svg viewBox="0 0 100 100" width="24" height="24">

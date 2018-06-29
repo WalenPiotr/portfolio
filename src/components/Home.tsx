@@ -1,7 +1,6 @@
-import * as React from 'react';
-import ITheme from '@typings/ITheme';
-import styled, { withTheme } from 'styled-components';
 import { theme } from '@constants/theme';
+import * as React from 'react';
+import styled, { withTheme } from 'styled-components';
 
 const Box = styled.div`
     display: flex;

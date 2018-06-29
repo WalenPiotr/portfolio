@@ -1,8 +1,8 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Icon from '@components/Icon';
 import { theme } from '@constants/theme';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as React from 'react';
+import styled from 'styled-components';
 
 const Box = styled.div`
     color: ${theme.fontPrimaryColor};

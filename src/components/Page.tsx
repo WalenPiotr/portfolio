@@ -1,10 +1,8 @@
-import * as React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled, { withTheme } from 'styled-components';
-import IView from '@typings/IView';
-import * as navbar from '@components/Navbar';
+import { dimensions } from '@constants/dimensions';
 import { theme } from '@constants/theme';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as React from 'react';
+import styled from 'styled-components';
 interface IBox {
     label: string;
 }
@@ -77,7 +75,7 @@ const Page = ({
     label,
 }: IPage) => (
     <Box innerRef={innerRef}>
-        <ComponentWrapper navbarHeight={navbar.height}>
+        <ComponentWrapper navbarHeight={dimensions.navbar.height}>
             {innerComponent}
         </ComponentWrapper>
         <Button onClick={handleClick}>
