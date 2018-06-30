@@ -16,6 +16,7 @@ module.exports = {
             '@pages': path.resolve(__dirname, 'src/pages/'),
             '@reducers': path.resolve(__dirname, 'src/reducers/'),
             '@actions': path.resolve(__dirname, 'src/actions/'),
+            '@icons': path.resolve(__dirname, 'src/icons/'),
         },
     },
     module: {

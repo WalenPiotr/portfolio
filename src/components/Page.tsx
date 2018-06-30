@@ -2,7 +2,7 @@ import { dimensions } from '@constants/dimensions';
 import { theme } from '@constants/theme';
 import * as React from 'react';
 import styled from 'styled-components';
-import * as Icon from '@components/Icon';
+import Icon from '@icons/index';
 interface IBox {
     label: string;
 }
@@ -82,14 +82,14 @@ const Page = ({
             {last ? (
                 <div>
                     <IconWrapper>
-                        <Icon.up />
+                        <Icon.navigation.up theme={theme} />
                     </IconWrapper>
                     <TextWrapper>Back to top</TextWrapper>
                 </div>
             ) : (
                 <div>
                     <IconWrapper>
-                        <Icon.down />
+                        <Icon.navigation.down theme={theme} />
                     </IconWrapper>
                     <TextWrapper>Next</TextWrapper>
                 </div>

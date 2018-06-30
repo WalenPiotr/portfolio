@@ -1,4 +1,4 @@
-import * as Icon from '@components/Icon';
+import Icon from '@icons/index';
 import { media } from '@constants/media';
 import { theme } from '@constants/theme';
 import * as React from 'react';
@@ -58,30 +58,30 @@ const Skills = () => (
         <Section />
         <div>Front-End:</div>
         <List>
-            <Item icon={<Icon.html />} skill="HTML" />
-            <Item icon={<Icon.css />} skill="CSS" />
-            <Item icon={<Icon.js />} skill="JS (ES2017)" />
-            <Item icon={<Icon.ts />} skill="Typescript" />
-            <Item icon={<Icon.react />} skill="React" />
-            <Item icon={<Icon.redux />} skill="Redux" />
-            <Item icon={<Icon.webpack />} skill="Webpack" />
+            <Item icon={<Icon.technology.html theme={theme}/>} skill="HTML" />
+            <Item icon={<Icon.technology.css theme={theme}/>} skill="CSS" />
+            <Item icon={<Icon.technology.js theme={theme}/>} skill="JS (ES2017)" />
+            <Item icon={<Icon.technology.ts theme={theme}/>} skill="Typescript" />
+            <Item icon={<Icon.technology.react theme={theme}/>} skill="React" />
+            <Item icon={<Icon.technology.redux theme={theme}/>} skill="Redux" />
+            <Item icon={<Icon.technology.webpack theme={theme}/>} skill="Webpack" />
         </List>
         <Section />
         <List>
             <div>Back-End:</div>
-            <Item icon={<Icon.nodejs />} skill="NodeJS" />
-            <Item icon={<Icon.filecode />} skill="Express" />
-            <Item icon={<Icon.mongo />} skill="MongoDB" />
-            <Item icon={<Icon.postgre />} skill="PostgreSQL" />
+            <Item icon={<Icon.technology.nodejs theme={theme}/>} skill="NodeJS" />
+            <Item icon={<Icon.technology.filecode theme={theme}/>} skill="Express" />
+            <Item icon={<Icon.technology.mongo theme={theme}/>} skill="MongoDB" />
+            <Item icon={<Icon.technology.postgre theme={theme}/>} skill="PostgreSQL" />
         </List>
         <Section />
         <div>Other:</div>
         <List>
-            <Item icon={<Icon.linux />} skill="Linux" />
-            <Item icon={<Icon.git />} skill="Git" />
-            <Item icon={<Icon.filecode />} skill="Keras, Tensorflow (Python)" />
+            <Item icon={<Icon.technology.linux theme={theme}/>} skill="Linux" />
+            <Item icon={<Icon.technology.git theme={theme}/>} skill="Git" />
+            <Item icon={<Icon.technology.filecode theme={theme}/>} skill="Keras, Tensorflow (Python)" />
             <Item
-                icon={<Icon.filecode />}
+                icon={<Icon.technology.filecode theme={theme}/>}
                 skill="OpenCV (Python, Java for Android)"
             />
         </List>

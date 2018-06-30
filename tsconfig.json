@@ -15,7 +15,8 @@
             "@pages/*": ["src/pages/*"],
             "@constants/*": ["src/constants/*"],
             "@reducers/*": ["src/reducers/*"],
-            "@actions/*": ["src/actions/*"]
+            "@actions/*": ["src/actions/*"],
+            "@icons/*": ["src/icons/*"]
         },
         "downlevelIteration": true
     },
