@@ -3,6 +3,7 @@ import { theme } from '@constants/theme';
 import * as React from 'react';
 import styled from 'styled-components';
 import Icon from '@icons/index';
+import media from '@constants/media';
 interface IBox {
     label: string;
 }
@@ -38,16 +39,25 @@ const Button = styled.button`
 `;
 
 const TextWrapper = styled.div`
-    font-size: 2vh;
     width: 100%;
     text-transform: lowercase;
     margin-bottom: 1vh;
+    font-size: 18px;
+    ${media.sm`
+        font-size: 12px;
+    `};
 `;
 
 const IconWrapper = styled.div`
-    font-size: 4vh;
-    margin-bottom: -1vh;
+    margin-bottom: -10px;
     width: 100%;
+
+    width: 40px;
+    height: 40px;
+    ${media.sm`
+        width: 30px;
+        height: 30px;
+    `};
 `;
 
 const ComponentWrapper = styled.div`

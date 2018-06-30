@@ -1,11 +1,11 @@
 import * as React from 'react';
 import IIcon from '@typings/IIcon';
 
-const postgre = ({ theme, height, width }: IIcon) => (
+const postgre = ({ theme}: IIcon) => (
     <svg
         viewBox="0 0 432.071 445.383"
-        height={height ? height : 24}
-        width={width ? width : 24}
+        height="100%"
+        width="100%"
     >
         <g>id="orginal"</g>
         <path

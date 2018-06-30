@@ -9,9 +9,11 @@ const range = (width: number) => (
     }
 `;
 
-export const media = {
+const media = {
     xs: range(576),
     sm: range(768),
     md: range(992),
     lg: range(1200),
 };
+
+export default media;

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import IIcon from '@typings/IIcon';
 
-const webpack = ({ theme, height, width }: IIcon) => (
+const webpack = ({ theme}: IIcon) => (
     <svg
         viewBox="0 0 600 600"
-        height={height ? height : 24}
-        width={width ? width : 24}
+        height="100%"
+        width="100%"
     >
         <path
             fill={theme.fontPrimaryColor}

@@ -3,7 +3,7 @@ import { theme } from '@constants/theme';
 import IView from '@typings/IView';
 import * as React from 'react';
 import styled from 'styled-components';
-import { media } from '@constants/media';
+import media from '@constants/media';
 
 const Box = styled.div`
     position: fixed;

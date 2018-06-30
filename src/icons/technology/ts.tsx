@@ -1,17 +1,17 @@
 import * as React from 'react';
 import IIcon from '@typings/IIcon';
 
-const ts = ({ theme, height, width }: IIcon) => (
+const ts = ({ theme }: IIcon) => (
     //Copyright (c) 2015 Remo H. Jansen <remo.jansen@wolksoftware.com>
     <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         viewBox="0 0 630 630"
-        height={height ? height : 24}
-        width={width ? width : 24}
+        height="100%"
+        width="100%"
     >
         <g
-            transform="translate(0.000000,630.000000) scale(0.100000,-0.100000)"
+            transform="translate(0.000000,630.000000) scale(0.087000,-0.08500)"
             fill={theme.fontPrimaryColor}
             stroke="none"
         >
