@@ -1,8 +1,12 @@
 import * as React from 'react';
 import IIcon from '@typings/IIcon';
 
-const mongo = ({ theme }: IIcon) => (
-    <svg viewBox="0 0 250 250" width="24" height="24">
+const mongo = ({ theme, height, width }: IIcon) => (
+    <svg
+        viewBox="0 0 250 250"
+        height={height ? height : 24}
+        width={width ? width : 24}
+    >
         <g>
             <path
                 fill={theme.fontPrimaryColor}

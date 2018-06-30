@@ -5,7 +5,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 const Box = styled.div`
     color: ${theme.fontPrimaryColor};
-    font-size: 2.8vh;
+    font-size: 20px;
+    ${media.sm`
+        font-size: 16px;
+    `};
 `;
 
 const Section = styled.div`
@@ -46,9 +49,9 @@ const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {
     );
 };
 const Title = styled.span`
-    font-size: 35px;
+    font-size: 32px;
     ${media.sm`
-        font-size: 25px;
+        font-size: 24px;
     `};
 `;
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import IIcon from '@typings/IIcon';
 
-const down = ({ theme }: IIcon) => (
+const down = ({ theme, height, width }: IIcon) => (
     <svg
         aria-hidden="true"
         data-prefix="fas"
@@ -9,8 +9,8 @@ const down = ({ theme }: IIcon) => (
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
-        width="24"
-        height="24"
+        height={height ? height : 24}
+        width={width ? width : 24}
     >
         <path
             fill="currentColor"

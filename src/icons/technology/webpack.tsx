@@ -1,8 +1,12 @@
 import * as React from 'react';
 import IIcon from '@typings/IIcon';
 
-const webpack = ({ theme }: IIcon) => (
-    <svg viewBox="0 0 600 600" width="24" height="24">
+const webpack = ({ theme, height, width }: IIcon) => (
+    <svg
+        viewBox="0 0 600 600"
+        height={height ? height : 24}
+        width={width ? width : 24}
+    >
         <path
             fill={theme.fontPrimaryColor}
             d="M300 .1L565 150v299.9L300 599.8 35 449.9V150z"

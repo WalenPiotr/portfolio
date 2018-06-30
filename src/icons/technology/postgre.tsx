@@ -1,8 +1,12 @@
 import * as React from 'react';
 import IIcon from '@typings/IIcon';
 
-const postgre = ({ theme }: IIcon) => (
-    <svg width="24" height="24" viewBox="0 0 432.071 445.383">
+const postgre = ({ theme, height, width }: IIcon) => (
+    <svg
+        viewBox="0 0 432.071 445.383"
+        height={height ? height : 24}
+        width={width ? width : 24}
+    >
         <g>id="orginal"</g>
         <path
             fill={theme.fontPrimaryColor}
