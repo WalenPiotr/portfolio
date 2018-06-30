@@ -49,7 +49,7 @@ const TextWrapper = styled.div`
 `;
 
 const IconWrapper = styled.div`
-    margin-bottom: -10px;
+    margin-bottom: -5px;
     width: 100%;
 
     width: 40px;
@@ -77,6 +77,13 @@ interface IPage {
     label: string;
 }
 
+const ButtonGroup = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
 const Page = ({
     handleClick,
     innerRef,
@@ -90,19 +97,19 @@ const Page = ({
         </ComponentWrapper>
         <Button onClick={handleClick}>
             {last ? (
-                <div>
+                <ButtonGroup>
                     <IconWrapper>
                         <Icon.navigation.up theme={theme} />
                     </IconWrapper>
                     <TextWrapper>Back to top</TextWrapper>
-                </div>
+                </ButtonGroup>
             ) : (
-                <div>
+                <ButtonGroup>
                     <IconWrapper>
                         <Icon.navigation.down theme={theme} />
                     </IconWrapper>
                     <TextWrapper>Next</TextWrapper>
-                </div>
+                </ButtonGroup>
             )}
         </Button>
     </Box>

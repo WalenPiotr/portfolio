@@ -14,8 +14,13 @@ const Box = styled.div`
 const Section = styled.div`
     width: 100%;
     border-bottom: 2px dashed ${theme.fontPrimaryColor};
+
     margin-top: 5px;
     margin-bottom: 5px;
+    ${media.sm`
+        margin-top: 2px;
+        margin-bottom: 2px;
+    `};
 `;
 
 const List = styled.ul`
@@ -31,26 +36,18 @@ const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {
         justify-content: center;
         align-items: center;
         height: 100%;
+
         width: 24px;
-        height: 24px;
         margin-right: 5px;
-        ${media.sm`
-            width: 18px;
-            height: 18px;
-            margin-right: 3px;
-        `};
     `;
 
     const ItemBox = styled.li`
         display: flex;
         align-items: center;
         height: 100%;
-        margin-top: 5px;
+
         font-size: 18px;
-        ${media.sm`
-            font-size: 12px;
-            margin-top: 3px;
-        `};
+        margin-top: 5px;
     `;
 
     return (
