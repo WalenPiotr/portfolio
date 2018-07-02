@@ -12,7 +12,6 @@ const Box = styled.div`
     width: 100%;
     height: 100vh;
     background-color: ${theme.backgroundColor};
-    transition: background-color 500ms ease-in;
     display: flex;
     border-bottom: 2px dashed ${theme.fontPrimaryColor};
     flex-direction: column;
