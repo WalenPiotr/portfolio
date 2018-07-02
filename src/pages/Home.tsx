@@ -1,4 +1,4 @@
-import { theme } from '@constants/theme';
+import theme from '@constants/theme';
 import * as React from 'react';
 import styled from 'styled-components';
 import media from '@constants/media';

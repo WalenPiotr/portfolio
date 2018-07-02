@@ -1,5 +1,5 @@
 import { dimensions } from '@constants/dimensions';
-import { theme } from '@constants/theme';
+import theme from '@constants/theme';
 import * as React from 'react';
 import styled from 'styled-components';
 import Icon from '@icons/index';

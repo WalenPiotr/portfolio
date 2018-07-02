@@ -1,5 +1,5 @@
 import { dimensions } from '@constants/dimensions';
-import { theme } from '@constants/theme';
+import theme from '@constants/theme';
 import IView from '@typings/IView';
 import * as React from 'react';
 import styled from 'styled-components';
