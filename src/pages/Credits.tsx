@@ -9,21 +9,24 @@ const Box = styled.div`
 `;
 
 const Title = styled.div`
+    display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-size: 32px;
+    margin-bottom: 10px;
 `;
 
 const Subtitle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 24px;
+    height: 45px;
 `;
 
 const IconWrapper = styled.div`
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin: 5px;
     animation: rotate(360deg) infinite linear;
 `;
@@ -31,16 +34,24 @@ const IconWrapper = styled.div`
 const Credits = () => (
     <Box>
         <Title>Credits</Title>
+        <Subtitle>Created with LOVEICON by Piotr Waleń</Subtitle>
         <Subtitle>
             Page powered by React
             <IconWrapper>
                 <Icon.technology.react theme={theme} />
             </IconWrapper>
+            , Redux
+            <IconWrapper>
+                <Icon.technology.redux theme={theme} />
+            </IconWrapper>
+            and Typescript
+            <IconWrapper>
+                <Icon.technology.ts theme={theme} />
+            </IconWrapper>
         </Subtitle>
-        <Subtitle>Created with LOVEICON by Piotr Walen</Subtitle>
         <Subtitle>Brand icons are owned by ... companies</Subtitle>
         <Subtitle>
-            Navigation icons and love icons are created by FontAwesome
+            Navigation icons and love icon are created by FontAwesome
         </Subtitle>
     </Box>
 );
