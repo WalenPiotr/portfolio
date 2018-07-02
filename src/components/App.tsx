@@ -1,12 +1,11 @@
 import Pages from '@components/Pages';
 import Navbar from '@containers/Navbar';
-
+import Credits from '@pages/Credits';
 import Home from '@pages/Home';
 import Projects from '@pages/Projects';
 import Skills from '@pages/Skills';
 import IView from '@typings/IView';
 import * as React from 'react';
-
 
 export interface AppProps {
     setCurrentPage: (page: number) => void;
@@ -59,6 +58,10 @@ class App extends React.Component<AppProps, any> {
             {
                 name: 'Projects',
                 component: <Projects />,
+            },
+            {
+                name: 'Credits',
+                component: <Credits />,
             },
         ];
 
