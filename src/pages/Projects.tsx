@@ -24,7 +24,7 @@ const PaneGroup = styled.div`
 
 const Pane = styled.span`
     width: 30vw;
-    height: 20vh;
+    height: 35vh;
     margin: 2vh;
     border-bottom: 2px dashed ${theme.fontPrimaryColor};
     border-top: 2px dashed ${theme.fontPrimaryColor};
