@@ -20,21 +20,85 @@ const Subtitle = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    height: 45px;
+    height: 35px;
 `;
 
-const IconWrapper = styled.div`
+const Credit = styled.div`
+    display: flex;
     justify-content: center;
-    width: 30px;
+    align-items: center;
+    font-size: 18px;
     height: 30px;
-    margin: 5px;
-    animation: rotate(360deg) infinite linear;
+`;
+
+const rotate360 = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const bumpAnimation = keyframes`
+    0% {
+        position: relative;
+        top: 0px;
+    };
+    25% {
+        position: relative;
+        top: -3px;
+    };
+    50% {
+        position: relative;
+        top: 0px;
+    };
+    75% {
+        position: relative;
+        top: 3px;
+    };
+    100% {
+        position: relative;
+        top: 0px;
+    };
+`;
+
+interface IIconWrapper {
+    rotate?: boolean;
+    bump?: boolean;
+}
+const IconWrapper = styled.div`
+    width: 25px;
+    height: 25px;
+    margin: 6px;
+    animation: ${({ rotate, bump }: IIconWrapper) => {
+        if (rotate) {
+            return `${rotate360} 4s infinite linear;`;
+        } else if (bump) {
+            return `${bumpAnimation} 1s infinite linear`;
+        } else {
+            return 'none';
+        }
+    }};
+`;
+
+const Spacer = styled.div`
+    height: 20px;
+    width: 100%;
 `;
 
 const Credits = () => (
     <Box>
         <Title>Credits</Title>
-        <Subtitle>Created with LOVEICON by Piotr Waleń</Subtitle>
+        <Spacer />
+        <Subtitle>
+            Created with
+            <IconWrapper>
+                <Icon.other.love theme={theme} />
+            </IconWrapper>
+            by Piotr Waleń
+        </Subtitle>
         <Subtitle>
             Page powered by React
             <IconWrapper>
@@ -49,10 +113,14 @@ const Credits = () => (
                 <Icon.technology.ts theme={theme} />
             </IconWrapper>
         </Subtitle>
-        <Subtitle>Brand icons are owned by ... companies</Subtitle>
-        <Subtitle>
-            Navigation icons and love icon are created by FontAwesome
-        </Subtitle>
+        <Spacer />
+        <Credit>Technology icons are owned by adequate companies</Credit>
+        <Credit>
+            {`Navigation icons, code and love icons are created by FontAwesome - http://fontawesome.com/`}
+        </Credit>
+        <Credit>
+            {`TypeScript icon by Remo H. Jansen - remo.jansen@wolksoftware.com`}
+        </Credit>
     </Box>
 );
 
