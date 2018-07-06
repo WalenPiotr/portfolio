@@ -71,7 +71,7 @@ const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {
         white-space: nowrap;
 
         height: 28px;
-        font-size: 24px;
+        font-size: 20px;
         margin-top: 6px;
         ${media.sm`
             height: 18px;
@@ -89,6 +89,8 @@ const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {
 };
 
 const SkillGroup = styled.div`
+    display: flex;
+    justify-content: center;
     font-size: 26px;
     ${media.sm`
         font-size: 20px;
@@ -100,8 +102,7 @@ const Skills = () => (
         <Title>Skills</Title>
         <ListWrapper>
             <List>
-                <Section />
-                <SkillGroup>Front-End:</SkillGroup>
+                <SkillGroup>Front-End</SkillGroup>
                 <Section />
                 <Item
                     icon={<Icon.technology.html theme={theme} />}
@@ -134,8 +135,7 @@ const Skills = () => (
                 <Section />
             </List>
             <List>
-                <Section />
-                <SkillGroup>Back-End:</SkillGroup>
+                <SkillGroup>Back-End</SkillGroup>
                 <Section />
                 <Item
                     icon={<Icon.technology.nodejs theme={theme} />}
@@ -156,8 +156,7 @@ const Skills = () => (
                 <Section />
             </List>
             <List>
-                <Section />
-                <SkillGroup>Other:</SkillGroup>
+                <SkillGroup>Other</SkillGroup>
                 <Section />
                 <Item
                     icon={<Icon.technology.linux theme={theme} />}
