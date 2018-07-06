@@ -9,9 +9,10 @@ const Box = styled.div`
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.08);
     height: ${(props: { height: string }) => props.height};
     display: flex;
+    align-items: center;
 `;
 
 const Line = styled.div`
@@ -30,8 +31,7 @@ const Button = styled.button`
     color: ${theme.fontPrimaryColor};
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    margin-left: 1vh;
-    margin-top: 1vh;
+    margin: 10px 0 10px 20px;
     &:focus {
         outline: none;
     }
