@@ -13,6 +13,7 @@ import react from '@icons/technology/react';
 import redux from '@icons/technology/redux';
 import ts from '@icons/technology/ts';
 import webpack from '@icons/technology/webpack';
+import love from '@icons/other/love';
 
 const Icon = {
     navigation: {
@@ -33,6 +34,9 @@ const Icon = {
         redux,
         ts,
         webpack,
+    },
+    other: {
+        love,
     },
 };
 export default Icon;
