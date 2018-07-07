@@ -9,7 +9,7 @@ const Box = styled.div`
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: ${theme.navbarColor};
     height: ${(props: { height: string }) => props.height};
     display: flex;
     align-items: center;
