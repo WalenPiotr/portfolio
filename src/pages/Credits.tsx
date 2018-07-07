@@ -2,66 +2,56 @@ import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 import theme from '@constants/theme';
 import Icon from '@icons/index';
+import media from '@constants/media';
 
 const Box = styled.div`
     justify-content: center;
     color: ${theme.fontPrimaryColor};
+    padding: 10px;
 `;
 
 const Title = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+
     font-size: 32px;
     margin-bottom: 10px;
+    ${media.md`
+        font-size: 16px;
+        margin-bottom: 5px;
+    `};
 `;
 
 const Subtitle = styled.div`
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+
     font-size: 24px;
-    height: 35px;
+    margin-top: 10px;
+    ${media.md`
+        margin-top: 5px;
+        font-size: 16px;
+    `};
 `;
 
 const Credit = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
     font-size: 18px;
-    height: 30px;
-`;
-
-const rotate360 = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-const bumpAnimation = keyframes`
-    0% {
-        position: relative;
-        top: 0px;
-    };
-    25% {
-        position: relative;
-        top: -3px;
-    };
-    50% {
-        position: relative;
-        top: 0px;
-    };
-    75% {
-        position: relative;
-        top: 3px;
-    };
-    100% {
-        position: relative;
-        top: 0px;
-    };
+    margin-top: 10px;
+    ${media.md`
+        margin-top: 5px;
+        font-size: 12px;
+    `};
 `;
 
 interface IIconWrapper {
@@ -69,18 +59,17 @@ interface IIconWrapper {
     bump?: boolean;
 }
 const IconWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 6px;
     width: 25px;
     height: 25px;
-    margin: 6px;
-    animation: ${({ rotate, bump }: IIconWrapper) => {
-        if (rotate) {
-            return `${rotate360} 4s infinite linear;`;
-        } else if (bump) {
-            return `${bumpAnimation} 1s infinite linear`;
-        } else {
-            return 'none';
-        }
-    }};
+    ${media.md`
+        width: 12px;
+        height: 12px;
+    `};
 `;
 
 const Spacer = styled.div`

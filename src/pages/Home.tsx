@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import media from '@constants/media';
 
 const Box = styled.div`
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,14 +16,14 @@ const Box = styled.div`
 
 const Name = styled.span`
     font-size: 70px;
-    ${media.sm`
+    ${media.md`
         font-size: 60px;
     `};
 `;
 
 const Title = styled.span`
     font-size: 35px;
-    ${media.sm`
+    ${media.md`
         font-size: 25px;
     `};
 `;

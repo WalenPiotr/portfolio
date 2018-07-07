@@ -9,7 +9,7 @@ const Box = styled.div`
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.08);
+    background-color: rgba(0, 0, 0, 0);
     height: ${(props: { height: string }) => props.height};
     display: flex;
     align-items: center;
@@ -17,8 +17,8 @@ const Box = styled.div`
 
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
-    border-bottom: 2px dashed ${theme.fontPrimaryColor};
     transition: width 0.1s linear;
+    border-bottom: 2px dashed ${theme.fontPrimaryColor};
 `;
 
 const Button = styled.button`
@@ -42,7 +42,7 @@ const Button = styled.button`
         border-bottom: 2px dashed ${theme.fontHighlightColor};
     }
 
-    ${media.sm`
+    ${media.md`
         font-size: 20px;
         display: none;
     `};
@@ -62,7 +62,7 @@ const Navbar = ({ views, createHandler, currentPage }: NavbarProps) => {
                 key={view.name}
                 onClick={createHandler(view)}
             >
-                <Line current={currentPage == index} />
+                <Line current={currentPage === index} />
                 <span>{view.name}</span>
             </Button>
         );

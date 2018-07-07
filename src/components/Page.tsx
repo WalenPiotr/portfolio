@@ -49,8 +49,6 @@ const TextWrapper = styled.div`
 
 const IconWrapper = styled.div`
     margin-bottom: -5px;
-    width: 100%;
-
     width: 40px;
     height: 40px;
     ${media.sm`

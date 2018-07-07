@@ -9,6 +9,8 @@ const love = ({ theme }: IIcon) => (
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
+        width="100%"
+        height="100%"
     >
         <path
             fill="currentColor"

@@ -14,11 +14,15 @@ import redux from '@icons/technology/redux';
 import ts from '@icons/technology/ts';
 import webpack from '@icons/technology/webpack';
 import love from '@icons/other/love';
+import left from '@icons/navigation/left';
+import right from '@icons/navigation/right';
 
 const Icon = {
     navigation: {
         up,
         down,
+        right,
+        left,
     },
     technology: {
         css,

@@ -10,13 +10,13 @@ const Box = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-size: 3vh;
 `;
 
 const Title = styled.span`
-    font-size: 32px;
-    ${media.sm`
-        font-size: 24px;
-    `};
+    height: 4.5vh;
+    font-size: 4.5vh;
+    margin-bottom: 1.5vh;
 `;
 
 const ListWrapper = styled.div`
@@ -26,27 +26,21 @@ const ListWrapper = styled.div`
     flex-wrap: wrap;
 `;
 
-const Section = styled.div`
-    width: 100%;
-    border-bottom: 2px dashed ${theme.fontPrimaryColor};
-
-    margin-top: 5px;
-    margin-bottom: 5px;
-    ${media.sm`
-        margin-top: 2px;
-        margin-bottom: 2px;
-    `};
-`;
-
 const List = styled.ul`
     list-style-type: none;
     list-style-position: inside;
     padding: 0;
     display: block;
-    margin: 15px;
-    ${media.sm`
-        margin: 10px;
-    `};
+    border-bottom: 2px dashed ${theme.fontPrimaryColor};
+    border-top: 2px dashed ${theme.fontPrimaryColor};
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
 `;
 
 const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {
@@ -55,29 +49,17 @@ const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {
         justify-content: center;
         align-items: center;
         height: 100%;
-
-        width: 24px;
-        margin-right: 5px;
-        ${media.sm`
-            width: 18px;
-            margin-right: 3px;
-        `};
+        width: 3.5vh;
+        margin-right: 1vh;
     `;
 
     const ItemBox = styled.div`
+        height: 4.5vh;
+        font-size: 3vh;
         display: flex;
         align-items: center;
         overflow: hidden;
         white-space: nowrap;
-
-        height: 28px;
-        font-size: 20px;
-        margin-top: 6px;
-        ${media.sm`
-            height: 18px;
-            font-size: 14px;
-            margin-top: 3px;
-        `};
     `;
 
     return (
@@ -89,12 +71,10 @@ const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {
 };
 
 const SkillGroup = styled.div`
+    font-size: 3.5vh;
+    margin-bottom: 1vh;
     display: flex;
     justify-content: center;
-    font-size: 26px;
-    ${media.sm`
-        font-size: 20px;
-    `};
 `;
 
 const Skills = () => (
@@ -103,7 +83,6 @@ const Skills = () => (
         <ListWrapper>
             <List>
                 <SkillGroup>Front-End</SkillGroup>
-                <Section />
                 <Item
                     icon={<Icon.technology.html theme={theme} />}
                     skill="HTML"
@@ -132,11 +111,9 @@ const Skills = () => (
                     icon={<Icon.technology.webpack theme={theme} />}
                     skill="Webpack"
                 />
-                <Section />
             </List>
             <List>
                 <SkillGroup>Back-End</SkillGroup>
-                <Section />
                 <Item
                     icon={<Icon.technology.nodejs theme={theme} />}
                     skill="NodeJS"
@@ -153,11 +130,9 @@ const Skills = () => (
                     icon={<Icon.technology.postgre theme={theme} />}
                     skill="PostgreSQL"
                 />
-                <Section />
             </List>
             <List>
                 <SkillGroup>Other</SkillGroup>
-                <Section />
                 <Item
                     icon={<Icon.technology.linux theme={theme} />}
                     skill="Linux"
@@ -174,7 +149,6 @@ const Skills = () => (
                     icon={<Icon.technology.filecode theme={theme} />}
                     skill="OpenCV (Python, Java for Android)"
                 />
-                <Section />
             </List>
         </ListWrapper>
     </Box>

@@ -10,10 +10,10 @@ const range = (width: number) => (
 `;
 
 const media = {
-    xs: range(576),
-    sm: range(768),
-    md: range(992),
-    lg: range(1200),
+    sm: range(576),
+    md: range(768),
+    lg: range(992),
+    xl: range(1200),
 };
 
 export default media;
