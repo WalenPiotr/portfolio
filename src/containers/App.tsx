@@ -11,7 +11,11 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     },
 });
 
+const mapStateToProps = (state: IState) => ({
+    currentPage: state.page.current,
+});
+
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps,
 )((props: AppProps) => <App {...props} />);
