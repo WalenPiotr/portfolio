@@ -7,7 +7,7 @@ import media from '@constants/media';
 const Box = styled.div`
     justify-content: center;
     color: ${theme.fontPrimaryColor};
-    padding: 10px;
+    padding: 1vh;
 `;
 
 const Title = styled.div`
@@ -17,12 +17,8 @@ const Title = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
 
-    font-size: 32px;
-    margin-bottom: 10px;
-    ${media.md`
-        font-size: 16px;
-        margin-bottom: 5px;
-    `};
+    font-size: 4vh;
+    margin-bottom: 1vh;
 `;
 
 const Subtitle = styled.div`
@@ -32,12 +28,8 @@ const Subtitle = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
 
-    font-size: 24px;
-    margin-top: 10px;
-    ${media.md`
-        margin-top: 5px;
-        font-size: 16px;
-    `};
+    font-size: 3vh;
+    margin-top: 1vh;
 `;
 
 const Credit = styled.div`
@@ -46,12 +38,8 @@ const Credit = styled.div`
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
-    font-size: 18px;
-    margin-top: 10px;
-    ${media.md`
-        margin-top: 5px;
-        font-size: 12px;
-    `};
+    font-size: 2vh;
+    margin-top: 1vh;
 `;
 
 interface IIconWrapper {
@@ -63,17 +51,13 @@ const IconWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    margin: 6px;
-    width: 25px;
-    height: 25px;
-    ${media.md`
-        width: 12px;
-        height: 12px;
-    `};
+    margin: 1vh;
+    width: 3vh;
+    height: 3vh;
 `;
 
 const Spacer = styled.div`
-    height: 20px;
+    height: 2vh;
     width: 100%;
 `;
 

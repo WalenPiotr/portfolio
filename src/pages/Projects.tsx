@@ -52,12 +52,11 @@ const Pane = ({
         animation-fill-mode: forwards;
         animation-play-state: running;
 
-        width: 60vw;
+        width: 70vw;
+        padding-left: 1vh;
+        padding-right: 1vh;
         padding-bottom: 2vh;
         padding-top: 2vh;
-        margin-left: 2vw;
-        margin-right: 2vw;
-        margin-bottom: 2vh;
     `;
 
     const Title = styled.div`
@@ -71,7 +70,7 @@ const Pane = ({
         margin-top: 1vh;
     `;
 
-    const List = styled.ul`
+    const List = styled.span`
         font-size: 2.5vh;
         margin: 0;
     `;
@@ -91,9 +90,9 @@ const Pane = ({
                 {technologies.map(
                     (tech, index) =>
                         index == technologies.length - 1 ? (
-                            <li key={tech}>{tech}. </li>
+                            <span key={tech}>{tech}. </span>
                         ) : (
-                            <li key={tech}>{tech}, </li>
+                            <span key={tech}>{tech}, </span>
                         ),
                 )}
             </List>
@@ -116,7 +115,7 @@ const Pane = ({
 const ProjectBox = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
 `;
 
@@ -141,7 +140,7 @@ const Arrow = styled.button`
     border: none;
     background-color: rgba(0, 0, 0, 0);
     height: 100%;
-    width: 60px;
+    width: 10vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -161,6 +160,13 @@ const IconWrapper = styled.div`
 
 const Text = styled.div`
     font-size: 2vh;
+`;
+
+const PaneWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
 `;
 class Projects extends React.Component<ProjectsProps, any> {
     state: ProjectsState = {
@@ -226,9 +232,9 @@ class Projects extends React.Component<ProjectsProps, any> {
                             <Icon.navigation.left theme={theme} />
                         </IconWrapper>
 
-                        <Text>previous</Text>
+                        <Text>prev</Text>
                     </Arrow>
-                    {this.panes[this.state.current]}
+                    <PaneWrapper>{this.panes[this.state.current]}</PaneWrapper>
                     <Arrow onClick={this.handleNext}>
                         <IconWrapper>
                             <Icon.navigation.right theme={theme} />
