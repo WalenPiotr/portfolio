@@ -18,7 +18,7 @@ const Box = styled.div`
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
     transition: width 0.1s linear;
-    border-bottom: 2px dashed ${theme.fontPrimaryColor};
+    border-bottom: 1px solid ${theme.fontPrimaryColor};
 `;
 
 const Button = styled.button`
@@ -39,12 +39,12 @@ const Button = styled.button`
         color: ${theme.fontHighlightColor};
     }
     &:hover ${Line} {
-        border-bottom: 2px dashed ${theme.fontHighlightColor};
+        border-bottom: 1px solid ${theme.fontHighlightColor};
     }
 
+    display: none;
     ${media.md`
-        font-size: 20px;
-        display: none;
+        display: flex;
     `};
 `;
 
