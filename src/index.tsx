@@ -9,8 +9,13 @@ import { injectGlobal } from 'styled-components';
 injectGlobal`
     body {
         font-family: 'Roboto Condensed';
+        font-weight: 300;
         margin: 0;
         padding: 0;
+    }
+    button {
+        font-family: 'Roboto Condensed';
+        font-weight: 300;
     }
 `;
 
