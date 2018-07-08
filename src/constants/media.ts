@@ -4,7 +4,7 @@ const range = (width: number) => (
     rule: TemplateStringsArray,
     ...args: TemplateStringsArray[]
 ) => css`
-    @media (max-width: ${`${width}px`}) {
+    @media (min-width: ${`${width}px`}) {
         ${css(rule, ...args)};
     }
 `;
