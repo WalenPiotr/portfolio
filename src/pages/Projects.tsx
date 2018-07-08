@@ -40,8 +40,8 @@ const Pane = ({
         }
     `;
     const PaneBox = styled.span`
-        border-top: 2px dashed ${theme.fontPrimaryColor};
-        border-bottom: 2px dashed ${theme.fontPrimaryColor};
+        border-top: 1px solid ${theme.fontPrimaryColor};
+        border-bottom: 1px solid ${theme.fontPrimaryColor};
         opacity: 100%;
         animation-name: ${coolBoxKeyframes};
         animation-duration: 0.4s;
@@ -53,6 +53,21 @@ const Pane = ({
         animation-play-state: running;
 
         width: 70vw;
+
+        ${media.xl`
+            width: 50vw;
+        `}
+
+        ${media.lg`
+            width: 55vw;
+        `}
+
+        ${media.md`
+            width: 60vw;
+        `}
+        ${media.sm`
+            width: 65vw;
+        `}
         padding-left: 1vh;
         padding-right: 1vh;
         padding-bottom: 2vh;
@@ -115,7 +130,7 @@ const Pane = ({
 const ProjectBox = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
 `;
 
@@ -140,7 +155,7 @@ const Arrow = styled.button`
     border: none;
     background-color: rgba(0, 0, 0, 0);
     height: 100%;
-    width: 10vw;
+    width: 5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -154,8 +169,8 @@ const Arrow = styled.button`
 `;
 
 const IconWrapper = styled.div`
-    width: 4vh;
-    height: 4vh;
+    width: 3vh;
+    height: 3vh;
 `;
 
 const Text = styled.div`
@@ -250,7 +265,7 @@ class Projects extends React.Component<ProjectsProps, any> {
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
     transition: width 0.2s linear;
-    border-bottom: 2px dashed ${theme.fontPrimaryColor};
+    border-bottom: 1px solid ${theme.fontPrimaryColor};
     margin-bottom: 2px;
 `;
 
@@ -270,7 +285,7 @@ const Button = styled.button`
         color: ${theme.fontHighlightColor};
     }
     &:hover ${Line} {
-        border-bottom: 2px dashed ${theme.fontHighlightColor};
+        border-bottom: 1px solid ${theme.fontHighlightColor};
     }
     margin-left: 1vh;
     font-size: 2vh;

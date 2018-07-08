@@ -13,7 +13,7 @@ const Box = styled.div`
     height: 100vh;
     background-color: ${theme.backgroundColor};
     display: flex;
-    border-bottom: 2px dashed ${theme.fontPrimaryColor};
+    border-bottom: 1px solid ${theme.fontPrimaryColor};
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
@@ -41,20 +41,13 @@ const TextWrapper = styled.div`
     width: 100%;
     text-transform: lowercase;
     margin-bottom: 1vh;
-    font-size: 18px;
-    ${media.sm`
-        font-size: 12px;
-    `};
+    font-size: 2vh;
 `;
 
 const IconWrapper = styled.div`
-    margin-bottom: -5px;
-    width: 40px;
-    height: 40px;
-    ${media.sm`
-        width: 30px;
-        height: 30px;
-    `};
+    margin-bottom: -0.5vh;
+    width: 3vh;
+    height: 3vh;
 `;
 
 const ComponentWrapper = styled.div`
