@@ -10,12 +10,11 @@ const Box = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 3vh;
 `;
 
 const Title = styled.span`
     height: 4.5vh;
-    font-size: 4.5vh;
+    font-size: 4vh;
     margin-bottom: 1.5vh;
 `;
 
@@ -31,8 +30,9 @@ const List = styled.ul`
     list-style-position: inside;
     padding: 0;
     display: block;
-    border-bottom: 2px dashed ${theme.fontPrimaryColor};
-    border-top: 2px dashed ${theme.fontPrimaryColor};
+    border-top: 1px solid ${theme.fontPrimaryColor};
+    border-bottom: 1px solid ${theme.fontPrimaryColor};
+    
     margin-top: 1vh;
     margin-bottom: 1vh;
     margin-left: 1.5vw;
@@ -49,13 +49,13 @@ const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {
         justify-content: center;
         align-items: center;
         height: 100%;
-        width: 3.5vh;
-        margin-right: 1vh;
+        width: 2.5vh;
+        margin-right: 0.5vh;
     `;
 
     const ItemBox = styled.div`
-        height: 4.5vh;
-        font-size: 3vh;
+        height: 3.5vh;
+        font-size: 2.5vh;
         display: flex;
         align-items: center;
         overflow: hidden;
