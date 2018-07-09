@@ -130,8 +130,9 @@ const Pane = ({
 const ProjectBox = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
+    height: 50vh;
 `;
 
 interface IProject {
@@ -149,17 +150,25 @@ interface ProjectsProps {
     projects: IProject[];
 }
 
-const Arrow = styled.button`
+const Arrow = styled.div`
     font-family: 'Roboto Condensed';
-    color: ${theme.fontPrimaryColor};
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    height: 100%;
+    height: 5vw;
     width: 5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+`;
+
+const ArrowButton = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${theme.fontPrimaryColor};
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 10vw;
     &:focus {
         outline: none;
     }
@@ -181,7 +190,6 @@ const PaneWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
 `;
 class Projects extends React.Component<ProjectsProps, any> {
     state: ProjectsState = {
@@ -242,20 +250,24 @@ class Projects extends React.Component<ProjectsProps, any> {
                     handleClick={this.handleClick}
                 />
                 <ProjectBox>
-                    <Arrow onClick={this.handlePrevious}>
-                        <IconWrapper>
-                            <Icon.navigation.left theme={theme} />
-                        </IconWrapper>
+                    <ArrowButton onClick={this.handlePrevious}>
+                        <Arrow>
+                            <IconWrapper>
+                                <Icon.navigation.left theme={theme} />
+                            </IconWrapper>
 
-                        <Text>prev</Text>
-                    </Arrow>
+                            <Text>prev</Text>
+                        </Arrow>
+                    </ArrowButton>
                     <PaneWrapper>{this.panes[this.state.current]}</PaneWrapper>
-                    <Arrow onClick={this.handleNext}>
-                        <IconWrapper>
-                            <Icon.navigation.right theme={theme} />
-                        </IconWrapper>
-                        <Text>next</Text>
-                    </Arrow>
+                    <ArrowButton onClick={this.handleNext}>
+                        <Arrow>
+                            <IconWrapper>
+                                <Icon.navigation.right theme={theme} />
+                            </IconWrapper>
+                            <Text>next</Text>
+                        </Arrow>
+                    </ArrowButton>
                 </ProjectBox>
             </Box>
         );
