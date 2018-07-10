@@ -12,7 +12,6 @@ injectGlobal`
         font-weight: 300;
         margin: 0;
         padding: 0;
-        background-color: ${theme.backgroundColor};
         color: ${theme.fontPrimaryColor}; 
     }
     button {

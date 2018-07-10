@@ -73,9 +73,7 @@ const ButtonGroup = styled.div`
 const Background = styled.div`
     z-index: -1;
     width: 100vw;
-    height: 30vh;
-    top: 0;
-    left: 0;
+    height: 100vh;
     background-color: ${theme.paralaxColor};
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
         url('https://images.pexels.com/photos/34676/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
