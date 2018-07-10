@@ -10,6 +10,8 @@ const Box = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: ${theme.backgroundColor};
+    width: 100vw;
 `;
 
 const Title = styled.span`
@@ -32,7 +34,7 @@ const List = styled.ul`
     display: block;
     border-top: 1px solid ${theme.fontPrimaryColor};
     border-bottom: 1px solid ${theme.fontPrimaryColor};
-    
+
     margin-top: 1vh;
     margin-bottom: 1vh;
     margin-left: 1.5vw;

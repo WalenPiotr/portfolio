@@ -5,9 +5,16 @@ import Icon from '@icons/index';
 import media from '@constants/media';
 
 const Box = styled.div`
+    display: flex;
+    align-items: center;
     justify-content: center;
-    color: ${theme.fontPrimaryColor};
-    padding: 1vh;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 100%;
+    width: 100vw;
+
+
+
 `;
 
 const Title = styled.div`

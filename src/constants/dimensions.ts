@@ -1,3 +1,3 @@
 export const dimensions = {
-    navbar: { height: '60px' },
+    navbar: { height: '7vh' },
 };

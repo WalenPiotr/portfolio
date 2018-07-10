@@ -16,6 +16,7 @@ import webpack from '@icons/technology/webpack';
 import love from '@icons/other/love';
 import left from '@icons/navigation/left';
 import right from '@icons/navigation/right';
+import bars from '@icons/other/bars';
 
 const Icon = {
     navigation: {
@@ -40,6 +41,7 @@ const Icon = {
         webpack,
     },
     other: {
+        bars,
         love,
     },
 };

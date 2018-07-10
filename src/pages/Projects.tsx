@@ -6,13 +6,12 @@ import media from '@constants/media';
 
 const Box = styled.div`
     width: 100%;
-    height: 100%;
-    flex-grow: 1;
-    flex-shrink: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    color: ${theme.fontPrimaryColor};
+    background-color: ${theme.backgroundColor};
+    width: 100vw;
 `;
 
 const Title = styled.span`
@@ -40,8 +39,7 @@ const Pane = ({
         }
     `;
     const PaneBox = styled.span`
-        border-top: 1px solid ${theme.fontPrimaryColor};
-        border-bottom: 1px solid ${theme.fontPrimaryColor};
+
         opacity: 100%;
         animation-name: ${coolBoxKeyframes};
         animation-duration: 0.4s;
@@ -51,27 +49,27 @@ const Pane = ({
         animation-direction: normal;
         animation-fill-mode: forwards;
         animation-play-state: running;
-
-        width: 70vw;
+        flex-grow:0;
 
         ${media.xl`
-            width: 50vw;
-        `}
-
-        ${media.lg`
             width: 55vw;
         `}
 
-        ${media.md`
+        ${media.lg`
             width: 60vw;
         `}
-        ${media.sm`
+
+        ${media.md`
             width: 65vw;
         `}
+        ${media.sm`
+            width: 70vw;
+        `}
+        width: 75vw;
         padding-left: 1vh;
         padding-right: 1vh;
-        padding-bottom: 2vh;
-        padding-top: 2vh;
+        padding-bottom: 1vh;
+        padding-top: 1vh;
     `;
 
     const Title = styled.div`
@@ -130,9 +128,18 @@ const Pane = ({
 const ProjectBox = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
     height: 50vh;
+    ${media.sm`
+        height: 45vh;
+    `};
+    ${media.md`
+        height: 40vh;
+    `};
+    ${media.lg`
+        height: 35vh;
+    `};
 `;
 
 interface IProject {
@@ -152,8 +159,7 @@ interface ProjectsProps {
 
 const Arrow = styled.div`
     font-family: 'Roboto Condensed';
-    height: 5vw;
-    width: 5vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -168,7 +174,7 @@ const ArrowButton = styled.button`
     border: none;
     background-color: rgba(0, 0, 0, 0);
     height: 100%;
-    width: 10vw;
+    width: 12vw;
     &:focus {
         outline: none;
     }
@@ -178,8 +184,8 @@ const ArrowButton = styled.button`
 `;
 
 const IconWrapper = styled.div`
-    width: 3vh;
-    height: 3vh;
+    width: 4vh;
+    height: 4vh;
 `;
 
 const Text = styled.div`
@@ -187,6 +193,9 @@ const Text = styled.div`
 `;
 
 const PaneWrapper = styled.div`
+    border-top: 1px solid ${theme.fontPrimaryColor};
+    border-bottom: 1px solid ${theme.fontPrimaryColor};
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -300,7 +309,7 @@ const Button = styled.button`
         border-bottom: 1px solid ${theme.fontHighlightColor};
     }
     margin-left: 1vh;
-    font-size: 2vh;
+    font-size: 2.5vh;
 `;
 
 const NavigationBox = styled.div`

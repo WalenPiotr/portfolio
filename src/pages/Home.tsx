@@ -4,14 +4,12 @@ import styled from 'styled-components';
 import media from '@constants/media';
 
 const Box = styled.div`
-    width: 100%;
-    height: 100%;
-    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: ${theme.fontPrimaryColor};
+    background-color: ${theme.backgroundColor};
+    width: 100vw;
 `;
 
 const Name = styled.span`

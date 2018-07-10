@@ -19,7 +19,8 @@ const projects = [
             'Express',
             'PostgreSQL',
         ],
-        description: 'Todo list app created with TypeScript.',
+        description:
+            'Todo list app created with TypeScript. Postgre and Node backend with CRUD routes. Frontend based on React Redux store. ',
         links: new Map([
             ['Source code', 'https://github.com/WalenPiotr/YetAnotherToDoApp'],
             ['Demo page', 'https://todos-typescript.herokuapp.com/'],
@@ -102,7 +103,10 @@ class App extends React.Component<AppProps, any> {
 
     createHandler = (view: IView) => (): void => {
         window.scrollTo({
-            top: this.boxes.get(view).offsetTop,
+            top:
+                this.boxes.get(view).offsetTop +
+                this.boxes.get(view).offsetHeight / 2 -
+                window.innerHeight / 2,
             left: 0,
             behavior: 'smooth',
         });

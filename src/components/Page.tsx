@@ -9,26 +9,29 @@ interface IBox {
 }
 
 const Box = styled.div`
+    padding-top: 8vh;
     width: 100%;
-    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
     background-color: ${theme.backgroundColor};
-    display: flex;
     border-bottom: 1px solid ${theme.fontPrimaryColor};
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    border-top: 1px solid ${theme.fontPrimaryColor};
+`;
+
+const ButtonWrapper = styled.div`
+    position: relative;
+    top: 8vh;
+    width: 100%;
+    height: 8vh;
+    text-align: center;
 `;
 
 const Button = styled.button`
-    font-family: 'Roboto Condensed';
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0);
     color: ${theme.fontPrimaryColor};
     border: none;
+    z-index: 9;
     &:focus {
         outline: none;
     }
@@ -46,17 +49,8 @@ const TextWrapper = styled.div`
 
 const IconWrapper = styled.div`
     margin-bottom: -0.5vh;
-    width: 3vh;
-    height: 3vh;
-`;
-
-const ComponentWrapper = styled.div`
-    width: 100%;
-    flex-grow: 1;
-    margin-top: ${(props: { navbarHeight: string }) => props.navbarHeight};
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 4vh;
+    height: 4vh;
 `;
 
 interface IPage {
@@ -68,12 +62,27 @@ interface IPage {
 }
 
 const ButtonGroup = styled.div`
-    width:100%;
+    width: 100%;
     height: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+`;
+
+const Background = styled.div`
+    z-index: -1;
+    width: 100vw;
+    height: 30vh;
+    top: 0;
+    left: 0;
+    background-color: ${theme.paralaxColor};
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('https://images.pexels.com/photos/34676/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 `;
 
 const Page = ({
@@ -83,28 +92,32 @@ const Page = ({
     innerComponent,
     label,
 }: IPage) => (
-    <Box innerRef={innerRef}>
-        <ComponentWrapper navbarHeight={dimensions.navbar.height}>
+    <div>
+        <Background />
+        <Box innerRef={innerRef}>
             {innerComponent}
-        </ComponentWrapper>
-        <Button onClick={handleClick}>
-            {last ? (
-                <ButtonGroup>
-                    <IconWrapper>
-                        <Icon.navigation.up theme={theme} />
-                    </IconWrapper>
-                    <TextWrapper>Back to top</TextWrapper>
-                </ButtonGroup>
-            ) : (
-                <ButtonGroup>
-                    <IconWrapper>
-                        <Icon.navigation.down theme={theme} />
-                    </IconWrapper>
-                    <TextWrapper>Next</TextWrapper>
-                </ButtonGroup>
-            )}
-        </Button>
-    </Box>
+            <ButtonWrapper>
+                <Button onClick={handleClick}>
+                    {last ? (
+                        <ButtonGroup>
+                            <IconWrapper>
+                                <Icon.navigation.up theme={theme} />
+                            </IconWrapper>
+                            <TextWrapper>Back to top</TextWrapper>
+                        </ButtonGroup>
+                    ) : (
+                        <ButtonGroup>
+                            <IconWrapper>
+                                <Icon.navigation.down theme={theme} />
+                            </IconWrapper>
+                            <TextWrapper>Next</TextWrapper>
+                        </ButtonGroup>
+                    )}
+                </Button>
+            </ButtonWrapper>
+        </Box>
+        {last ? <Background /> : <div />}
+    </div>
 );
 
 export default Page;

@@ -5,13 +5,15 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { injectGlobal } from 'styled-components';
-
+import theme from '@constants/theme';
 injectGlobal`
     body {
         font-family: 'Roboto Condensed';
         font-weight: 300;
         margin: 0;
         padding: 0;
+        background-color: ${theme.backgroundColor};
+        color: ${theme.fontPrimaryColor}; 
     }
     button {
         font-family: 'Roboto Condensed';
