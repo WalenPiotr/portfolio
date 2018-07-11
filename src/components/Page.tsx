@@ -9,20 +9,24 @@ interface IBox {
 }
 
 const Box = styled.div`
-    padding-top: 8vh;
-    width: 100%;
     background-color: rgba(0, 0, 0, 0);
     background-color: ${theme.backgroundColor};
     border-bottom: 1px solid ${theme.fontPrimaryColor};
-    border-top: 1px solid ${theme.fontPrimaryColor};
 `;
 
-const ButtonWrapper = styled.div`
-    position: relative;
-    top: 8vh;
+const ComponentWrapper = styled.div`
+    padding-top: 7vh;
     width: 100%;
-    height: 8vh;
-    text-align: center;
+    height: 86vh;
+    display: flex;
+    justify-content: center;
+`;
+const ButtonWrapper = styled.div`
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const Button = styled.button`
@@ -62,25 +66,10 @@ interface IPage {
 }
 
 const ButtonGroup = styled.div`
-    width: 100%;
-    height: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`;
-
-const Background = styled.div`
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    background-color: ${theme.paralaxColor};
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url('https://images.pexels.com/photos/34676/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
 `;
 
 const Page = ({
@@ -91,9 +80,8 @@ const Page = ({
     label,
 }: IPage) => (
     <div>
-        <Background />
         <Box innerRef={innerRef}>
-            {innerComponent}
+            <ComponentWrapper>{innerComponent}</ComponentWrapper>
             <ButtonWrapper>
                 <Button onClick={handleClick}>
                     {last ? (
@@ -114,7 +102,6 @@ const Page = ({
                 </Button>
             </ButtonWrapper>
         </Box>
-        {last ? <Background /> : <div />}
     </div>
 );
 
