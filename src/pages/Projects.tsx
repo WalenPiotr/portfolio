@@ -286,6 +286,7 @@ class Projects extends React.Component<ProjectsProps, any> {
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
     transition: width 0.2s linear;
+    height: 1px;
     border-bottom: 1px solid ${theme.fontPrimaryColor};
     margin-bottom: 2px;
 `;
