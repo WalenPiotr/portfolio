@@ -6,7 +6,8 @@ import Projects from '@pages/Projects';
 import Skills from '@pages/Skills';
 import IView from '@typings/IView';
 import * as React from 'react';
-
+import styled from 'styled-components';
+import theme from '@constants/theme';
 const projects = [
     {
         name: 'Yet Another To-Do List',
@@ -119,6 +120,7 @@ class App extends React.Component<AppProps, any> {
     render() {
         return (
             <div>
+                <Background />
                 <Navbar views={views} createHandler={this.createHandler} />
                 <Pages
                     views={views}
@@ -129,5 +131,23 @@ class App extends React.Component<AppProps, any> {
         );
     }
 }
+
+const Background = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: ${theme.paralaxColor};
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('https://images.pexels.com/photos/34676/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: blur(3px) grayscale(100%);
+    transform: scale(1.1);
+`;
 
 export default App;
