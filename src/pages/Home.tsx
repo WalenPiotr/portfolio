@@ -13,17 +13,11 @@ const Box = styled.div`
 `;
 
 const Name = styled.span`
-    font-size: 70px;
-    ${media.md`
-        font-size: 60px;
-    `};
+    font-size: 8vh;
 `;
 
 const Title = styled.span`
-    font-size: 35px;
-    ${media.md`
-        font-size: 25px;
-    `};
+    font-size: 4vh;
 `;
 
 const Home = () => (
