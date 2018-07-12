@@ -12,9 +12,6 @@ const Box = styled.div`
     flex-grow: 1;
     flex-basis: 100%;
     width: 100vw;
-
-
-
 `;
 
 const Title = styled.div`
@@ -23,7 +20,6 @@ const Title = styled.div`
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
-
     font-size: 4vh;
     margin-bottom: 1vh;
 `;

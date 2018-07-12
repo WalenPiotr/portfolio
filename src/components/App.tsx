@@ -8,6 +8,7 @@ import IView from '@typings/IView';
 import * as React from 'react';
 import styled from 'styled-components';
 import theme from '@constants/theme';
+
 const projects = [
     {
         name: 'Yet Another To-Do List',
