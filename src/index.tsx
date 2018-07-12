@@ -9,14 +9,14 @@ import theme from '@constants/theme';
 injectGlobal`
     body {
         font-family: 'Roboto Condensed';
-        font-weight: 500;
+        font-weight: 300;
         margin: 0;
         padding: 0;
         color: ${theme.fontPrimaryColor}; 
     }
     button {
         font-family: 'Roboto Condensed';
-        font-weight: 500;
+        font-weight: 300;
     }
 `;
 
