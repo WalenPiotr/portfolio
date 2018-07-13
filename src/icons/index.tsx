@@ -18,6 +18,9 @@ import left from '@icons/navigation/left';
 import right from '@icons/navigation/right';
 import bars from '@icons/other/bars';
 import desktop from '@icons/other/dekstop';
+import github from '@icons/brand/github';
+import linkedin from '@icons/brand/linkedin';
+import mail from '@icons/other/mail';
 
 const Icon = {
     navigation: {
@@ -45,6 +48,11 @@ const Icon = {
         bars,
         love,
         desktop,
+        mail,
+    },
+    brand: {
+        github,
+        linkedin,
     },
 };
 export default Icon;
