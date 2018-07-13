@@ -13,7 +13,6 @@
             "@containers/*": ["src/containers/*"],
             "@typings/*": ["src/typings/*"],
             "@pages/*": ["src/pages/*"],
-            "@constants/*": ["src/constants/*"],
             "@reducers/*": ["src/reducers/*"],
             "@actions/*": ["src/actions/*"],
             "@styled-components/*": ["src/styled-components/*"],
