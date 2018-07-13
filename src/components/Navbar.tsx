@@ -62,11 +62,11 @@ const Button = styled.button`
         font-size:2.5vh;
         height: 4vh;
         margin-right:0;
+        margin-left: 1.5vh;
     `};
     border-radius: 2vh;
     padding-left: 1vh;
     padding-right: 1vh;
-    margin-left: 1.5vh;
     margin-top: 1vh;
     margin-bottom: 1vh;
 `;
