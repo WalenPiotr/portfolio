@@ -32,17 +32,13 @@ const List = styled.ul`
     list-style-position: inside;
     padding: 0;
     display: block;
-    border-top: 1px solid ${theme.fontPrimaryColor};
-    border-bottom: 1px solid ${theme.fontPrimaryColor};
-
     margin-top: 1vh;
     margin-bottom: 1vh;
-    margin-left: 1.5vw;
-    margin-right: 1.5vw;
-    padding-right: 0;
-    padding-left: 0;
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding: 1.5vh;
+    border-radius: 2vh;
+    background-color: rgba(255, 255, 255, 0.15);
 `;
 
 const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {

@@ -12,7 +12,7 @@ const Pane = ({
     name: string;
     description: string;
     technologies: string[];
-    links: Map<string, string>;
+    links: Map<string, { url: string; icon: JSX.Element }>;
 }) => {
     const coolBoxKeyframes = keyframes`
         0% {
@@ -22,7 +22,9 @@ const Pane = ({
             opacity: 1;
         }
     `;
-    const PaneBox = styled.span`
+    const PaneBox = styled.div`
+        display: flex;
+        flex-direction: column;
         opacity: 100%;
         animation-name: ${coolBoxKeyframes};
         animation-duration: 0.4s;
@@ -33,10 +35,7 @@ const Pane = ({
         animation-fill-mode: forwards;
         animation-play-state: running;
         width: 100%;
-        padding-left: 1vh;
-        padding-right: 1vh;
-        padding-bottom: 1vh;
-        padding-top: 1vh;
+        padding: 1.5vh;
         width: 70vw;
         ${media.sm`
             width: 60vw;
@@ -50,57 +49,116 @@ const Pane = ({
         ${media.xl`
             width: 30vw;
         `};
+
+        height: 60vh;
+        ${media.sm`
+            height: 55vh;
+        `};
+        ${media.md`
+            height: 50vh;
+        `};
+        ${media.lg`
+            height: 45vh;
+        `};
+        ${media.xl`
+            height: 40vh;
+        `};
+        
+        border-radius: 2vh;
+        background-color: rgba(255,255,255,0.15);
+
     `;
 
     const Title = styled.div`
         display: flex;
         justify-content: center;
         font-size: 3vh;
+        margin-bottom: 1.5vh;
     `;
 
     const Subtitile = styled.div`
+        display: flex;
+        justify-content: center;
         font-size: 2.5vh;
-        margin-top: 1vh;
-    `;
-
-    const List = styled.span`
-        font-size: 2.5vh;
-        margin: 0;
+        margin-top: 1.5vh;
     `;
 
     const Standard = styled.div`
         font-size: 2.5vh;
     `;
-    const Link = styled.a`
+
+    const UrlBox = styled.a`
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         color: ${theme.fontPrimaryColor};
+        text-decoration: none;
+        font-size: 2vh;
+        color: ${theme.fontPrimaryColor};
+        &:hover {
+            color: ${theme.fontHighlightColor};
+        }
+    `;
+
+    const IconBox = styled.div`
+        width: 5vh;
+        height: 5vh;
+    `;
+    const IconsBox = styled.div`
+        display: flex;
+        justify-content: space-around;
+        background-color: rgba(0, 0, 0, 0);
+    `;
+
+    const Filler = styled.div`
+        flex-grow: 1;
+    `;
+
+    const TechList = styled.div`
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    `;
+
+    const TechWrapper = styled.div`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.15);
+        height: 4vh;
+        font-size: 2vh;
+        border-radius: 2vh;
+        margin-right: 1vh;
+        margin-top: 1vh;
+        padding-right: 1vh;
+        padding-left: 1vh;
     `;
 
     return (
         <PaneBox>
             <Title>{name}</Title>
-            <Subtitile>Technologies: </Subtitile>
-            <List>
-                {technologies.map(
-                    (tech, index) =>
-                        index == technologies.length - 1 ? (
-                            <span key={tech}>{tech}. </span>
-                        ) : (
-                            <span key={tech}>{tech}, </span>
-                        ),
-                )}
-            </List>
-            <Subtitile>Description: </Subtitile>
             <Standard>{description}</Standard>
-            <Subtitile> Links: </Subtitile>
-            <List>
+            <Subtitile>Technologies</Subtitile>
+            <TechList>
+                {technologies.map((tech, index) => (
+                    <TechWrapper key={tech}>{tech}</TechWrapper>
+                ))}
+            </TechList>
+            <Filler />
+            <IconsBox>
                 {Array.from(links.entries()).map(
-                    ([name, url]: [string, string]) => (
-                        <li key={name}>
-                            <Link href={url}>{name}</Link>
-                        </li>
+                    ([name, object]: [
+                        string,
+                        { url: string; icon: JSX.Element }
+                    ]) => (
+                        <UrlBox href={object.url} key={name}>
+                            <IconBox>{object.icon}</IconBox>
+                            {name}
+                        </UrlBox>
                     ),
                 )}
-            </List>
+            </IconsBox>
         </PaneBox>
     );
 };

@@ -32,11 +32,12 @@ const Line = styled.div`
 interface ButtonProps {
     height: string;
     hidden: boolean;
+    current: boolean;
 }
 
 const Button = styled.button`
     font-family: 'Roboto Condensed';
-    height: ${({ height }: ButtonProps) => height};
+    height: ${dimensions.navbar.height};
     font-size: 4vh;
     display: ${({ hidden }: ButtonProps) => (hidden ? 'none' : 'flex')};
     flex-direction: column;
@@ -45,25 +46,29 @@ const Button = styled.button`
     color: ${theme.fontPrimaryColor};
     border: none;
     width: 100vw;
-    height: ${dimensions.navbar.height};
     background-color: rgba(0, 0, 0, 0);
-    ${media.md`
-        margin-right: 4vh;
-        width: auto;
-        font-size:2.5vh;
-    `};
     &:focus {
         outline: none;
     }
     &:hover {
         color: ${theme.fontHighlightColor};
+        background-color: ${({ current }: ButtonProps) =>
+            current ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)'};
     }
-    &:hover ${Line} {
-        border-bottom: 1px solid ${theme.fontHighlightColor};
-    }
+    background-color: ${({ current }: ButtonProps) =>
+        current ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.0)'};
     ${media.md`
         display: flex;
+        width: auto;
+        font-size:2.5vh;
+        height: 4vh;
     `};
+    border-radius: 2vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    margin-left: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 `;
 
 const BarIcon = styled.button`
@@ -120,8 +125,8 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
                     key={view.name}
                     onClick={this.navigationClick(view)}
                     hidden={this.state.hidden}
+                    current={this.props.currentPage === index}
                 >
-                    <Line current={this.props.currentPage === index} />
                     <span>{view.name}</span>
                 </Button>
             );

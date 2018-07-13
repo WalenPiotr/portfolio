@@ -17,6 +17,7 @@ import love from '@icons/other/love';
 import left from '@icons/navigation/left';
 import right from '@icons/navigation/right';
 import bars from '@icons/other/bars';
+import desktop from '@icons/other/dekstop';
 
 const Icon = {
     navigation: {
@@ -43,6 +44,7 @@ const Icon = {
     other: {
         bars,
         love,
+        desktop,
     },
 };
 export default Icon;

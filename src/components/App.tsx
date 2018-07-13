@@ -8,8 +8,10 @@ import IView from '@typings/IView';
 import * as React from 'react';
 import styled from 'styled-components';
 import theme from '@constants/theme';
+import Icon from '@icons/index';
+import { IProject } from '@pages/Projects';
 
-const projects = [
+const projects: IProject[] = [
     {
         name: 'Yet Another To-Do List',
         technologies: [
@@ -24,8 +26,20 @@ const projects = [
         description:
             'Todo list app created with TypeScript. Postgre and Node backend with CRUD routes. Frontend based on React Redux store. ',
         links: new Map([
-            ['Source code', 'https://github.com/WalenPiotr/YetAnotherToDoApp'],
-            ['Demo page', 'https://todos-typescript.herokuapp.com/'],
+            [
+                'Source code',
+                {
+                    url: 'https://github.com/WalenPiotr/YetAnotherToDoApp',
+                    icon: <Icon.technology.filecode theme={theme} />,
+                },
+            ],
+            [
+                'Demo page',
+                {
+                    url: 'https://todos-typescript.herokuapp.com/',
+                    icon: <Icon.other.desktop theme={theme} />,
+                },
+            ],
         ]),
     },
     {
@@ -41,7 +55,13 @@ const projects = [
         description:
             'Automatic point counting system for Scrabble game. Application detects game board and tiles with letter, using OpenCV image processing library, then classifies each tile with two convolutional neural networks built in Keras, and finally counts points for each player turn.',
         links: new Map([
-            ['Source code', 'https://github.com/WalenPiotr/Scrabble-Detector'],
+            [
+                'Source code',
+                {
+                    url: 'https://github.com/WalenPiotr/Scrabble-Detector',
+                    icon: <Icon.technology.filecode theme={theme} />,
+                },
+            ],
         ]),
     },
     {
@@ -50,8 +70,20 @@ const projects = [
         description:
             'Car review application with server side rendering, user authentication and authorization.',
         links: new Map([
-            ['Source code', 'https://github.com/WalenPiotr/Rate-Car'],
-            ['Demo page', 'https://rate-car.herokuapp.com/'],
+            [
+                'Source code',
+                {
+                    url: 'https://github.com/WalenPiotr/Rate-Car',
+                    icon: <Icon.technology.filecode theme={theme} />,
+                },
+            ],
+            [
+                'Demo page',
+                {
+                    url: 'https://rate-car.herokuapp.com/',
+                    icon: <Icon.other.desktop theme={theme} />,
+                },
+            ],
         ]),
     },
 ];

@@ -25,7 +25,6 @@ const Navigation = ({
         font-family: 'Roboto Condensed';
         color: ${theme.fontPrimaryColor};
         border: none;
-        background-color: rgba(0, 0, 0, 0);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -35,12 +34,17 @@ const Navigation = ({
         }
         &:hover {
             color: ${theme.fontHighlightColor};
+            background-color: ${({ current }: { current: boolean }) =>
+                current ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)'};
         }
-        &:hover ${Line} {
-            border-bottom: 1px solid ${theme.fontHighlightColor};
-        }
+        background-color: ${({ current }: { current: boolean }) =>
+            current ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.0)'};
         margin-left: 1vh;
+        padding-left: 1vh;
+        padding-right: 1vh;
         font-size: 2.5vh;
+        height: 4vh;
+        border-radius: 2vh;
     `;
 
     const NavigationBox = styled.div`
@@ -51,8 +55,11 @@ const Navigation = ({
         margin-bottom: 1.5vh;
     `;
     const titles = projects.map((project, index) => (
-        <Button key={project.name} onClick={handleClick(index)}>
-            <Line key={project.name} current={current === index} />
+        <Button
+            key={project.name}
+            onClick={handleClick(index)}
+            current={current === index}
+        >
             {project.name}
         </Button>
     ));

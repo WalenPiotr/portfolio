@@ -10,7 +10,7 @@ export interface IProject {
     name: string;
     technologies: string[];
     description: string;
-    links: Map<string, string>;
+    links: Map<string, { url: string; icon: JSX.Element }>;
 }
 
 interface ProjectsState {
@@ -90,19 +90,6 @@ class Projects extends React.Component<ProjectsProps, any> {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 60vh;
-            ${media.sm`
-                height: 55vh;
-            `};
-            ${media.md`
-                height: 50vh;
-            `};
-            ${media.lg`
-                height: 45vh;
-            `};
-            ${media.xl`
-                height: 40vh;
-            `};
         `;
 
         const Arrow = styled.div`
@@ -141,8 +128,6 @@ class Projects extends React.Component<ProjectsProps, any> {
         `;
 
         const PaneWrapper = styled.div`
-            border-top: 1px solid ${theme.fontPrimaryColor};
-            border-bottom: 1px solid ${theme.fontPrimaryColor};
             height: 100%;
             display: flex;
             justify-content: center;
