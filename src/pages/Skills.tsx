@@ -48,7 +48,7 @@ const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {
         align-items: center;
         height: 100%;
         width: 2.5vh;
-        margin-right: 0.5vh;
+        margin-right: 1vh;
     `;
 
     const ItemBox = styled.div`

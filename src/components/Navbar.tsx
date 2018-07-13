@@ -9,18 +9,17 @@ import Icon from '@icons/index';
 const Box = styled.div`
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
     flex-direction: column;
     z-index: 10;
-    transition: height 0.5s linear;
     background-color: ${theme.navbarColor};
     ${media.md`
         flex-direction: row;
-        padding-left: 20px;
+        padding-left: 2vh;
     `};
-    border-bottom: 1px solid ${theme.fontPrimaryColor};
+    /* border-bottom: 1px solid ${theme.fontPrimaryColor}; */
 `;
 
 const Line = styled.div`
@@ -62,11 +61,12 @@ const Button = styled.button`
         width: auto;
         font-size:2.5vh;
         height: 4vh;
+        margin-right:0;
     `};
     border-radius: 2vh;
     padding-left: 1vh;
     padding-right: 1vh;
-    margin-left: 1vh;
+    margin-left: 1.5vh;
     margin-top: 1vh;
     margin-bottom: 1vh;
 `;

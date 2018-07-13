@@ -11,7 +11,8 @@ const Box = styled.div`
     flex-direction: column;
     flex-grow: 1;
     flex-basis: 100%;
-    width: 100vw;
+    margin-right: 8vw;
+    margin-left: 8vw;
 `;
 
 const Title = styled.div`
