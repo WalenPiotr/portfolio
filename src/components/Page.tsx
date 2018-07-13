@@ -12,18 +12,23 @@ const Box = styled.div`
     background-color: rgba(0, 0, 0, 0);
     background-color: ${theme.backgroundColor};
     border-bottom: 1px solid ${theme.fontPrimaryColor};
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 `;
 
 const ComponentWrapper = styled.div`
-    padding-top: 7vh;
-    width: 100%;
-    height: 86vh;
+    padding-top: ${dimensions.navbar.height};
+    width: 100vw;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
 `;
 const ButtonWrapper = styled.div`
-    width: 100%;
-    height: 7vh;
+    width: 100vw;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;

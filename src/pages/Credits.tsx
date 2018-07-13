@@ -31,9 +31,7 @@ const Main = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
-
     font-size: 3.5vh;
-    margin-top: 1vh;
 `;
 
 const Subtitle = styled.div`
@@ -78,7 +76,7 @@ const Spacer = styled.div`
 
 const SmallBox = styled.div`
     border-radius: 2vh;
-    padding: 1.5vh;
+    padding: 2vh;
     background-color: rgba(255, 255, 255, 0.15);
 `;
 const Mail = styled.a`

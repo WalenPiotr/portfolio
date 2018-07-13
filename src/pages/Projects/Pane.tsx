@@ -39,18 +39,18 @@ const PaneBox = styled.div`
     width: 30vw;
 `};
 
-    height: 60vh;
-    ${media.sm`
     height: 55vh;
-`};
-    ${media.md`
+    ${media.sm`
     height: 50vh;
 `};
-    ${media.lg`
+    ${media.md`
     height: 45vh;
 `};
-    ${media.xl`
+    ${media.lg`
     height: 40vh;
+`};
+    ${media.xl`
+    height: 35vh;
 `};
 
     border-radius: 2vh;
