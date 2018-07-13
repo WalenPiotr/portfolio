@@ -1,7 +1,6 @@
 import * as React from 'react';
-import IIcon from '@typings/IIcon';
 
-const linkedin = ({ theme }: IIcon) => (
+const linkedin = () => (
     <svg
         aria-hidden="true"
         data-prefix="fab"

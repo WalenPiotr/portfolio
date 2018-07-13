@@ -116,7 +116,7 @@ const Credits = () => (
             <Main>
                 Created with
                 <TitleIconWrapper>
-                    <Icon.other.love theme={theme} />
+                    <Icon.other.love />
                 </TitleIconWrapper>
                 by Piotr Waleń
             </Main>
@@ -137,19 +137,19 @@ const Credits = () => (
                 <Technology>
                     React
                     <IconWrapper>
-                        <Icon.technology.react theme={theme} />
+                        <Icon.technology.react />
                     </IconWrapper>
                 </Technology>
                 <Technology>
                     Redux
                     <IconWrapper>
-                        <Icon.technology.redux theme={theme} />
+                        <Icon.technology.redux />
                     </IconWrapper>
                 </Technology>
                 <Technology>
                     Typescript
                     <IconWrapper>
-                        <Icon.technology.ts theme={theme} />
+                        <Icon.technology.ts />
                     </IconWrapper>
                 </Technology>
             </Subtitle>

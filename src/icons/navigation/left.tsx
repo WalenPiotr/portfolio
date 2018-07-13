@@ -1,7 +1,6 @@
 import * as React from 'react';
-import IIcon from '@typings/IIcon';
 
-const left = ({ theme }: IIcon) => (
+const left = () => (
     <svg
         aria-hidden="true"
         data-prefix="fas"

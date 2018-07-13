@@ -1,7 +1,6 @@
 import * as React from 'react';
-import IIcon from '@typings/IIcon';
 
-const dekstop = ({ theme }: IIcon) => (
+const dekstop = () => (
     <svg
         aria-hidden="true"
         data-prefix="fas"

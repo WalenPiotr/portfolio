@@ -1,12 +1,8 @@
 import * as React from 'react';
-import IIcon from '@typings/IIcon';
+import theme from '@styled-components/theme';
 
-const mongo = ({ theme}: IIcon) => (
-    <svg
-        viewBox="0 0 250 250"
-        height="100%"
-        width="100%"
-    >
+const mongo = () => (
+    <svg viewBox="0 0 250 250" height="100%" width="100%">
         <g>
             <path
                 fill={theme.fontPrimaryColor}

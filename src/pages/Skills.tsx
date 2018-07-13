@@ -81,70 +81,31 @@ const Skills = () => (
         <ListWrapper>
             <List>
                 <SkillGroup>Front-End</SkillGroup>
-                <Item
-                    icon={<Icon.technology.html theme={theme} />}
-                    skill="HTML"
-                />
-                <Item
-                    icon={<Icon.technology.css theme={theme} />}
-                    skill="CSS"
-                />
-                <Item
-                    icon={<Icon.technology.js theme={theme} />}
-                    skill="JS (ES2017)"
-                />
-                <Item
-                    icon={<Icon.technology.ts theme={theme} />}
-                    skill="Typescript"
-                />
-                <Item
-                    icon={<Icon.technology.react theme={theme} />}
-                    skill="React"
-                />
-                <Item
-                    icon={<Icon.technology.redux theme={theme} />}
-                    skill="Redux"
-                />
-                <Item
-                    icon={<Icon.technology.webpack theme={theme} />}
-                    skill="Webpack"
-                />
+                <Item icon={<Icon.technology.html />} skill="HTML" />
+                <Item icon={<Icon.technology.css />} skill="CSS" />
+                <Item icon={<Icon.technology.js />} skill="JS (ES2017)" />
+                <Item icon={<Icon.technology.ts />} skill="Typescript" />
+                <Item icon={<Icon.technology.react />} skill="React" />
+                <Item icon={<Icon.technology.redux />} skill="Redux" />
+                <Item icon={<Icon.technology.webpack />} skill="Webpack" />
             </List>
             <List>
                 <SkillGroup>Back-End</SkillGroup>
-                <Item
-                    icon={<Icon.technology.nodejs theme={theme} />}
-                    skill="NodeJS"
-                />
-                <Item
-                    icon={<Icon.technology.filecode theme={theme} />}
-                    skill="Express"
-                />
-                <Item
-                    icon={<Icon.technology.mongo theme={theme} />}
-                    skill="MongoDB"
-                />
-                <Item
-                    icon={<Icon.technology.postgre theme={theme} />}
-                    skill="PostgreSQL"
-                />
+                <Item icon={<Icon.technology.nodejs />} skill="NodeJS" />
+                <Item icon={<Icon.technology.filecode />} skill="Express" />
+                <Item icon={<Icon.technology.mongo />} skill="MongoDB" />
+                <Item icon={<Icon.technology.postgre />} skill="PostgreSQL" />
             </List>
             <List>
                 <SkillGroup>Other</SkillGroup>
+                <Item icon={<Icon.technology.linux />} skill="Linux" />
+                <Item icon={<Icon.technology.git />} skill="Git" />
                 <Item
-                    icon={<Icon.technology.linux theme={theme} />}
-                    skill="Linux"
-                />
-                <Item
-                    icon={<Icon.technology.git theme={theme} />}
-                    skill="Git"
-                />
-                <Item
-                    icon={<Icon.technology.filecode theme={theme} />}
+                    icon={<Icon.technology.filecode />}
                     skill="Keras, Tensorflow (Python)"
                 />
                 <Item
-                    icon={<Icon.technology.filecode theme={theme} />}
+                    icon={<Icon.technology.filecode />}
                     skill="OpenCV (Python, Java for Android)"
                 />
             </List>

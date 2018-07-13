@@ -134,7 +134,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
         return (
             <Box>
                 <BarIcon onClick={this.collapseClick}>
-                    <Icon.other.bars theme={theme} />
+                    <Icon.other.bars/>
                 </BarIcon>
                 {Links}
             </Box>

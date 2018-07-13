@@ -1,7 +1,6 @@
 import * as React from 'react';
-import IIcon from '@typings/IIcon';
 
-const nodejs = ({ theme }: IIcon) => (
+const nodejs = () => (
     //Licence: https://fontawesome.com/licenses
     <svg
         aria-hidden="true"

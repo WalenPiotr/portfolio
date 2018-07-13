@@ -92,14 +92,14 @@ const Page = ({
                     {last ? (
                         <ButtonGroup>
                             <IconWrapper>
-                                <Icon.navigation.up theme={theme} />
+                                <Icon.navigation.up  />
                             </IconWrapper>
                             <TextWrapper>Back to top</TextWrapper>
                         </ButtonGroup>
                     ) : (
                         <ButtonGroup>
                             <IconWrapper>
-                                <Icon.navigation.down theme={theme} />
+                                <Icon.navigation.down  />
                             </IconWrapper>
                             <TextWrapper>Next</TextWrapper>
                         </ButtonGroup>

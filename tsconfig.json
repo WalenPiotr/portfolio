@@ -16,6 +16,7 @@
             "@constants/*": ["src/constants/*"],
             "@reducers/*": ["src/reducers/*"],
             "@actions/*": ["src/actions/*"],
+            "@styled-components/*": ["src/styled-components/*"],
             "@icons/*": ["src/icons/*"]
         },
         "downlevelIteration": true

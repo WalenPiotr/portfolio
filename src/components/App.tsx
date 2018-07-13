@@ -30,14 +30,14 @@ const projects: IProject[] = [
                 'Source code',
                 {
                     url: 'https://github.com/WalenPiotr/YetAnotherToDoApp',
-                    icon: <Icon.technology.filecode theme={theme} />,
+                    icon: <Icon.technology.filecode />,
                 },
             ],
             [
                 'Demo page',
                 {
                     url: 'https://todos-typescript.herokuapp.com/',
-                    icon: <Icon.other.desktop theme={theme} />,
+                    icon: <Icon.other.desktop />,
                 },
             ],
         ]),
@@ -59,7 +59,7 @@ const projects: IProject[] = [
                 'Source code',
                 {
                     url: 'https://github.com/WalenPiotr/Scrabble-Detector',
-                    icon: <Icon.technology.filecode theme={theme} />,
+                    icon: <Icon.technology.filecode />,
                 },
             ],
         ]),
@@ -74,14 +74,14 @@ const projects: IProject[] = [
                 'Source code',
                 {
                     url: 'https://github.com/WalenPiotr/Rate-Car',
-                    icon: <Icon.technology.filecode theme={theme} />,
+                    icon: <Icon.technology.filecode />,
                 },
             ],
             [
                 'Demo page',
                 {
                     url: 'https://rate-car.herokuapp.com/',
-                    icon: <Icon.other.desktop theme={theme} />,
+                    icon: <Icon.other.desktop />,
                 },
             ],
         ]),

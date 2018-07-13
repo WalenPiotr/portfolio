@@ -1,7 +1,7 @@
 import * as React from 'react';
-import IIcon from '@typings/IIcon';
+import theme from '@styled-components/theme';
 
-const ts = ({ theme }: IIcon) => (
+const ts = () => (
     //Copyright (c) 2015 Remo H. Jansen <remo.jansen@wolksoftware.com>
     <svg
         xmlns="http://www.w3.org/2000/svg"

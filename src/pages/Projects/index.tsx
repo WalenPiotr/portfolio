@@ -146,7 +146,7 @@ class Projects extends React.Component<ProjectsProps, any> {
                     <ArrowButton onClick={this.handlePrevious}>
                         <Arrow>
                             <IconWrapper>
-                                <Icon.navigation.left theme={theme} />
+                                <Icon.navigation.left />
                             </IconWrapper>
 
                             <Text>prev</Text>
@@ -156,7 +156,7 @@ class Projects extends React.Component<ProjectsProps, any> {
                     <ArrowButton onClick={this.handleNext}>
                         <Arrow>
                             <IconWrapper>
-                                <Icon.navigation.right theme={theme} />
+                                <Icon.navigation.right />
                             </IconWrapper>
                             <Text>next</Text>
                         </Arrow>

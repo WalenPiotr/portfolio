@@ -1,7 +1,6 @@
 import * as React from 'react';
-import IIcon from '@typings/IIcon';
 
-const react = ({ theme }: IIcon) => (
+const react = () => (
     //Licence: https://fontawesome.com/licenses
     <svg
         aria-hidden="true"

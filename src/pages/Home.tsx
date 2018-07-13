@@ -1,6 +1,5 @@
-import theme from '@constants/theme';
 import * as React from 'react';
-import styled from 'styled-components';
+import styled from '@styled-components/index';
 import media from '@constants/media';
 import Icon from '@icons/index';
 
@@ -9,7 +8,7 @@ const Box = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: ${theme.backgroundColor};
+    background-color: ${({ theme }) => theme.backgroundColor};
     width: 100vw;
 `;
 
@@ -34,7 +33,7 @@ const SymbolWrapper = styled.a`
     align-items: center;
     font-size: 2vh;
     margin-top: 3vh;
-    color: ${theme.fontPrimaryColor};
+    color: ${({ theme }) => theme.fontPrimaryColor};
     text-decoration: none;
 `;
 
@@ -52,19 +51,19 @@ const Home = () => (
         <IconsBox>
             <SymbolWrapper href="https://github.com/WalenPiotr">
                 <IconWrapper>
-                    <Icon.brand.github theme={theme} />
+                    <Icon.brand.github />
                 </IconWrapper>
                 Github
             </SymbolWrapper>
             <SymbolWrapper href="https://www.linkedin.com/in/piotr-walen">
                 <IconWrapper>
-                    <Icon.brand.linkedin theme={theme} />
+                    <Icon.brand.linkedin />
                 </IconWrapper>
                 LinkedIn
             </SymbolWrapper>
             <SymbolWrapper href="mailto:walen.piotr@gmail.com">
                 <IconWrapper>
-                    <Icon.other.mail theme={theme} />
+                    <Icon.other.mail />
                 </IconWrapper>
                 Mail
             </SymbolWrapper>
