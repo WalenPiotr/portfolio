@@ -64,7 +64,7 @@ const IconWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    margin: 1vh;
+    margin-left: 0.5vh;
     width: 3vh;
     height: 3vh;
 `;
@@ -92,8 +92,20 @@ const Technology = styled.div`
     border-radius: 2vh;
     padding: 0.5vh;
     padding-left: 1.5vh;
-    padding-right: 1.5vh;
+    padding-right: 1vh;
     margin-left: 1vh;
+`;
+
+const TitleIconWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 1vh;
+    margin-right: 1vh;
+
+    width: 3vh;
+    height: 3vh;
 `;
 
 const Credits = () => (
@@ -103,9 +115,9 @@ const Credits = () => (
         <SmallBox>
             <Main>
                 Created with
-                <IconWrapper>
+                <TitleIconWrapper>
                     <Icon.other.love theme={theme} />
-                </IconWrapper>
+                </TitleIconWrapper>
                 by Piotr Waleń
             </Main>
             <Spacer />
