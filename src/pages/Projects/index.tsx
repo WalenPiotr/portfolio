@@ -1,6 +1,5 @@
 import * as React from 'react';
-import styled, { keyframes } from 'styled-components';
-import theme from '@constants/theme';
+import styled, { keyframes } from '@styled-components/index';
 import Icon from '@icons/index';
 import media from '@constants/media';
 import Navigation from './Navigation';
@@ -12,7 +11,7 @@ const Box = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: ${theme.backgroundColor};
+    background-color: ${props => props.theme.backgroundColor};
     width: 100vw;
 `;
 
@@ -40,7 +39,7 @@ const ArrowButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
     border: none;
     background-color: rgba(0, 0, 0, 0);
     height: 100%;
@@ -49,7 +48,7 @@ const ArrowButton = styled.button`
         outline: none;
     }
     &:hover {
-        color: ${theme.fontHighlightColor};
+        color: ${props => props.theme.fontHighlightColor};
     }
 `;
 

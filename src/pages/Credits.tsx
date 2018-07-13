@@ -1,6 +1,5 @@
 import * as React from 'react';
-import styled, { keyframes } from 'styled-components';
-import theme from '@constants/theme';
+import styled, { keyframes } from '@styled-components/index';
 import Icon from '@icons/index';
 import media from '@constants/media';
 
@@ -80,7 +79,7 @@ const SmallBox = styled.div`
     background-color: rgba(255, 255, 255, 0.15);
 `;
 const Mail = styled.a`
-    color: ${theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
 `;
 
 const Technology = styled.div`

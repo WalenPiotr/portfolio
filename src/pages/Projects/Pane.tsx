@@ -1,6 +1,5 @@
 import * as React from 'react';
-import styled, { keyframes } from 'styled-components';
-import theme from '@constants/theme';
+import styled, { keyframes } from '@styled-components/index';
 import media from '@constants/media';
 
 const coolBoxKeyframes = keyframes`
@@ -82,12 +81,12 @@ const UrlBox = styled.a`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: ${theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
     text-decoration: none;
     font-size: 2vh;
-    color: ${theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
     &:hover {
-        color: ${theme.fontHighlightColor};
+        color: ${props => props.theme.fontHighlightColor};
     }
 `;
 

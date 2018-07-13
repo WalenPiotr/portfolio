@@ -1,16 +1,15 @@
 import Icon from '@icons/index';
 import media from '@constants/media';
-import theme from '@constants/theme';
 import * as React from 'react';
-import styled from 'styled-components';
+import styled from '@styled-components/index';
 
 const Box = styled.div`
-    color: ${theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: ${theme.backgroundColor};
+    background-color: ${props => props.theme.backgroundColor};
     width: 100vw;
 `;
 

@@ -1,19 +1,18 @@
 import * as React from 'react';
-import styled, { keyframes } from 'styled-components';
-import theme from '@constants/theme';
+import styled, { keyframes } from '@styled-components/index';
 import { IProject } from './index';
 
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
     transition: width 0.2s linear;
     height: 1px;
-    border-bottom: 1px solid ${theme.fontPrimaryColor};
+    border-bottom: 1px solid ${props => props.theme.fontPrimaryColor};
     margin-bottom: 2px;
 `;
 
 const Button = styled.button`
     font-family: 'Roboto Condensed';
-    color: ${theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
     border: none;
     display: flex;
     flex-direction: column;
@@ -23,7 +22,7 @@ const Button = styled.button`
         outline: none;
     }
     &:hover {
-        color: ${theme.fontHighlightColor};
+        color: ${props => props.theme.fontHighlightColor};
         background-color: ${({ current }: { current: boolean }) =>
             current ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)'};
     }
