@@ -39,18 +39,18 @@ const PaneBox = styled.div`
     width: 30vw;
 `};
 
-    height: 55vh;
+    height: 56vh;
     ${media.sm`
-    height: 50vh;
+    height: 52vh;
 `};
     ${media.md`
-    height: 45vh;
+    height: 48vh;
 `};
     ${media.lg`
-    height: 40vh;
+    height: 44vh;
 `};
     ${media.xl`
-    height: 35vh;
+    height: 40vh;
 `};
 
     border-radius: 2vh;
@@ -96,6 +96,7 @@ const IconBox = styled.div`
     height: 5vh;
 `;
 const IconsBox = styled.div`
+    margin-top: 2vh;
     display: flex;
     justify-content: space-around;
     background-color: rgba(0, 0, 0, 0);
@@ -140,13 +141,13 @@ const Pane = ({
         <PaneBox>
             <Title>{name}</Title>
             <Description>{description}</Description>
+            <Filler />
             <Subtitile>Technologies</Subtitile>
             <TechList>
                 {technologies.map((tech, index) => (
                     <TechWrapper key={tech}>{tech}</TechWrapper>
                 ))}
             </TechList>
-            <Filler />
             <IconsBox>
                 {Array.from(links.entries()).map(
                     ([name, object]: [
