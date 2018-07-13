@@ -33,7 +33,7 @@ const SymbolWrapper = styled.a`
     align-items: center;
     font-size: 2vh;
     margin-top: 3vh;
-    color: ${({ theme }) => theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
     text-decoration: none;
 `;
 
