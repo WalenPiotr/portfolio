@@ -1,5 +1,4 @@
 import { dimensions } from '@constants/dimensions';
-import theme from '@constants/theme';
 import * as React from 'react';
 import styled from 'styled-components';
 import Icon from '@icons/index';
@@ -10,8 +9,8 @@ interface IBox {
 
 const Box = styled.div`
     background-color: rgba(0, 0, 0, 0);
-    background-color: ${theme.backgroundColor};
-    border-bottom: 1px solid ${theme.fontPrimaryColor};
+    background-color: ${props => props.theme.backgroundColor};
+    border-bottom: 1px solid ${props => props.theme.fontPrimaryColor};
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -38,14 +37,14 @@ const Button = styled.button`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
-    color: ${theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
     border: none;
     z-index: 9;
     &:focus {
         outline: none;
     }
     &:hover {
-        color: ${theme.fontHighlightColor};
+        color: ${props => props.theme.fontHighlightColor};
     }
 `;
 

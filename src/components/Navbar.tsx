@@ -1,5 +1,4 @@
 import { dimensions } from '@constants/dimensions';
-import theme from '@constants/theme';
 import IView from '@typings/IView';
 import * as React from 'react';
 import styled from 'styled-components';
@@ -14,18 +13,17 @@ const Box = styled.div`
     align-items: center;
     flex-direction: column;
     z-index: 10;
-    background-color: ${theme.navbarColor};
+    background-color: ${props => props.theme.navbarColor};
     ${media.md`
         flex-direction: row;
         padding-left: 2vh;
     `};
-    /* border-bottom: 1px solid ${theme.fontPrimaryColor}; */
 `;
 
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
     transition: width 0.1s linear;
-    border-bottom: 1px solid ${theme.fontPrimaryColor};
+    border-bottom: 1px solid ${props => props.theme.fontPrimaryColor};
 `;
 
 interface ButtonProps {
@@ -42,7 +40,7 @@ const Button = styled.button`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: ${theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
     border: none;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0);
@@ -50,7 +48,7 @@ const Button = styled.button`
         outline: none;
     }
     &:hover {
-        color: ${theme.fontHighlightColor};
+        color: ${props => props.theme.fontHighlightColor};
         background-color: ${({ current }: ButtonProps) =>
             current ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)'};
     }
@@ -78,7 +76,7 @@ const BarIcon = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
     background-color: rgba(0, 0, 0, 0);
     border: none;
     width: 100vw;
@@ -134,7 +132,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
         return (
             <Box>
                 <BarIcon onClick={this.collapseClick}>
-                    <Icon.other.bars/>
+                    <Icon.other.bars />
                 </BarIcon>
                 {Links}
             </Box>
