@@ -1,5 +1,5 @@
 import Icon from '@icons/index';
-import media from '@constants/media';
+import media from '@styled-components/media';
 import * as React from 'react';
 import styled from '@styled-components/index';
 

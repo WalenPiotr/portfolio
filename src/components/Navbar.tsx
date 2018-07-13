@@ -1,8 +1,8 @@
-import { dimensions } from '@constants/dimensions';
+import { dimensions } from '@styled-components/dimensions';
 import IView from '@typings/IView';
 import * as React from 'react';
 import styled from 'styled-components';
-import media from '@constants/media';
+import media from '@styled-components/media';
 import Icon from '@icons/index';
 
 const Box = styled.div`

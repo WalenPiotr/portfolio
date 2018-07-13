@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styled, { keyframes } from '@styled-components/index';
 import Icon from '@icons/index';
-import media from '@constants/media';
+import styled, { keyframes } from '@styled-components/index';
+import media from '@styled-components/media';
 import Navigation from './Navigation';
 import Pane from './Pane';
 

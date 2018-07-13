@@ -1,8 +1,8 @@
-import { dimensions } from '@constants/dimensions';
 import * as React from 'react';
-import styled from 'styled-components';
 import Icon from '@icons/index';
-import media from '@constants/media';
+import { dimensions } from '@styled-components/dimensions';
+import styled from '@styled-components/index';
+import media from '@styled-components/media';
 interface IBox {
     label: string;
 }
@@ -91,14 +91,14 @@ const Page = ({
                     {last ? (
                         <ButtonGroup>
                             <IconWrapper>
-                                <Icon.navigation.up  />
+                                <Icon.navigation.up />
                             </IconWrapper>
                             <TextWrapper>Back to top</TextWrapper>
                         </ButtonGroup>
                     ) : (
                         <ButtonGroup>
                             <IconWrapper>
-                                <Icon.navigation.down  />
+                                <Icon.navigation.down />
                             </IconWrapper>
                             <TextWrapper>Next</TextWrapper>
                         </ButtonGroup>

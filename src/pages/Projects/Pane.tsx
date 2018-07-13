@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled, { keyframes } from '@styled-components/index';
-import media from '@constants/media';
+import media from '@styled-components/media';
 
 const coolBoxKeyframes = keyframes`
 0% {
