@@ -9,10 +9,22 @@ const Box = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     background-color: ${props => props.theme.backgroundColor};
     width: 100vw;
+    height: 66vh;
+    ${media.sm`
+    height: 62vh;
+`};
+    ${media.md`
+    height: 58vh;
+`};
+    ${media.lg`
+    height: 54vh;
+`};
+    ${media.xl`
+    height: 50vh;
+`};
 `;
 
 const Title = styled.span`

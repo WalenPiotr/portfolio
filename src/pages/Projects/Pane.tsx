@@ -37,20 +37,7 @@ const PaneBox = styled.div`
     ${media.xl`
     width: 30vw;
 `};
-
-    height: 56vh;
-    ${media.sm`
-    height: 52vh;
-`};
-    ${media.md`
-    height: 48vh;
-`};
-    ${media.lg`
-    height: 44vh;
-`};
-    ${media.xl`
-    height: 40vh;
-`};
+    flex: 1 0 auto;
 `;
 
 const Title = styled.div`
@@ -99,7 +86,7 @@ const IconsBox = styled.div`
 `;
 
 const Filler = styled.div`
-    flex-grow: 1;
+    flex: 1 0 auto;
 `;
 
 const TechList = styled.div`

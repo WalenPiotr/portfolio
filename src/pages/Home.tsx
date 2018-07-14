@@ -34,6 +34,9 @@ const SymbolWrapper = styled.a`
     font-size: 2vh;
     margin-top: 3vh;
     color: ${props => props.theme.fontPrimaryColor};
+    &:hover {
+        color: ${props => props.theme.fontHighlightColor};
+    }
     text-decoration: none;
 `;
 
