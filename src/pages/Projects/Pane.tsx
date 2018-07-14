@@ -51,9 +51,6 @@ const PaneBox = styled.div`
     ${media.xl`
     height: 40vh;
 `};
-
-    border-radius: 2vh;
-    background-color: rgba(255, 255, 255, 0.15);
 `;
 
 const Title = styled.div`

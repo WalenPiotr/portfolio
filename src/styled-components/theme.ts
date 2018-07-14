@@ -12,7 +12,7 @@ const theme = {
     backgroundColor: 'rgba(0, 0, 0, 0.0)',
     navbarColor: 'rgb(20, 20, 20)',
     buttonColor: 'rgba(0, 0, 0, 0.0)',
-    paneColor: 'rgb(40, 40, 40)',
+    paneColor: 'rgb(255, 255, 255, 0.15)',
 };
 
 export default theme;

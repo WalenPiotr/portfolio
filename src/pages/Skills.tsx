@@ -36,8 +36,6 @@ const List = styled.ul`
     margin-left: 1vw;
     margin-right: 1vw;
     padding: 1.5vh;
-    border-radius: 2vh;
-    background-color: rgba(255, 255, 255, 0.15);
 `;
 
 const Item = ({ icon, skill }: { icon: JSX.Element; skill: string }) => {

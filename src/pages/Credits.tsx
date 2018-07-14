@@ -31,6 +31,8 @@ const Main = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     font-size: 3.5vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 `;
 
 const Subtitle = styled.div`
@@ -42,16 +44,18 @@ const Subtitle = styled.div`
 
     font-size: 2.5vh;
     margin-top: 1vh;
+    margin-bottom: 1vh;
 `;
 
 const Credit = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     text-align: center;
     font-size: 2vh;
     margin-top: 1vh;
+    margin-bottom: 1vh;
 `;
 
 interface IIconWrapper {
@@ -62,10 +66,9 @@ const IconWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin-left: 0.5vh;
-    width: 3vh;
-    height: 3vh;
+    width: 2vh;
+    height: 2vh;
 `;
 
 const Spacer = styled.div`
@@ -73,11 +76,8 @@ const Spacer = styled.div`
     width: 100%;
 `;
 
-const SmallBox = styled.div`
-    border-radius: 2vh;
-    padding: 2vh;
-    background-color: rgba(255, 255, 255, 0.15);
-`;
+const SmallBox = styled.div``;
+
 const Mail = styled.a`
     color: ${props => props.theme.fontPrimaryColor};
 `;
@@ -86,25 +86,30 @@ const Technology = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    height: 4vh;
-    border-radius: 2vh;
-    padding: 0.5vh;
+    height: 3vh;
+    border-radius: 1.5vh;
     padding-left: 1.5vh;
     padding-right: 1vh;
     margin-left: 1vh;
+    background-color: ${props => props.theme.paneColor};
 `;
 
 const TitleIconWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin-left: 1vh;
     margin-right: 1vh;
-
     width: 3vh;
     height: 3vh;
+`;
+
+const LinkIcon = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4vh;
+    height: 4vh;
 `;
 
 const Link = styled.a`
@@ -113,15 +118,16 @@ const Link = styled.a`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     flex-grow: 0;
     &:hover {
         color: ${props => props.theme.fontHighlightColor};
     }
 `;
+
 const Credits = () => (
     <Box>
         <Title>Credits</Title>
-        <Spacer />
         <SmallBox>
             <Main>
                 Created with
@@ -131,32 +137,17 @@ const Credits = () => (
                 by Piotr Waleń
             </Main>
             <Spacer />
-
-            <Subtitle>
-                <span>{`Feel free to contact me at: `} </span>
-            </Subtitle>
-            <Subtitle>
-                <Technology>
-                    <Mail href="mailto:walen.piotr@gmail.com">{`walen.piotr@gmail.com`}</Mail>
-                </Technology>
-            </Subtitle>
-            <Spacer />
-
             <Subtitle>Source code of this page:</Subtitle>
-            <Subtitle>
-                <Technology>
-                    <Link href="https://github.com/WalenPiotr/portfolio">
-                        Source code
-                        <IconWrapper>
-                            <Icon.technology.filecode />
-                        </IconWrapper>
-                    </Link>
-                </Technology>
-            </Subtitle>
-            <Spacer />
-
+            <Credit>
+                <Link href="https://github.com/WalenPiotr/portfolio">
+                    <LinkIcon>
+                        <Icon.technology.filecode />
+                    </LinkIcon>
+                    Source code
+                </Link>
+            </Credit>
             <Subtitle>Page powered by:</Subtitle>
-            <Subtitle>
+            <Credit>
                 <Technology>
                     React
                     <IconWrapper>
@@ -175,7 +166,7 @@ const Credits = () => (
                         <Icon.technology.ts />
                     </IconWrapper>
                 </Technology>
-            </Subtitle>
+            </Credit>
             <Spacer />
             <Credit>Technology icons are owned by adequate companies</Credit>
             <Credit>

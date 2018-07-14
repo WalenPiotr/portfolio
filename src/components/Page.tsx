@@ -9,21 +9,24 @@ interface IBox {
 
 const Box = styled.div`
     background-color: rgba(0, 0, 0, 0);
-    background-color: ${props => props.theme.backgroundColor};
-    border-bottom: 1px solid ${props => props.theme.fontPrimaryColor};
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 `;
-
-const ComponentWrapper = styled.div`
-    padding-top: ${dimensions.navbar.height};
-    width: 100vw;
+const Filler = styled.div`
     flex-grow: 1;
+`;
+const ComponentWrapper = styled.div`
+    margin-top: ${dimensions.navbar.height};
+    width: 100vw;
     display: flex;
     justify-content: center;
+    background-color: ${props => props.theme.paneColor};
+    padding-bottom: 10vh;
+    padding-top: 10vh;
+    clip-path: polygon(0 0, 0 calc(100% - 10vh), 100% 100%, 100% 10vh);
 `;
 const ButtonWrapper = styled.div`
     width: 100vw;
@@ -85,7 +88,9 @@ const Page = ({
 }: IPage) => (
     <div>
         <Box innerRef={innerRef}>
+            <Filler />
             <ComponentWrapper>{innerComponent}</ComponentWrapper>
+            <Filler />
             <ButtonWrapper>
                 <Button onClick={handleClick}>
                     {last ? (
