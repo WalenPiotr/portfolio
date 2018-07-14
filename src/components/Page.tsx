@@ -23,7 +23,8 @@ const ComponentWrapper = styled.div`
     width: 100vw;
     display: flex;
     justify-content: center;
-    background-color: ${props => props.theme.paneColor};
+    background-color: ${(props: { backgroundColor: string }) =>
+        props.backgroundColor};
     padding-bottom: 10vh;
     padding-top: 10vh;
     clip-path: polygon(0 0, 0 calc(100% - 10vh), 100% 100%, 100% 10vh);
@@ -70,6 +71,7 @@ interface IPage {
     last: boolean;
     innerComponent: JSX.Element;
     label: string;
+    backgroundColor: string;
 }
 
 const ButtonGroup = styled.div`
@@ -85,11 +87,14 @@ const Page = ({
     last,
     innerComponent,
     label,
+    backgroundColor,
 }: IPage) => (
     <div>
         <Box innerRef={innerRef}>
             <Filler />
-            <ComponentWrapper>{innerComponent}</ComponentWrapper>
+            <ComponentWrapper backgroundColor={backgroundColor}>
+                {innerComponent}
+            </ComponentWrapper>
             <Filler />
             <ButtonWrapper>
                 <Button onClick={handleClick}>

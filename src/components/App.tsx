@@ -6,9 +6,10 @@ import Projects from '@pages/Projects';
 import Skills from '@pages/Skills';
 import IView from '@typings/IView';
 import * as React from 'react';
-import styled from '@styled-components/index';
 import Icon from '@icons/index';
 import { IProject } from '@pages/Projects';
+import styled from '@styled-components/index';
+import theme from '@styled-components/theme';
 
 const projects: IProject[] = [
     {
@@ -88,18 +89,25 @@ const projects: IProject[] = [
 ];
 
 const views = [
-    { name: 'Home', component: <Home /> },
+    {
+        name: 'Home',
+        component: <Home />,
+        backgroundColor: theme.backgroundColors.Home,
+    },
     {
         name: 'Skills',
         component: <Skills />,
+        backgroundColor: theme.backgroundColors.Skills,
     },
     {
         name: 'Projects',
         component: <Projects projects={projects} />,
+        backgroundColor: theme.backgroundColors.Projects,
     },
     {
         name: 'Credits',
         component: <Credits />,
+        backgroundColor: theme.backgroundColors.Credits,
     },
 ];
 

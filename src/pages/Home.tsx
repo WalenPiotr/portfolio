@@ -8,7 +8,6 @@ const Box = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: ${({ theme }) => theme.backgroundColor};
     width: 100vw;
 `;
 

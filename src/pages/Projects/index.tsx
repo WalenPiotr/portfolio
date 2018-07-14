@@ -10,21 +10,20 @@ const Box = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: ${props => props.theme.backgroundColor};
     width: 100vw;
     height: 66vh;
     ${media.sm`
-    height: 62vh;
-`};
+        height: 62vh;
+    `};
     ${media.md`
-    height: 58vh;
-`};
+        height: 58vh;
+    `};
     ${media.lg`
-    height: 54vh;
-`};
+        height: 54vh;
+    `};
     ${media.xl`
-    height: 50vh;
-`};
+        height: 50vh;
+    `};
 `;
 
 const Title = styled.span`

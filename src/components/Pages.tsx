@@ -20,6 +20,7 @@ const Pages = ({ views, createRef, createHandler }: IPages) => {
                 key={view.name}
                 last={last}
                 innerComponent={view.component}
+                backgroundColor={view.backgroundColor}
             />
         );
     });

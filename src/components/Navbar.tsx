@@ -30,6 +30,7 @@ interface ButtonProps {
     height: string;
     hidden: boolean;
     current: boolean;
+    backgroundColor: string;
 }
 
 const Button = styled.button`
@@ -49,11 +50,11 @@ const Button = styled.button`
     }
     &:hover {
         color: ${props => props.theme.fontHighlightColor};
-        background-color: ${({ current }: ButtonProps) =>
-            current ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)'};
+        background-color: ${({ current, backgroundColor }: ButtonProps) =>
+            current ? backgroundColor : 'rgba(255, 255, 255, 0.1)'};
     }
-    background-color: ${({ current }: ButtonProps) =>
-        current ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.0)'};
+    background-color: ${({ current, backgroundColor }: ButtonProps) =>
+        current ? backgroundColor : 'rgba(0, 0, 0, 0.0)'};
     ${media.md`
         display: flex;
         width: auto;
@@ -124,6 +125,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
                     onClick={this.navigationClick(view)}
                     hidden={this.state.hidden}
                     current={this.props.currentPage === index}
+                    backgroundColor={view.backgroundColor}
                 >
                     <span>{view.name}</span>
                 </Button>
