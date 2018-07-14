@@ -107,6 +107,17 @@ const TitleIconWrapper = styled.div`
     height: 3vh;
 `;
 
+const Link = styled.a`
+    text-decoration: none;
+    color: ${props => props.theme.fontPrimaryColor};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    &:hover {
+        color: ${props => props.theme.fontHighlightColor};
+    }
+`;
 const Credits = () => (
     <Box>
         <Title>Credits</Title>
@@ -127,6 +138,19 @@ const Credits = () => (
             <Subtitle>
                 <Technology>
                     <Mail href="mailto:walen.piotr@gmail.com">{`walen.piotr@gmail.com`}</Mail>
+                </Technology>
+            </Subtitle>
+            <Spacer />
+
+            <Subtitle>Source code of this page:</Subtitle>
+            <Subtitle>
+                <Technology>
+                    <Link href="https://github.com/WalenPiotr/portfolio">
+                        Source code
+                        <IconWrapper>
+                            <Icon.technology.filecode />
+                        </IconWrapper>
+                    </Link>
                 </Technology>
             </Subtitle>
             <Spacer />
