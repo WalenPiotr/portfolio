@@ -67,7 +67,7 @@ const projects: IProject[] = [
         name: 'Rate Car',
         technologies: ['NodeJS', 'Express', 'MongoDB', 'EJS Templates'],
         description:
-            'Car review application with server side rendering, user authentication and authorization.',
+            'Car review application with server side rendering, user roles, authentication and authorization. You can preview demo page by login as user: admin, password: 12345',
         links: new Map([
             [
                 'Source code',
