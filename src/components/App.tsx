@@ -171,7 +171,6 @@ const Background = styled.div`
     z-index: -1;
     width: 100vw;
     height: 100vh;
-    background-color: ${props => props.theme.paralaxColor};
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
         url('https://images.pexels.com/photos/34676/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
     background-size: cover;

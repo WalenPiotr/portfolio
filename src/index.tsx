@@ -4,9 +4,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { injectGlobal } from 'styled-components';
-import { ThemeProvider } from '@styled-components/index';
+import { ThemeProvider, injectGlobal } from '@styled-components/index';
 import theme from '@styled-components/theme';
+
 injectGlobal`
     body {
         font-family: 'Roboto Condensed';
