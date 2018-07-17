@@ -4,7 +4,6 @@ import * as React from 'react';
 import styled from '@styled-components/index';
 
 const Box = styled.div`
-    color: ${props => props.theme.fontPrimaryColor};
     display: flex;
     justify-content: center;
     align-items: center;

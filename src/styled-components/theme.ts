@@ -1,29 +1,35 @@
+import Color from '@utils/Color';
+
 export interface ITheme {
-    fontPrimaryColor: string;
-    fontHighlightColor: string;
-    backgroundColor: string;
-    navbarColor: string;
-    buttonColor: string;
-    paneColor: string;
+    fontPrimaryColor: Color;
+    fontHighlightColor: Color;
     backgroundColors: {
-        Skills: string;
-        Projects: string;
-        Home: string;
-        Credits: string;
+        main: Color;
+        highlight: {
+            hover: Color;
+            current: Color;
+        };
+        Navbar: Color;
+        Skills: Color;
+        Projects: Color;
+        Home: Color;
+        Credits: Color;
     };
 }
-const theme = {
-    fontPrimaryColor: 'rgb(220, 220, 220)',
-    fontHighlightColor: 'rgb(255, 255, 255)',
-    backgroundColor: 'rgba(0, 0, 0, 0.0)',
-    navbarColor: 'rgb(20, 20, 20)',
-    buttonColor: 'rgba(0, 0, 0, 0.0)',
-    paneColor: 'rgb(255, 255, 255, 0.15)',
+const theme: ITheme = {
+    fontPrimaryColor: new Color(220, 220, 220),
+    fontHighlightColor: new Color(255, 255, 255),
     backgroundColors: {
-        Skills: 'rgb(255, 0, 0, 0.15)',
-        Projects: 'rgb(0, 255, 0, 0.15)',
-        Home: 'rgb(125, 125, 0, 0.15)',
-        Credits: 'rgb(0, 0, 255, 0.15)',
+        Navbar: new Color(20, 20, 20),
+        highlight: {
+            hover: new Color(255, 255, 255, 0.1),
+            current: new Color(255, 255, 255, 0.2),
+        },
+        main: new Color(0, 0, 0, 0),
+        Home: new Color(155, 0, 0, 0.25),
+        Skills: new Color(155, 0, 0, 0.25),
+        Projects: new Color(155, 0, 0, 0.25),
+        Credits: new Color(155, 0, 0, 0.25),
     },
 };
 

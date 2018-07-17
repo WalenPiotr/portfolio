@@ -79,7 +79,7 @@ const Spacer = styled.div`
 const SmallBox = styled.div``;
 
 const Mail = styled.a`
-    color: ${props => props.theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor.stringify()};
 `;
 
 const Technology = styled.div`
@@ -91,7 +91,8 @@ const Technology = styled.div`
     padding-left: 1.5vh;
     padding-right: 1vh;
     margin-left: 1vh;
-    background-color: ${props => props.theme.paneColor};
+    background-color: ${props =>
+        props.theme.backgroundColors.highlight.current.stringify()};
 `;
 
 const TitleIconWrapper = styled.div`
@@ -114,15 +115,11 @@ const LinkIcon = styled.div`
 
 const Link = styled.a`
     text-decoration: none;
-    color: ${props => props.theme.fontPrimaryColor};
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     flex-grow: 0;
-    &:hover {
-        color: ${props => props.theme.fontHighlightColor};
-    }
 `;
 
 const Credits = () => (

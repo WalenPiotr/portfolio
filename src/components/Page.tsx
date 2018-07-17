@@ -3,6 +3,7 @@ import Icon from '@icons/index';
 import { dimensions } from '@styled-components/dimensions';
 import styled from '@styled-components/index';
 import media from '@styled-components/media';
+import Color from '@utils/Color';
 interface IBox {
     label: string;
 }
@@ -23,8 +24,8 @@ const ComponentWrapper = styled.div`
     width: 100vw;
     display: flex;
     justify-content: center;
-    background-color: ${(props: { backgroundColor: string }) =>
-        props.backgroundColor};
+    background-color: ${(props: { backgroundColor: Color }) =>
+        props.backgroundColor.stringify()};
     padding-bottom: 10vh;
     padding-top: 10vh;
     clip-path: polygon(0 0, 0 calc(100% - 10vh), 100% 100%, 100% 10vh);
@@ -41,15 +42,9 @@ const Button = styled.button`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
-    color: ${props => props.theme.fontPrimaryColor};
     border: none;
     z-index: 9;
-    &:focus {
-        outline: none;
-    }
-    &:hover {
-        color: ${props => props.theme.fontHighlightColor};
-    }
+
 `;
 
 const TextWrapper = styled.div`
@@ -71,7 +66,7 @@ interface IPage {
     last: boolean;
     innerComponent: JSX.Element;
     label: string;
-    backgroundColor: string;
+    backgroundColor: Color;
 }
 
 const ButtonGroup = styled.div`

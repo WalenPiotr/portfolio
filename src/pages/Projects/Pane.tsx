@@ -65,13 +65,8 @@ const UrlBox = styled.a`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: ${props => props.theme.fontPrimaryColor};
     text-decoration: none;
     font-size: 2vh;
-    color: ${props => props.theme.fontPrimaryColor};
-    &:hover {
-        color: ${props => props.theme.fontHighlightColor};
-    }
 `;
 
 const IconBox = styled.div`
@@ -99,7 +94,8 @@ const TechWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: ${props =>
+        props.theme.backgroundColors.highlight.current.stringify()};
     height: 4vh;
     font-size: 2vh;
     border-radius: 2vh;

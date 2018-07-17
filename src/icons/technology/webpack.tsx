@@ -4,7 +4,7 @@ import theme from '@styled-components/theme';
 const webpack = () => (
     <svg viewBox="0 0 600 600" height="100%" width="100%">
         <path
-            fill={theme.fontPrimaryColor}
+            fill={theme.fontPrimaryColor.stringify()}
             d="M300 .1L565 150v299.9L300 599.8 35 449.9V150z"
         />
         <path

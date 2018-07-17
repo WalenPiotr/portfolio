@@ -1,19 +1,22 @@
 import * as React from 'react';
 import styled, { keyframes } from '@styled-components/index';
 import { IProject } from './index';
+import { ITheme } from '@styled-components/theme';
 
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
     transition: width 0.2s linear;
     height: 1px;
-    border-bottom: 1px solid ${props => props.theme.fontPrimaryColor};
+    border-bottom: 1px solid
+        ${props => props.theme.fontPrimaryColor.stringify()};
     margin-bottom: 2px;
 `;
 
+interface ButtonProps {
+    current: boolean;
+    theme?: ITheme;
+}
 const Button = styled.button`
-    font-family: 'Roboto Condensed';
-    color: ${props => props.theme.fontPrimaryColor};
-    border: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,12 +25,15 @@ const Button = styled.button`
         outline: none;
     }
     &:hover {
-        color: ${props => props.theme.fontHighlightColor};
-        background-color: ${({ current }: { current: boolean }) =>
-            current ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)'};
+        background-color: ${({ current, theme }: ButtonProps) =>
+            current
+                ? theme.backgroundColors.highlight.current.stringify()
+                : theme.backgroundColors.highlight.hover.stringify()};
     }
-    background-color: ${({ current }: { current: boolean }) =>
-        current ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.0)'};
+    background-color: ${({ current, theme }: ButtonProps) =>
+        current
+            ? theme.backgroundColors.highlight.current.stringify()
+            : theme.backgroundColors.main.stringify()};
     margin-left: 1vh;
     padding-left: 1vh;
     padding-right: 1vh;

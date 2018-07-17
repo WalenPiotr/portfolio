@@ -16,7 +16,8 @@
             "@reducers/*": ["src/reducers/*"],
             "@actions/*": ["src/actions/*"],
             "@styled-components/*": ["src/styled-components/*"],
-            "@icons/*": ["src/icons/*"]
+            "@icons/*": ["src/icons/*"],
+            "@utils/*": ["src/utils/*"]
         },
         "downlevelIteration": true
     },

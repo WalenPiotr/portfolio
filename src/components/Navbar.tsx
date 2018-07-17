@@ -1,9 +1,11 @@
 import { dimensions } from '@styled-components/dimensions';
 import IView from '@typings/IView';
 import * as React from 'react';
-import styled from 'styled-components';
-import media from '@styled-components/media';
 import Icon from '@icons/index';
+import Color from '@utils/Color';
+import media from '@styled-components/media';
+import styled from '@styled-components/index';
+import { ITheme } from '@styled-components/theme';
 
 const Box = styled.div`
     position: fixed;
@@ -13,7 +15,8 @@ const Box = styled.div`
     align-items: center;
     flex-direction: column;
     z-index: 10;
-    background-color: ${props => props.theme.navbarColor};
+    background-color: ${({ theme }) =>
+        theme.backgroundColors.Navbar.stringify()};
     ${media.md`
         flex-direction: row;
         padding-left: 2vh;
@@ -23,25 +26,26 @@ const Box = styled.div`
 const Line = styled.div`
     width: ${({ current }: { current: boolean }) => (current ? '100%' : '0')};
     transition: width 0.1s linear;
-    border-bottom: 1px solid ${props => props.theme.fontPrimaryColor};
+    border-bottom: 1px solid
+        ${({ theme }) => theme.fontPrimaryColor.stringify()};
 `;
 
 interface ButtonProps {
     height: string;
     hidden: boolean;
     current: boolean;
-    backgroundColor: string;
+    backgroundColor: Color;
 }
 
 const Button = styled.button`
     font-family: 'Roboto Condensed';
-    height: ${dimensions.navbar.height};
+    height: ${({ height }: ButtonProps) => dimensions.navbar.height};
     font-size: 4vh;
     display: ${({ hidden }: ButtonProps) => (hidden ? 'none' : 'flex')};
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: ${props => props.theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor.stringify()};
     border: none;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0);
@@ -49,12 +53,12 @@ const Button = styled.button`
         outline: none;
     }
     &:hover {
-        color: ${props => props.theme.fontHighlightColor};
+        color: ${props => props.theme.fontHighlightColor.stringify()};
         background-color: ${({ current, backgroundColor }: ButtonProps) =>
-            current ? backgroundColor : 'rgba(255, 255, 255, 0.1)'};
+            current ? backgroundColor.stringify() : 'rgba(255, 255, 255, 0.1)'};
     }
     background-color: ${({ current, backgroundColor }: ButtonProps) =>
-        current ? backgroundColor : 'rgba(0, 0, 0, 0.0)'};
+        current ? backgroundColor.stringify() : 'rgba(0, 0, 0, 0.0)'};
     ${media.md`
         display: flex;
         width: auto;
@@ -77,7 +81,7 @@ const BarIcon = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${props => props.theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor.stringify()};
     background-color: rgba(0, 0, 0, 0);
     border: none;
     width: 100vw;

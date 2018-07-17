@@ -12,7 +12,7 @@ const ts = () => (
     >
         <g
             transform="translate(0.000000,630.000000) scale(0.087000,-0.08500)"
-            fill={theme.fontPrimaryColor}
+            fill={theme.fontPrimaryColor.stringify()}
             stroke="none"
         >
             <path

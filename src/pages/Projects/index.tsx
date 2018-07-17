@@ -50,16 +50,12 @@ const ArrowButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${props => props.theme.fontPrimaryColor};
     border: none;
     background-color: rgba(0, 0, 0, 0);
     height: 100%;
     width: 10vw;
     &:focus {
         outline: none;
-    }
-    &:hover {
-        color: ${props => props.theme.fontHighlightColor};
     }
 `;
 

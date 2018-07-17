@@ -13,12 +13,30 @@ injectGlobal`
         font-weight: 300;
         margin: 0;
         padding: 0;
-        color: ${theme.fontPrimaryColor}; 
+        color: ${theme.fontPrimaryColor.stringify()}; 
     }
     button {
         font-family: 'Roboto Condensed';
         font-weight: 300;
+        color: ${theme.fontPrimaryColor.stringify()};
+        &:hover: {
+            color: ${theme.fontHighlightColor.stringify()};
+        }
+        border: none;
+        background-color: rgba(0, 0, 0,0.0);   
+        &:focus {   
+            outline: none;
+        }     
     }
+    a {
+        font-family: 'Roboto Condensed';
+        font-weight: 300;
+        color: ${theme.fontPrimaryColor.stringify()};
+        &:hover: {
+            color: ${theme.fontHighlightColor.stringify()};
+        }     
+    }
+
 `;
 
 const store = createStore(rootReducer);
