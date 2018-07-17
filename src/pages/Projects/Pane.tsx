@@ -22,28 +22,17 @@ const PaneBox = styled.div`
     animation-direction: normal;
     animation-fill-mode: forwards;
     animation-play-state: running;
+    padding: 1.5vh;
+    flex-shrink: 1;
+    flex-grow: 1;
+    height: 40vh;
     width: 100%;
-    padding: 2.5vh;
-    width: 70vw;
-    ${media.sm`
-    width: 60vw;
-`};
-    ${media.md`
-    width: 50vw;
-`};
-    ${media.lg`
-    width: 40vw;
-`};
-    ${media.xl`
-    width: 30vw;
-`};
-    flex: 1 0 auto;
 `;
 
 const Title = styled.div`
     display: flex;
     justify-content: center;
-    font-size: 3vh;
+    font-size: 2.5vh;
     margin-bottom: 1.5vh;
 `;
 
@@ -55,7 +44,7 @@ const Subtitile = styled.div`
 `;
 
 const Description = styled.div`
-    font-size: 2.5vh;
+    font-size: 2vh;
     text-align: justify;
     text-justify: inter-word;
 `;

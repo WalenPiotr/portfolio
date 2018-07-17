@@ -11,19 +11,6 @@ const Box = styled.div`
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    height: 66vh;
-    ${media.sm`
-        height: 62vh;
-    `};
-    ${media.md`
-        height: 58vh;
-    `};
-    ${media.lg`
-        height: 54vh;
-    `};
-    ${media.xl`
-        height: 50vh;
-    `};
 `;
 
 const Title = styled.span`
@@ -73,6 +60,21 @@ const PaneWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 70vw;
+    ${media.sm`
+        flex-basis: 60vw;
+    `};
+    ${media.md`
+        flex-basis: 50vw;
+    `};
+    ${media.lg`
+        flex-basis: 40vw;
+    `};
+    ${media.xl`
+        flex-basis: 30vw;
+    `};
 `;
 
 export interface IProject {
